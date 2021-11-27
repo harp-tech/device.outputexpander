@@ -70,6 +70,8 @@ void init_ios(void)
 	io_pin2out(&PORTB, 6, OUT_IO_DIGITAL, IN_EN_IO_EN);                  // IDE_IOS_EN
 	io_pin2out(&PORTD, 7, OUT_IO_DIGITAL, IN_EN_IO_EN);                  // BNC_IOS_DIR
 	io_pin2out(&PORTD, 6, OUT_IO_DIGITAL, IN_EN_IO_EN);                  // BNC_IOS_EN
+	io_pin2out(&PORTK, 1, OUT_IO_DIGITAL, IN_EN_IO_EN);                  // EN_CLOCK_OUT
+	io_pin2out(&PORTK, 2, OUT_IO_DIGITAL, IN_EN_IO_EN);                  // EN_CLOCK_IN
 	io_pin2out(&PORTD, 4, OUT_IO_DIGITAL, IN_EN_IO_EN);                  // OUT0
 	io_pin2out(&PORTD, 3, OUT_IO_DIGITAL, IN_EN_IO_EN);                  // OUT1
 	io_pin2out(&PORTD, 2, OUT_IO_DIGITAL, IN_EN_IO_EN);                  // OUT2
@@ -98,6 +100,8 @@ void init_ios(void)
 	clr_IDE_IOS_EN;
 	clr_BNC_IOS_DIR;
 	clr_BNC_IOS_EN;
+	clr_EN_CLOCK_OUT;
+	set_EN_CLOCK_IN;
 	clr_OUT0;
 	clr_OUT1;
 	clr_OUT2;

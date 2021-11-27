@@ -109,6 +109,8 @@ void init_ios(void);
 // IDE_IOS_EN             Description: Buffer enable
 // BNC_IOS_DIR            Description: Direction control
 // BNC_IOS_EN             Description: Buffer enable
+// EN_CLOCK_OUT           Description: Buffer enable
+// EN_CLOCK_IN            Description: Buffer enable
 // OUT0                   Description: Output 0
 // OUT1                   Description: Output 1
 // OUT2                   Description: Output 2
@@ -215,6 +217,18 @@ void init_ios(void);
 #define clr_BNC_IOS_EN clear_io(PORTD, 6)
 #define tgl_BNC_IOS_EN toggle_io(PORTD, 6)
 #define read_BNC_IOS_EN read_io(PORTD, 6)
+
+/* EN_CLOCK_OUT */
+#define set_EN_CLOCK_OUT clear_io(PORTK, 1)
+#define clr_EN_CLOCK_OUT set_io(PORTK, 1)
+#define tgl_EN_CLOCK_OUT toggle_io(PORTK, 1)
+#define read_EN_CLOCK_OUT read_io(PORTK, 1)
+
+/* EN_CLOCK_IN */
+#define set_EN_CLOCK_IN clear_io(PORTK, 2)
+#define clr_EN_CLOCK_IN set_io(PORTK, 2)
+#define tgl_EN_CLOCK_IN toggle_io(PORTK, 2)
+#define read_EN_CLOCK_IN read_io(PORTK, 2)
 
 /* OUT0 */
 #define set_OUT0 set_io(PORTD, 4)
