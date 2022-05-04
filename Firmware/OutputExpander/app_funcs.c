@@ -2,6 +2,8 @@
 #include "app_ios_and_regs.h"
 #include "hwbp_core.h"
 
+#include "PAA5100JE.h"
+
 
 /************************************************************************/
 /* Create pointers to functions                                         */
@@ -74,7 +76,10 @@ void (*app_func_rd_pointer[])(void) = {
 	&app_read_REG_SERVO_PERIOD_US,
 	&app_read_REG_SERVO0_PULSE_US,
 	&app_read_REG_SERVO1_PULSE_US,
-	&app_read_REG_SERVO2_PULSE_US
+	&app_read_REG_SERVO2_PULSE_US,
+	&app_read_REG_RESERVED6,
+	&app_read_REG_RESERVED7,
+	&app_read_REG_OPTICAL_TRACKING_READ
 };
 
 bool (*app_func_wr_pointer[])(void*) = {
@@ -143,7 +148,10 @@ bool (*app_func_wr_pointer[])(void*) = {
 	&app_write_REG_SERVO_PERIOD_US,
 	&app_write_REG_SERVO0_PULSE_US,
 	&app_write_REG_SERVO1_PULSE_US,
-	&app_write_REG_SERVO2_PULSE_US
+	&app_write_REG_SERVO2_PULSE_US,
+	&app_write_REG_RESERVED6,
+	&app_write_REG_RESERVED7,
+	&app_write_REG_OPTICAL_TRACKING_READ
 };
 
 /************************************************************************/
@@ -266,6 +274,7 @@ bool app_write_REG_AUX_INPUTS_FALLING_EDGE_ENABLE(void *a)
 #define PINS_MASK_SERVO_MOTOR_1    B_OUT0 | B_OUT1 | B_OUT2 | B_OUT3 | B_OUT4 |          B_OUT6 | B_OUT7 | B_OUT8 | B_OUT9
 #define PINS_MASK_SERVO_MOTOR_2    B_OUT0 | B_OUT1 | B_OUT2 | B_OUT3 | B_OUT4 |                   B_OUT7 | B_OUT8 | B_OUT9
 #define PINS_MASK_SERVO_MOTOR_3    B_OUT0 | B_OUT1 | B_OUT2 | B_OUT3 | B_OUT4 |                            B_OUT8 | B_OUT9
+#define PINS_MASK_OPTICAL_TRACKING B_OUT0 | B_OUT1 | B_OUT2 | B_OUT3 | B_OUT4 |                   B_OUT7 | B_OUT8
 
 void app_read_REG_OUTPUTS_SET(void) {}
 bool app_write_REG_OUTPUTS_SET(void *a)
@@ -281,6 +290,7 @@ bool app_write_REG_OUTPUTS_SET(void *a)
 		case MSK_SERVO_MOTOR_1: mask = PINS_MASK_SERVO_MOTOR_1; break;		
 		case MSK_SERVO_MOTOR_2: mask = PINS_MASK_SERVO_MOTOR_2; break;		
 		case MSK_SERVO_MOTOR_3: mask = PINS_MASK_SERVO_MOTOR_3; break;
+		case MSK_OPTICAL_TRACKING: mask = PINS_MASK_OPTICAL_TRACKING; break;
 	}
 	
 	if ((reg & B_OUT0) & mask) { set_OUT0; if (core_bool_is_visual_enabled()) set_LED_0; }
@@ -316,6 +326,7 @@ bool app_write_REG_OUTPUTS_CLEAR(void *a)
 		case MSK_SERVO_MOTOR_1: mask = PINS_MASK_SERVO_MOTOR_1; break;
 		case MSK_SERVO_MOTOR_2: mask = PINS_MASK_SERVO_MOTOR_2; break;
 		case MSK_SERVO_MOTOR_3: mask = PINS_MASK_SERVO_MOTOR_3; break;
+		case MSK_OPTICAL_TRACKING: mask = PINS_MASK_OPTICAL_TRACKING; break;		
 	}
 	
 	if ((reg & B_OUT0) & mask) { clr_OUT0; clr_LED_0; }
@@ -351,6 +362,7 @@ bool app_write_REG_OUTPUTS_TOGGLE(void *a)
 		case MSK_SERVO_MOTOR_1: mask = PINS_MASK_SERVO_MOTOR_1; break;
 		case MSK_SERVO_MOTOR_2: mask = PINS_MASK_SERVO_MOTOR_2; break;
 		case MSK_SERVO_MOTOR_3: mask = PINS_MASK_SERVO_MOTOR_3; break;
+		case MSK_OPTICAL_TRACKING: mask = PINS_MASK_OPTICAL_TRACKING; break;
 	}
 	
 	if ((reg & B_OUT0) & mask) { tgl_OUT0; if (core_bool_is_visual_enabled()) tgl_LED_0; }
@@ -399,6 +411,7 @@ bool app_write_REG_OUTPUTS_WRITE(void *a)
 		case MSK_SERVO_MOTOR_1: mask = PINS_MASK_SERVO_MOTOR_1; break;
 		case MSK_SERVO_MOTOR_2: mask = PINS_MASK_SERVO_MOTOR_2; break;
 		case MSK_SERVO_MOTOR_3: mask = PINS_MASK_SERVO_MOTOR_3; break;
+		case MSK_OPTICAL_TRACKING: mask = PINS_MASK_OPTICAL_TRACKING; break;
 	}
 	
 	if ((reg & B_OUT0) & mask) { set_OUT0; if (core_bool_is_visual_enabled()) set_LED_0; } else { clr_OUT0; clr_LED_0; }
@@ -875,7 +888,8 @@ bool app_write_REG_PWM_START(void *a)
 		   
 		if (app_regs.REG_PWM_AND_STIM_WRITE & B_PWM1_EN_OUT7 && (
 			(app_regs.REG_EXPANSION_OPTIONS == MSK_BREAKOUT) ||
-			(app_regs.REG_EXPANSION_OPTIONS == MSK_MAGNETIC_ENCODER)
+			(app_regs.REG_EXPANSION_OPTIONS == MSK_MAGNETIC_ENCODER) ||
+			(app_regs.REG_EXPANSION_OPTIONS == MSK_OPTICAL_TRACKING)
 			))
 			{
 				start_pwm1 = true;
@@ -884,7 +898,8 @@ bool app_write_REG_PWM_START(void *a)
 			}
 		if (app_regs.REG_PWM_AND_STIM_WRITE & B_PWM1_EN_OUT8 && (
 		(app_regs.REG_EXPANSION_OPTIONS == MSK_BREAKOUT) ||
-		(app_regs.REG_EXPANSION_OPTIONS == MSK_MAGNETIC_ENCODER)
+		(app_regs.REG_EXPANSION_OPTIONS == MSK_MAGNETIC_ENCODER) ||
+		(app_regs.REG_EXPANSION_OPTIONS == MSK_OPTICAL_TRACKING)
 		))
 			{
 				start_pwm1 = true;
@@ -1282,6 +1297,25 @@ bool app_write_REG_EXPANSION_OPTIONS(void *a)
 			TCC0_CTRLA = TIMER_PRESCALER_DIV64;						// Start timer			
 			break;
 		
+		case MSK_OPTICAL_TRACKING:
+			io_set_int(&PORTE, INT_LEVEL_LOW, 0, (1<<5), true);		// Enable only AUX_INPUT1 interrupt on PORTE INT N=0
+			
+			//if (optical_tracking_initialize() == false)
+				//return false;
+			
+			timer_type0_stop(&TCC0);	// Terminate servo motors timer
+			
+			/* Turn LEDs ON to show that they are being used */
+			if (core_bool_is_visual_enabled())
+			{
+				set_OUT5;	// CS
+				set_LED_5;	// CS
+				set_LED_6;	// CLK
+				set_LED_9;	// MOSI
+				if (app_regs.REG_EXPANSION_OPTIONS == MSK_SERVO_MOTOR_3)    { clr_LED_7; }
+			}
+			break;
+		
 		default:
 			return false;
 	 }
@@ -1448,3 +1482,36 @@ bool app_write_REG_SERVO2_PULSE_US(void *a)
 	app_regs.REG_SERVO2_PULSE_US = reg;
 	return true;
 }
+
+
+/************************************************************************/
+/* REG_RESERVED6                                                        */
+/************************************************************************/
+void app_read_REG_RESERVED6(void) {}
+bool app_write_REG_RESERVED6(void *a)
+{
+	uint8_t reg = *((uint8_t*)a);
+
+	app_regs.REG_RESERVED6 = reg;
+	return true;
+}
+
+
+/************************************************************************/
+/* REG_RESERVED7                                                        */
+/************************************************************************/
+void app_read_REG_RESERVED7(void) {}
+bool app_write_REG_RESERVED7(void *a)
+{
+	uint8_t reg = *((uint8_t*)a);
+
+	app_regs.REG_RESERVED7 = reg;
+	return true;
+}
+
+
+/************************************************************************/
+/* REG_OPTICAL_TRACKING_READ                                            */
+/************************************************************************/
+void app_read_REG_OPTICAL_TRACKING_READ(void) {}
+bool app_write_REG_OPTICAL_TRACKING_READ(void *a) { return false; }

@@ -86,6 +86,9 @@ void app_read_REG_SERVO_PERIOD_US(void);
 void app_read_REG_SERVO0_PULSE_US(void);
 void app_read_REG_SERVO1_PULSE_US(void);
 void app_read_REG_SERVO2_PULSE_US(void);
+void app_read_REG_RESERVED6(void);
+void app_read_REG_RESERVED7(void);
+void app_read_REG_OPTICAL_TRACKING_READ(void);
 
 bool app_write_REG_AUX_INPUTS(void *a);
 bool app_write_REG_AUX_INPUTS_RISING_EDGE_ENABLE(void *a);
@@ -153,6 +156,9 @@ bool app_write_REG_SERVO_PERIOD_US(void *a);
 bool app_write_REG_SERVO0_PULSE_US(void *a);
 bool app_write_REG_SERVO1_PULSE_US(void *a);
 bool app_write_REG_SERVO2_PULSE_US(void *a);
+bool app_write_REG_RESERVED6(void *a);
+bool app_write_REG_RESERVED7(void *a);
+bool app_write_REG_OPTICAL_TRACKING_READ(void *a);
 
 
 #endif /* _APP_FUNCTIONS_H_ */

@@ -25,7 +25,7 @@
     <preserveEEPROM>true</preserveEEPROM>
     <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
-    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
         <options />
@@ -47,15 +47,28 @@
         <InterfaceName>PDI</InterfaceName>
       </ToolOptions>
       <ToolType>com.atmel.avrdbg.tool.atmelice</ToolType>
-      <ToolNumber>J42700004639</ToolNumber>
+      <ToolNumber>J42700022647</ToolNumber>
       <ToolName>Atmel-ICE</ToolName>
     </com_atmel_avrdbg_tool_atmelice>
     <avrtoolinterface>PDI</avrtoolinterface>
     <ResetRule>0</ResetRule>
     <EraseKey />
-    <avrtoolserialnumber>J42700004639</avrtoolserialnumber>
+    <avrtoolserialnumber>J42700022647</avrtoolserialnumber>
     <avrdeviceexpectedsignature>0x1E974C</avrdeviceexpectedsignature>
     <avrtoolinterfaceclock>4000000</avrtoolinterfaceclock>
+    <custom>
+      <ToolOptions>
+        <InterfaceProperties>
+          <PdiClock>4000000</PdiClock>
+        </InterfaceProperties>
+        <InterfaceName>
+        </InterfaceName>
+      </ToolOptions>
+      <ToolType>custom</ToolType>
+      <ToolNumber>
+      </ToolNumber>
+      <ToolName>Custom Programming Tool</ToolName>
+    </custom>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -86,7 +99,7 @@
         <avrgcc.linker.libraries.Libraries>
           <ListValues>
             <Value>libm</Value>
-            <Value>libATxmega128A1U-1.7.a</Value>
+            <Value>libATxmega128A1U-1.9.a</Value>
           </ListValues>
         </avrgcc.linker.libraries.Libraries>
         <avrgcc.linker.libraries.LibrarySearchPaths>
@@ -96,6 +109,7 @@
             <Value>C:\Users\Filipe Carvalho\Documents\BitBucket.FilCarvalho\Harp\Corelibrary.Atxmega\DeviceStarterKit\StarterKit</Value>
             <Value>C:\Users\OEPS\Google Drive\projects\internationalbrainlab\PCB\firmware ibl mainboard\StarterKit</Value>
             <Value>C:\Users\OEPS\Documents\github\harp-tech\harp_expander\Firmware\InputExpander</Value>
+            <Value>C:\Users\OEPS\Documents\github\harp-tech\harp_expander\Firmware\OutputExpander</Value>
           </ListValues>
         </avrgcc.linker.libraries.LibrarySearchPaths>
         <avrgcc.assembler.general.IncludePaths>
@@ -136,7 +150,7 @@
         <avrgcc.linker.libraries.Libraries>
           <ListValues>
             <Value>libm</Value>
-            <Value>libATxmega128A1U-1.7.a</Value>
+            <Value>libATxmega128A1U-1.9.a</Value>
           </ListValues>
         </avrgcc.linker.libraries.Libraries>
         <avrgcc.linker.libraries.LibrarySearchPaths>
@@ -146,6 +160,7 @@
             <Value>C:\Users\Filipe Carvalho\Documents\BitBucket.FilCarvalho\Harp\Corelibrary.Atxmega\DeviceStarterKit\StarterKit</Value>
             <Value>C:\Users\OEPS\Google Drive\projects\internationalbrainlab\PCB\firmware ibl mainboard\StarterKit</Value>
             <Value>C:\Users\OEPS\Documents\github\harp-tech\harp_expander\Firmware\InputExpander</Value>
+            <Value>C:\Users\OEPS\Documents\github\harp-tech\harp_expander\Firmware\OutputExpander</Value>
           </ListValues>
         </avrgcc.linker.libraries.LibrarySearchPaths>
         <avrgcc.assembler.general.IncludePaths>
@@ -174,6 +189,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PAA5100JE.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="spi.c">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

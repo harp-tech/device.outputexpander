@@ -185,7 +185,10 @@ uint8_t app_regs_type[] = {
 	TYPE_U16,
 	TYPE_U16,
 	TYPE_U16,
-	TYPE_U16
+	TYPE_U16,
+	TYPE_U8,
+	TYPE_U8,
+	TYPE_I16,
 };
 
 uint16_t app_regs_n_elements[] = {
@@ -254,7 +257,10 @@ uint16_t app_regs_n_elements[] = {
 	1,
 	1,
 	1,
-	1
+	1,
+	1,
+	1,
+	3
 };
 
 uint8_t *app_regs_pointer[] = {
@@ -323,5 +329,8 @@ uint8_t *app_regs_pointer[] = {
 	(uint8_t*)(&app_regs.REG_SERVO_PERIOD_US),
 	(uint8_t*)(&app_regs.REG_SERVO0_PULSE_US),
 	(uint8_t*)(&app_regs.REG_SERVO1_PULSE_US),
-	(uint8_t*)(&app_regs.REG_SERVO2_PULSE_US)
+	(uint8_t*)(&app_regs.REG_SERVO2_PULSE_US),
+	(uint8_t*)(&app_regs.REG_RESERVED6),
+	(uint8_t*)(&app_regs.REG_RESERVED7),
+	(uint8_t*)(app_regs.REG_OPTICAL_TRACKING_READ),
 };

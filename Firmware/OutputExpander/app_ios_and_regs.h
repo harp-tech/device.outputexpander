@@ -362,6 +362,10 @@ typedef struct
 	uint16_t REG_SERVO0_PULSE_US;
 	uint16_t REG_SERVO1_PULSE_US;
 	uint16_t REG_SERVO2_PULSE_US;
+	uint8_t REG_RESERVED6;
+	uint8_t REG_RESERVED7;
+	int16_t REG_OPTICAL_TRACKING_READ[3];
+
 } AppRegs;
 
 /************************************************************************/
@@ -434,6 +438,9 @@ typedef struct
 #define ADD_REG_SERVO0_PULSE_US             95 // U16    
 #define ADD_REG_SERVO1_PULSE_US             96 // U16    
 #define ADD_REG_SERVO2_PULSE_US             97 // U16    
+#define ADD_REG_RESERVED6                   98 // U8    
+#define ADD_REG_RESERVED7                   99 // U8    
+#define ADD_REG_OPTICAL_TRACKING_READ       100 // I16    
 
 /************************************************************************/
 /* PWM Generator registers' memory limits                               */
@@ -443,8 +450,8 @@ typedef struct
 /************************************************************************/
 /* Memory limits */
 #define APP_REGS_ADD_MIN                    0x20
-#define APP_REGS_ADD_MAX                    0x61
-#define APP_NBYTES_OF_REG_BANK              133
+#define APP_REGS_ADD_MAX                    0x64
+#define APP_NBYTES_OF_REG_BANK              139
 
 /************************************************************************/
 /* Registers' bits                                                      */
@@ -513,6 +520,7 @@ typedef struct
 #define MSK_SERVO_MOTOR_1                  2            // 
 #define MSK_SERVO_MOTOR_2                  3            // 
 #define MSK_SERVO_MOTOR_3                  4            // 
+#define MSK_OPTICAL_TRACKING               5            // 
 #define GM_MAG_ENCODER_MODE                7            // 
 #define MSK_AT_50SPS                       0            // 
 #define MSK_AT_100SPS                      1            // 

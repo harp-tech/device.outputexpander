@@ -10,6 +10,7 @@
 #include <util/delay.h>
 
 #include "AD5048A.h"
+#include "PAA5100JE.h"
 
 /************************************************************************/
 /* Declare application registers                                        */
@@ -116,6 +117,10 @@ void core_callback_1st_config_hw_after_boot(void)
 		
 	_delay_ms(500);
 	set_LED_PWR;
+	
+	/* Initialize the optical tracking device */
+	/* This functions still needs to be divided into a state machine */
+	optical_tracking_initialize();
 }
 
 void core_callback_reset_registers(void)
@@ -247,6 +252,20 @@ void core_callback_visualen_to_on(void)
 			if (read_OUT9) set_LED_9;
 			set_LED_9;
 			break;
+			
+		case MSK_OPTICAL_TRACKING:
+			if (read_OUT0) set_LED_0;
+			if (read_OUT1) set_LED_1;
+			if (read_OUT2) set_LED_2;
+			if (read_OUT3) set_LED_3;
+			if (read_OUT4) set_LED_4;
+			               set_LED_5;
+			               set_LED_6;
+			if (read_OUT7) set_LED_7;
+			if (read_OUT8) set_LED_8;
+			               set_LED_9;
+			set_LED_9;
+			break;
 	 }
 	 
 	 set_LED_PWR;
@@ -285,10 +304,18 @@ void core_callback_device_to_speed(void) {}
 /************************************************************************/
 uint8_t magnetic_counter = 0;
 uint8_t magnetic_counter_divider;
+uint8_t optical_counter = 0;
+uint8_t optical_counter_divider = 10;
+
+Motion optical_motion;
 
 void core_callback_t_before_exec(void) {}
 void core_callback_t_after_exec(void) {}
-void core_callback_t_new_second(void) { magnetic_counter = magnetic_counter_divider-1; }
+void core_callback_t_new_second(void)
+{
+	magnetic_counter = magnetic_counter_divider-1;
+	optical_counter = optical_counter_divider-1;
+}
 void core_callback_t_500us(void) {}
 void core_callback_t_1ms(void)
 {
@@ -301,6 +328,20 @@ void core_callback_t_1ms(void)
 			magnetic_counter = 0;
 		}
 	}
+	
+	if (app_regs.REG_EXPANSION_OPTIONS == MSK_OPTICAL_TRACKING)
+		{
+			if (++optical_counter == optical_counter_divider)
+			{				
+				optical_tracking_read_motion(&optical_motion);
+				
+				memcpy(app_regs.REG_OPTICAL_TRACKING_READ, ((uint8_t*)(&optical_motion))+2,5);
+				*(((uint8_t*)(&app_regs.REG_OPTICAL_TRACKING_READ[2]))+1) = 0;	// Clear high byte of [2]
+				
+				core_func_send_event(ADD_REG_OPTICAL_TRACKING_READ, true);
+				optical_counter = 0;
+			}
+		}
 }
 
 /************************************************************************/
