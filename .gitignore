@@ -58,8 +58,3 @@ bin
 obj
 Debug
 packages
-
-*.bonsai
-*.bonsai.layout
-*.csv
-*.bin
