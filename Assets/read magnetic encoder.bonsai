@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.6.2"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:harp="clr-namespace:Bonsai.Harp;assembly=Bonsai.Harp"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="GroupWorkflow">
+          <Name>ConfigureToMagneticEncoder</Name>
+          <Workflow>
+            <Nodes>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="harp:CreateMessage">
+                  <harp:MessageType>Write</harp:MessageType>
+                  <harp:Address>87</harp:Address>
+                  <harp:PayloadType>U8</harp:PayloadType>
+                  <harp:Payload>1</harp:Payload>
+                </Combinator>
+              </Expression>
+              <Expression xsi:type="WorkflowOutput" />
+            </Nodes>
+            <Edges>
+              <Edge From="0" To="1" Label="Source1" />
+            </Edges>
+          </Workflow>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="harp:Device">
+          <harp:DeviceState>Active</harp:DeviceState>
+          <harp:DumpRegisters>true</harp:DumpRegisters>
+          <harp:LedState>On</harp:LedState>
+          <harp:VisualIndicators>On</harp:VisualIndicators>
+          <harp:Heartbeat>Disable</harp:Heartbeat>
+          <harp:IgnoreErrors>false</harp:IgnoreErrors>
+          <harp:PortName>COM15</harp:PortName>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>Angle</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="harp:FilterMessage">
+                <harp:Address>90</harp:Address>
+                <harp:MessageType>Event</harp:MessageType>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="harp:Parse">
+              <harp:Type>U16</harp:Type>
+              <harp:IsArray>true</harp:IsArray>
+            </Expression>
+            <Expression xsi:type="Index">
+              <Operand xsi:type="IntProperty">
+                <Value>0</Value>
+              </Operand>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>Intensity</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="harp:FilterMessage">
+                <harp:Address>90</harp:Address>
+                <harp:MessageType>Event</harp:MessageType>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="harp:Parse">
+              <harp:Type>U16</harp:Type>
+              <harp:IsArray>true</harp:IsArray>
+            </Expression>
+            <Expression xsi:type="Index">
+              <Operand xsi:type="IntProperty">
+                <Value>1</Value>
+              </Operand>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>AuxiliarInputs</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="harp:FilterMessage">
+                <harp:Address>32</harp:Address>
+                <harp:MessageType>Event</harp:MessageType>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="harp:Parse">
+              <harp:Type>U8</harp:Type>
+              <harp:IsArray>true</harp:IsArray>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="1" To="2" Label="Source1" />
+      <Edge From="1" To="3" Label="Source1" />
+      <Edge From="1" To="4" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>
