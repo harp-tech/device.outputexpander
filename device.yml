@@ -75,7 +75,7 @@ registers:
     type: U16
     access: Write
     description: Sets the number of pulses to generate for PWM0.
-  Pwm0RealFrequency: &realfrequency #TODO are these read-only?
+  Pwm0RealFrequency: &realfrequency
     address: 45
     type: Float
     access: Read
@@ -189,11 +189,11 @@ registers:
     address: 69
     type: U16
     access: Write
-    description: Sets the duration each pulse is on for. #TODO units???).
+    description: Sets the duration (us) each pulse is on for.
   Stim0PulseOffTime:
     <<: *stimulusontime
     address: 70
-    description: Sets the duration each pulse is off for. #TODO units???).
+    description: Sets the duration (us) each pulse is off for.
   Stim0PulseCount:
     <<: *pulsecount
     address: 71
@@ -202,7 +202,7 @@ registers:
     address: 72
     type: U8
     access: Write
-    maskType: StimModeConfig
+    maskType: AcquisitionMode
     description: Sets the acquisition mode of Stim0.
   Stim0TriggerSource:
     address: 73
@@ -331,7 +331,7 @@ bitMasks:
     description: Specifies the state of auxiliary input lines.
   DigitalOutputs:
     description: Specifies the available digital output lines.
-    bits: #TODO Should these be named DO0 or Out0
+    bits:
       Out0: 0x1
       Out1: 0x2
       Out2: 0x4
@@ -365,7 +365,7 @@ bitMasks:
     bits:
       Stim0: 0x1
 groupMasks:
-  AcquisitionMode: #TODO can this be shared across Stim and PWM or will it break in the future?
+  AcquisitionMode:
     description: Available configurations for a PWM line.
     values:
       Continuous: 0
@@ -395,7 +395,7 @@ groupMasks:
       ServoMotor1: 2
       ServoMotor2: 3
       ServoMotor3: 4
-      OpticalFlow: 5 #TODO is this correct?
+      OpticalFlow: 5
   EncoderSamplingRate:
     description: Specifies the sampling rate of the encoder.
     values:
