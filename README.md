@@ -1,12 +1,7 @@
+# Harp Output Expander
+Harp board to expand the outputs of the current harp ecosystem.
 
-
-![DeviceFront](Pics/harp_expander_and_breakout.jpg)
-
-
-# Harp Input Expander & Harp Output Expander
-Harp board to expand the inputs and outputs of the current harp ecosystem.
-
-![HarpExpander](./Assets/pcb.png)
+![HarpExpander](./Assets/pcb.jpg)
 
 ### Key Features ###
 
@@ -21,7 +16,7 @@ Harp board to expand the inputs and outputs of the current harp ecosystem.
 ## Interface ##
 
 
-The interface with the Harp Behavior can be done through [Bonsai](https://bonsai-rx.org/).
+The interface with the Harp Output Expander can be done through [Bonsai](https://bonsai-rx.org/).
 
 
 ## Licensing ##
