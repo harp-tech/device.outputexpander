@@ -6,23 +6,23 @@ whoAmI: 1108
 firmwareVersion: "2.1"
 hardwareTargets: "1.0"
 registers:
-  AuxInPort:
+  AuxInState:
     address: 32
     type: U8
     access: Event
-    maskType: AuxiliaryInput
+    maskType: AuxiliaryInputs
     description: Reports the state of the auxiliary inputs.
-  AuxInEnableRisingEdge:
+  AuxInRisingEdge:
     address: 33
     type: U8
     access: Write
-    maskType: AuxiliaryInput
+    maskType: AuxiliaryInputs
     description: Enables rising edge detection on the auxiliary inputs.
-  AuxInEnableFallingEdge:
+  AuxInFallingEdge:
     address: 34
     type: U8
     access: Write
-    maskType: AuxiliaryInput
+    maskType: AuxiliaryInputs
     description: Enables falling edge detection on the auxiliary input port.
   OutputSet: &output
     address: 35
@@ -52,7 +52,7 @@ registers:
     <<: *pwmstimcontrol
     address: 40
     description: Disables PWM and stimulation on the specified digital output lines.
-  PwmAndStimWrite:
+  PwmAndStimState:
     <<: *pwmstimcontrol
     address: 41
     description: Writes the mapping between PWM/stimulation and the specified digital output lines in a single command.
@@ -60,12 +60,13 @@ registers:
     address: 42
     type: Float
     maxValue: 1000
+    minValue: 0.5
     access: Write
     description: Sets the frequency of PWM0 (Hz).
   Pwm0DutyCycle: &dutycycle
     address: 43
     type: Float
-    minValue: 0
+    minValue: 1
     maxValue: 100
     defaultValue: 50
     access: Write
@@ -75,12 +76,12 @@ registers:
     type: U16
     access: Write
     description: Sets the number of pulses to generate for PWM0.
-  Pwm0RealFrequency: &realfrequency
+  Pwm0ActualFrequency: &realfrequency
     address: 45
     type: Float
     access: Read
     description: Reports the actual frequency to be generated from PWM0 (Hz).
-  Pwm0RealDutyCycle: &realdutycycle
+  Pwm0ActualDutyCycle: &realdutycycle
     address: 46
     type: Float
     access: Read
@@ -95,9 +96,9 @@ registers:
     address: 48
     type: U8
     access: Write
-    maskType: TriggerSources
+    maskType: TriggerSource
     description: Sets the trigger source of PWM0.
-  Pwm0EventEnable: &eventenable
+  Pwm0EventConfig: &eventenable
     address: 49
     type: U8
     access: Write
@@ -115,11 +116,11 @@ registers:
     <<: *pulsecount
     address: 52
     description: Sets the number of pulses to generate for PWM1.
-  Pwm1RealFrequency:
+  Pwm1ActualFrequency:
     <<: *realfrequency
     address: 53
     description: Reports the actual frequency to be generated from PWM1 (Hz).
-  Pwm1RealDutyCycle:
+  Pwm1ActualDutyCycle:
     <<: *realdutycycle
     address: 54
     description: Reports the actual duty cycle to be generated from PWM1 (%).
@@ -131,7 +132,7 @@ registers:
     <<: *pwmtriggermode
     address: 56
     description: Sets the trigger source of PWM1.
-  Pwm1EventEnable:
+  Pwm1EventConfig:
     <<: *eventenable
     address: 57
     description: Enables the generation of events for PWM1.
@@ -147,11 +148,11 @@ registers:
     <<: *pulsecount
     address: 60
     description: Sets the number of pulses to generate for PWM2.
-  Pwm2RealFrequency:
+  Pwm2ActualFrequency:
     <<: *realfrequency
     address: 61
     description: Reports the actual frequency to be generated from PWM2 (Hz).
-  Pwm2RealDutyCycle:
+  Pwm2ActualDutyCycle:
     <<: *realdutycycle
     address: 62
     description: Reports the actual duty cycle to be generated from PWM2 (%).
@@ -163,7 +164,7 @@ registers:
     <<: *pwmtriggermode
     address: 64
     description: Sets the trigger source of PWM2.
-  Pwm2EventEnable:
+  Pwm2EventConfig:
     <<: *eventenable
     address: 65
     description: Enables the generation of events for PWM2.
@@ -171,19 +172,19 @@ registers:
     address: 66
     type: U8
     access: [Write, Event]
-    maskType: Pwm
+    maskType: PwmChannels
     description: Starts the a PWM on the specified channels. An event will be generated if the start was triggered by an auxiliary input.
   PwmStop:
     address: 67
     type: U8
     access: Write
-    maskType: Pwm
+    maskType: PwmChannels
     description: Stops the a PWM on the specified channels.
-  PwmRiseEventEnable:
+  PwmRiseEvent:
     address: 68
     type: U8
-    access: Write
-    maskType: Pwm
+    access: [Write, Event]
+    maskType: PwmChannels
     description: Enables the generation of an event on every rising edge of the PWM line.
   Stim0PulseOnTime: &stimulusontime
     address: 69
@@ -208,19 +209,19 @@ registers:
     address: 73
     type: U8
     access: Write
-    maskType: TriggerSources
+    maskType: TriggerSource
     description: Sets the trigger source of Stim0.
   StimStart:
     address: 74
     type: U8
     access: Write
-    maskType: Stim
+    maskType: StimChannels
     description: Starts a target Stim protocol.
   StimStop:
     address: 75
     type: U8
     access: Write
-    maskType: Stim
+    maskType: StimChannels
     description: Stops the target Stim protocol.
   OutputPulse:
     address: 76
@@ -264,7 +265,7 @@ registers:
     address: 87
     type: U8
     access: Write
-    maskType: ExpansionBoardTypes
+    maskType: ExpansionBoardType
     description: Selects the board to be interfaced with via the expansion port.
   Reserved0: &reserved
     address: 88
@@ -280,11 +281,11 @@ registers:
     type: U16
     access: Event
     description: Generated event with the latest read from the magnetic encoder.
-  EncoderSampling:
+  EncoderSamplingRate:
     address: 91
     type: U8
     access: Write
-    maskType: EncoderSamplingRate
+    maskType: EncoderSamplingRateMode
     description: Sets the sampling rate of the magnetic encoder.
   Reserved2:
     <<: *reserved
@@ -322,7 +323,7 @@ registers:
     access: Event
     description: Generated event with the latest read from the optical flow sensor.
 bitMasks:
-  AuxiliaryInput:
+  AuxiliaryInputs:
     bits:
       Aux0: 0x1
       Aux1: 0x2
@@ -354,13 +355,13 @@ bitMasks:
       Pwm2ToOut9: 0x40
       Stim0ToOut0: 0x80
       Stim0ToOut5: 0x100
-  Pwm:
+  PwmChannels:
     description: Specifies the available PWM protocols.
     bits:
       Pwm0: 0x1
       Pwm1: 0x2
       Pwm2: 0x4
-  Stim:
+  StimChannels:
     description: Specifies the available Stim protocols.
     bits:
       Stim0: 0x1
@@ -370,7 +371,7 @@ groupMasks:
     values:
       Continuous: 0
       Finite: 1
-  TriggerSources:
+  TriggerSource:
     description: Available trigger sources.
     values:
       Software: 0
@@ -382,12 +383,7 @@ groupMasks:
       Aux1Falling: 32
       Aux1WhileHigh: 64
       Aux1WhileLow: 128
-  EnableFlag:
-    description: The state of a configuration.
-    values:
-      Disabled: 0
-      Enabled: 1
-  ExpansionBoardTypes:
+  ExpansionBoardType:
     description: Specifies the available expansion boards implemented.
     values:
       Breakout: 0
@@ -396,12 +392,12 @@ groupMasks:
       ServoMotor2: 3
       ServoMotor3: 4
       OpticalFlow: 5
-  EncoderSamplingRate:
+  EncoderSamplingRateMode:
     description: Specifies the sampling rate of the encoder.
     values:
-      At50Hz: 0
-      At00Hz: 1
-      At200Hz: 2
-      At250Hz: 3
-      At500Hz: 4
-      At1000Hz: 5
+      SamplingRate50Hz: 0
+      SamplingRate100Hz: 1
+      SamplingRate200Hz: 2
+      SamplingRate250Hz: 3
+      SamplingRate500Hz: 4
+      SamplingRate1000Hz: 5
