@@ -15,7 +15,7 @@
     <FirmwarePath>..\Firmware\Harp.OutputExpander</FirmwarePath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Harp.Generators" Version="0.1.0-build032704" GeneratePathProperty="true" />
+    <PackageReference Include="Harp.Generators" Version="0.1.0-build060202" GeneratePathProperty="true" />
   </ItemGroup>
   <Target Name="TextTransform" BeforeTargets="AfterBuild">
     <PropertyGroup>

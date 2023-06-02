@@ -37,43 +37,43 @@ namespace Harp.OutputExpander
         public static new IReadOnlyDictionary<int, Type> RegisterMap { get; } = new Dictionary<int, Type>
             (Bonsai.Harp.Device.RegisterMap.ToDictionary(entry => entry.Key, entry => entry.Value))
         {
-            { 32, typeof(AuxInPort) },
-            { 33, typeof(AuxInEnableRisingEdge) },
-            { 34, typeof(AuxInEnableFallingEdge) },
+            { 32, typeof(AuxInState) },
+            { 33, typeof(AuxInRisingEdge) },
+            { 34, typeof(AuxInFallingEdge) },
             { 35, typeof(OutputSet) },
             { 36, typeof(OutputClear) },
             { 37, typeof(OutputToggle) },
             { 38, typeof(OutputState) },
             { 39, typeof(PwmAndStimEnable) },
             { 40, typeof(PwmAndStimDisable) },
-            { 41, typeof(PwmAndStimWrite) },
+            { 41, typeof(PwmAndStimState) },
             { 42, typeof(Pwm0Frequency) },
             { 43, typeof(Pwm0DutyCycle) },
             { 44, typeof(Pwm0PulseCount) },
-            { 45, typeof(Pwm0RealFrequency) },
-            { 46, typeof(Pwm0RealDutyCycle) },
+            { 45, typeof(Pwm0ActualFrequency) },
+            { 46, typeof(Pwm0ActualDutyCycle) },
             { 47, typeof(Pwm0AcquisitionMode) },
             { 48, typeof(Pwm0TriggerSource) },
-            { 49, typeof(Pwm0EventEnable) },
+            { 49, typeof(Pwm0EventConfig) },
             { 50, typeof(Pwm1Frequency) },
             { 51, typeof(Pwm1DutyCycle) },
             { 52, typeof(Pwm1PulseCount) },
-            { 53, typeof(Pwm1RealFrequency) },
-            { 54, typeof(Pwm1RealDutyCycle) },
+            { 53, typeof(Pwm1ActualFrequency) },
+            { 54, typeof(Pwm1ActualDutyCycle) },
             { 55, typeof(Pwm1AcquisitionMode) },
             { 56, typeof(Pwm1TriggerSource) },
-            { 57, typeof(Pwm1EventEnable) },
+            { 57, typeof(Pwm1EventConfig) },
             { 58, typeof(Pwm2Frequency) },
             { 59, typeof(Pwm2DutyCycle) },
             { 60, typeof(Pwm2PulseCount) },
-            { 61, typeof(Pwm2RealFrequency) },
-            { 62, typeof(Pwm2RealDutyCycle) },
+            { 61, typeof(Pwm2ActualFrequency) },
+            { 62, typeof(Pwm2ActualDutyCycle) },
             { 63, typeof(Pwm2AcquisitionMode) },
             { 64, typeof(Pwm2TriggerSource) },
-            { 65, typeof(Pwm2EventEnable) },
+            { 65, typeof(Pwm2EventConfig) },
             { 66, typeof(PwmStart) },
             { 67, typeof(PwmStop) },
-            { 68, typeof(PwmRiseEventEnable) },
+            { 68, typeof(PwmRiseEvent) },
             { 69, typeof(Stim0PulseOnTime) },
             { 70, typeof(Stim0PulseOffTime) },
             { 71, typeof(Stim0PulseCount) },
@@ -94,7 +94,7 @@ namespace Harp.OutputExpander
             { 86, typeof(Out9PulseWidth) },
             { 87, typeof(ExpansionBoard) },
             { 90, typeof(Encoder) },
-            { 91, typeof(EncoderSampling) },
+            { 91, typeof(EncoderSamplingRate) },
             { 94, typeof(ServoPeriod) },
             { 95, typeof(Servo0PulseWidth) },
             { 96, typeof(Servo1PulseWidth) },
@@ -128,43 +128,43 @@ namespace Harp.OutputExpander
     /// Represents an operator that filters register-specific messages
     /// reported by the <see cref="OutputExpander"/> device.
     /// </summary>
-    /// <seealso cref="AuxInPort"/>
-    /// <seealso cref="AuxInEnableRisingEdge"/>
-    /// <seealso cref="AuxInEnableFallingEdge"/>
+    /// <seealso cref="AuxInState"/>
+    /// <seealso cref="AuxInRisingEdge"/>
+    /// <seealso cref="AuxInFallingEdge"/>
     /// <seealso cref="OutputSet"/>
     /// <seealso cref="OutputClear"/>
     /// <seealso cref="OutputToggle"/>
     /// <seealso cref="OutputState"/>
     /// <seealso cref="PwmAndStimEnable"/>
     /// <seealso cref="PwmAndStimDisable"/>
-    /// <seealso cref="PwmAndStimWrite"/>
+    /// <seealso cref="PwmAndStimState"/>
     /// <seealso cref="Pwm0Frequency"/>
     /// <seealso cref="Pwm0DutyCycle"/>
     /// <seealso cref="Pwm0PulseCount"/>
-    /// <seealso cref="Pwm0RealFrequency"/>
-    /// <seealso cref="Pwm0RealDutyCycle"/>
+    /// <seealso cref="Pwm0ActualFrequency"/>
+    /// <seealso cref="Pwm0ActualDutyCycle"/>
     /// <seealso cref="Pwm0AcquisitionMode"/>
     /// <seealso cref="Pwm0TriggerSource"/>
-    /// <seealso cref="Pwm0EventEnable"/>
+    /// <seealso cref="Pwm0EventConfig"/>
     /// <seealso cref="Pwm1Frequency"/>
     /// <seealso cref="Pwm1DutyCycle"/>
     /// <seealso cref="Pwm1PulseCount"/>
-    /// <seealso cref="Pwm1RealFrequency"/>
-    /// <seealso cref="Pwm1RealDutyCycle"/>
+    /// <seealso cref="Pwm1ActualFrequency"/>
+    /// <seealso cref="Pwm1ActualDutyCycle"/>
     /// <seealso cref="Pwm1AcquisitionMode"/>
     /// <seealso cref="Pwm1TriggerSource"/>
-    /// <seealso cref="Pwm1EventEnable"/>
+    /// <seealso cref="Pwm1EventConfig"/>
     /// <seealso cref="Pwm2Frequency"/>
     /// <seealso cref="Pwm2DutyCycle"/>
     /// <seealso cref="Pwm2PulseCount"/>
-    /// <seealso cref="Pwm2RealFrequency"/>
-    /// <seealso cref="Pwm2RealDutyCycle"/>
+    /// <seealso cref="Pwm2ActualFrequency"/>
+    /// <seealso cref="Pwm2ActualDutyCycle"/>
     /// <seealso cref="Pwm2AcquisitionMode"/>
     /// <seealso cref="Pwm2TriggerSource"/>
-    /// <seealso cref="Pwm2EventEnable"/>
+    /// <seealso cref="Pwm2EventConfig"/>
     /// <seealso cref="PwmStart"/>
     /// <seealso cref="PwmStop"/>
-    /// <seealso cref="PwmRiseEventEnable"/>
+    /// <seealso cref="PwmRiseEvent"/>
     /// <seealso cref="Stim0PulseOnTime"/>
     /// <seealso cref="Stim0PulseOffTime"/>
     /// <seealso cref="Stim0PulseCount"/>
@@ -185,49 +185,49 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
     /// <seealso cref="Encoder"/>
-    /// <seealso cref="EncoderSampling"/>
+    /// <seealso cref="EncoderSamplingRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
     /// <seealso cref="Servo1PulseWidth"/>
     /// <seealso cref="Servo2PulseWidth"/>
     /// <seealso cref="OpticalFlow"/>
-    [XmlInclude(typeof(AuxInPort))]
-    [XmlInclude(typeof(AuxInEnableRisingEdge))]
-    [XmlInclude(typeof(AuxInEnableFallingEdge))]
+    [XmlInclude(typeof(AuxInState))]
+    [XmlInclude(typeof(AuxInRisingEdge))]
+    [XmlInclude(typeof(AuxInFallingEdge))]
     [XmlInclude(typeof(OutputSet))]
     [XmlInclude(typeof(OutputClear))]
     [XmlInclude(typeof(OutputToggle))]
     [XmlInclude(typeof(OutputState))]
     [XmlInclude(typeof(PwmAndStimEnable))]
     [XmlInclude(typeof(PwmAndStimDisable))]
-    [XmlInclude(typeof(PwmAndStimWrite))]
+    [XmlInclude(typeof(PwmAndStimState))]
     [XmlInclude(typeof(Pwm0Frequency))]
     [XmlInclude(typeof(Pwm0DutyCycle))]
     [XmlInclude(typeof(Pwm0PulseCount))]
-    [XmlInclude(typeof(Pwm0RealFrequency))]
-    [XmlInclude(typeof(Pwm0RealDutyCycle))]
+    [XmlInclude(typeof(Pwm0ActualFrequency))]
+    [XmlInclude(typeof(Pwm0ActualDutyCycle))]
     [XmlInclude(typeof(Pwm0AcquisitionMode))]
     [XmlInclude(typeof(Pwm0TriggerSource))]
-    [XmlInclude(typeof(Pwm0EventEnable))]
+    [XmlInclude(typeof(Pwm0EventConfig))]
     [XmlInclude(typeof(Pwm1Frequency))]
     [XmlInclude(typeof(Pwm1DutyCycle))]
     [XmlInclude(typeof(Pwm1PulseCount))]
-    [XmlInclude(typeof(Pwm1RealFrequency))]
-    [XmlInclude(typeof(Pwm1RealDutyCycle))]
+    [XmlInclude(typeof(Pwm1ActualFrequency))]
+    [XmlInclude(typeof(Pwm1ActualDutyCycle))]
     [XmlInclude(typeof(Pwm1AcquisitionMode))]
     [XmlInclude(typeof(Pwm1TriggerSource))]
-    [XmlInclude(typeof(Pwm1EventEnable))]
+    [XmlInclude(typeof(Pwm1EventConfig))]
     [XmlInclude(typeof(Pwm2Frequency))]
     [XmlInclude(typeof(Pwm2DutyCycle))]
     [XmlInclude(typeof(Pwm2PulseCount))]
-    [XmlInclude(typeof(Pwm2RealFrequency))]
-    [XmlInclude(typeof(Pwm2RealDutyCycle))]
+    [XmlInclude(typeof(Pwm2ActualFrequency))]
+    [XmlInclude(typeof(Pwm2ActualDutyCycle))]
     [XmlInclude(typeof(Pwm2AcquisitionMode))]
     [XmlInclude(typeof(Pwm2TriggerSource))]
-    [XmlInclude(typeof(Pwm2EventEnable))]
+    [XmlInclude(typeof(Pwm2EventConfig))]
     [XmlInclude(typeof(PwmStart))]
     [XmlInclude(typeof(PwmStop))]
-    [XmlInclude(typeof(PwmRiseEventEnable))]
+    [XmlInclude(typeof(PwmRiseEvent))]
     [XmlInclude(typeof(Stim0PulseOnTime))]
     [XmlInclude(typeof(Stim0PulseOffTime))]
     [XmlInclude(typeof(Stim0PulseCount))]
@@ -248,7 +248,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
     [XmlInclude(typeof(Encoder))]
-    [XmlInclude(typeof(EncoderSampling))]
+    [XmlInclude(typeof(EncoderSamplingRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
     [XmlInclude(typeof(Servo1PulseWidth))]
@@ -262,7 +262,7 @@ namespace Harp.OutputExpander
         /// </summary>
         public FilterMessage()
         {
-            Register = new AuxInPort();
+            Register = new AuxInState();
         }
 
         string INamedElement.Name
@@ -275,43 +275,43 @@ namespace Harp.OutputExpander
     /// Represents an operator which filters and selects specific messages
     /// reported by the OutputExpander device.
     /// </summary>
-    /// <seealso cref="AuxInPort"/>
-    /// <seealso cref="AuxInEnableRisingEdge"/>
-    /// <seealso cref="AuxInEnableFallingEdge"/>
+    /// <seealso cref="AuxInState"/>
+    /// <seealso cref="AuxInRisingEdge"/>
+    /// <seealso cref="AuxInFallingEdge"/>
     /// <seealso cref="OutputSet"/>
     /// <seealso cref="OutputClear"/>
     /// <seealso cref="OutputToggle"/>
     /// <seealso cref="OutputState"/>
     /// <seealso cref="PwmAndStimEnable"/>
     /// <seealso cref="PwmAndStimDisable"/>
-    /// <seealso cref="PwmAndStimWrite"/>
+    /// <seealso cref="PwmAndStimState"/>
     /// <seealso cref="Pwm0Frequency"/>
     /// <seealso cref="Pwm0DutyCycle"/>
     /// <seealso cref="Pwm0PulseCount"/>
-    /// <seealso cref="Pwm0RealFrequency"/>
-    /// <seealso cref="Pwm0RealDutyCycle"/>
+    /// <seealso cref="Pwm0ActualFrequency"/>
+    /// <seealso cref="Pwm0ActualDutyCycle"/>
     /// <seealso cref="Pwm0AcquisitionMode"/>
     /// <seealso cref="Pwm0TriggerSource"/>
-    /// <seealso cref="Pwm0EventEnable"/>
+    /// <seealso cref="Pwm0EventConfig"/>
     /// <seealso cref="Pwm1Frequency"/>
     /// <seealso cref="Pwm1DutyCycle"/>
     /// <seealso cref="Pwm1PulseCount"/>
-    /// <seealso cref="Pwm1RealFrequency"/>
-    /// <seealso cref="Pwm1RealDutyCycle"/>
+    /// <seealso cref="Pwm1ActualFrequency"/>
+    /// <seealso cref="Pwm1ActualDutyCycle"/>
     /// <seealso cref="Pwm1AcquisitionMode"/>
     /// <seealso cref="Pwm1TriggerSource"/>
-    /// <seealso cref="Pwm1EventEnable"/>
+    /// <seealso cref="Pwm1EventConfig"/>
     /// <seealso cref="Pwm2Frequency"/>
     /// <seealso cref="Pwm2DutyCycle"/>
     /// <seealso cref="Pwm2PulseCount"/>
-    /// <seealso cref="Pwm2RealFrequency"/>
-    /// <seealso cref="Pwm2RealDutyCycle"/>
+    /// <seealso cref="Pwm2ActualFrequency"/>
+    /// <seealso cref="Pwm2ActualDutyCycle"/>
     /// <seealso cref="Pwm2AcquisitionMode"/>
     /// <seealso cref="Pwm2TriggerSource"/>
-    /// <seealso cref="Pwm2EventEnable"/>
+    /// <seealso cref="Pwm2EventConfig"/>
     /// <seealso cref="PwmStart"/>
     /// <seealso cref="PwmStop"/>
-    /// <seealso cref="PwmRiseEventEnable"/>
+    /// <seealso cref="PwmRiseEvent"/>
     /// <seealso cref="Stim0PulseOnTime"/>
     /// <seealso cref="Stim0PulseOffTime"/>
     /// <seealso cref="Stim0PulseCount"/>
@@ -332,49 +332,49 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
     /// <seealso cref="Encoder"/>
-    /// <seealso cref="EncoderSampling"/>
+    /// <seealso cref="EncoderSamplingRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
     /// <seealso cref="Servo1PulseWidth"/>
     /// <seealso cref="Servo2PulseWidth"/>
     /// <seealso cref="OpticalFlow"/>
-    [XmlInclude(typeof(AuxInPort))]
-    [XmlInclude(typeof(AuxInEnableRisingEdge))]
-    [XmlInclude(typeof(AuxInEnableFallingEdge))]
+    [XmlInclude(typeof(AuxInState))]
+    [XmlInclude(typeof(AuxInRisingEdge))]
+    [XmlInclude(typeof(AuxInFallingEdge))]
     [XmlInclude(typeof(OutputSet))]
     [XmlInclude(typeof(OutputClear))]
     [XmlInclude(typeof(OutputToggle))]
     [XmlInclude(typeof(OutputState))]
     [XmlInclude(typeof(PwmAndStimEnable))]
     [XmlInclude(typeof(PwmAndStimDisable))]
-    [XmlInclude(typeof(PwmAndStimWrite))]
+    [XmlInclude(typeof(PwmAndStimState))]
     [XmlInclude(typeof(Pwm0Frequency))]
     [XmlInclude(typeof(Pwm0DutyCycle))]
     [XmlInclude(typeof(Pwm0PulseCount))]
-    [XmlInclude(typeof(Pwm0RealFrequency))]
-    [XmlInclude(typeof(Pwm0RealDutyCycle))]
+    [XmlInclude(typeof(Pwm0ActualFrequency))]
+    [XmlInclude(typeof(Pwm0ActualDutyCycle))]
     [XmlInclude(typeof(Pwm0AcquisitionMode))]
     [XmlInclude(typeof(Pwm0TriggerSource))]
-    [XmlInclude(typeof(Pwm0EventEnable))]
+    [XmlInclude(typeof(Pwm0EventConfig))]
     [XmlInclude(typeof(Pwm1Frequency))]
     [XmlInclude(typeof(Pwm1DutyCycle))]
     [XmlInclude(typeof(Pwm1PulseCount))]
-    [XmlInclude(typeof(Pwm1RealFrequency))]
-    [XmlInclude(typeof(Pwm1RealDutyCycle))]
+    [XmlInclude(typeof(Pwm1ActualFrequency))]
+    [XmlInclude(typeof(Pwm1ActualDutyCycle))]
     [XmlInclude(typeof(Pwm1AcquisitionMode))]
     [XmlInclude(typeof(Pwm1TriggerSource))]
-    [XmlInclude(typeof(Pwm1EventEnable))]
+    [XmlInclude(typeof(Pwm1EventConfig))]
     [XmlInclude(typeof(Pwm2Frequency))]
     [XmlInclude(typeof(Pwm2DutyCycle))]
     [XmlInclude(typeof(Pwm2PulseCount))]
-    [XmlInclude(typeof(Pwm2RealFrequency))]
-    [XmlInclude(typeof(Pwm2RealDutyCycle))]
+    [XmlInclude(typeof(Pwm2ActualFrequency))]
+    [XmlInclude(typeof(Pwm2ActualDutyCycle))]
     [XmlInclude(typeof(Pwm2AcquisitionMode))]
     [XmlInclude(typeof(Pwm2TriggerSource))]
-    [XmlInclude(typeof(Pwm2EventEnable))]
+    [XmlInclude(typeof(Pwm2EventConfig))]
     [XmlInclude(typeof(PwmStart))]
     [XmlInclude(typeof(PwmStop))]
-    [XmlInclude(typeof(PwmRiseEventEnable))]
+    [XmlInclude(typeof(PwmRiseEvent))]
     [XmlInclude(typeof(Stim0PulseOnTime))]
     [XmlInclude(typeof(Stim0PulseOffTime))]
     [XmlInclude(typeof(Stim0PulseCount))]
@@ -395,49 +395,49 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
     [XmlInclude(typeof(Encoder))]
-    [XmlInclude(typeof(EncoderSampling))]
+    [XmlInclude(typeof(EncoderSamplingRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
     [XmlInclude(typeof(Servo1PulseWidth))]
     [XmlInclude(typeof(Servo2PulseWidth))]
     [XmlInclude(typeof(OpticalFlow))]
-    [XmlInclude(typeof(TimestampedAuxInPort))]
-    [XmlInclude(typeof(TimestampedAuxInEnableRisingEdge))]
-    [XmlInclude(typeof(TimestampedAuxInEnableFallingEdge))]
+    [XmlInclude(typeof(TimestampedAuxInState))]
+    [XmlInclude(typeof(TimestampedAuxInRisingEdge))]
+    [XmlInclude(typeof(TimestampedAuxInFallingEdge))]
     [XmlInclude(typeof(TimestampedOutputSet))]
     [XmlInclude(typeof(TimestampedOutputClear))]
     [XmlInclude(typeof(TimestampedOutputToggle))]
     [XmlInclude(typeof(TimestampedOutputState))]
     [XmlInclude(typeof(TimestampedPwmAndStimEnable))]
     [XmlInclude(typeof(TimestampedPwmAndStimDisable))]
-    [XmlInclude(typeof(TimestampedPwmAndStimWrite))]
+    [XmlInclude(typeof(TimestampedPwmAndStimState))]
     [XmlInclude(typeof(TimestampedPwm0Frequency))]
     [XmlInclude(typeof(TimestampedPwm0DutyCycle))]
     [XmlInclude(typeof(TimestampedPwm0PulseCount))]
-    [XmlInclude(typeof(TimestampedPwm0RealFrequency))]
-    [XmlInclude(typeof(TimestampedPwm0RealDutyCycle))]
+    [XmlInclude(typeof(TimestampedPwm0ActualFrequency))]
+    [XmlInclude(typeof(TimestampedPwm0ActualDutyCycle))]
     [XmlInclude(typeof(TimestampedPwm0AcquisitionMode))]
     [XmlInclude(typeof(TimestampedPwm0TriggerSource))]
-    [XmlInclude(typeof(TimestampedPwm0EventEnable))]
+    [XmlInclude(typeof(TimestampedPwm0EventConfig))]
     [XmlInclude(typeof(TimestampedPwm1Frequency))]
     [XmlInclude(typeof(TimestampedPwm1DutyCycle))]
     [XmlInclude(typeof(TimestampedPwm1PulseCount))]
-    [XmlInclude(typeof(TimestampedPwm1RealFrequency))]
-    [XmlInclude(typeof(TimestampedPwm1RealDutyCycle))]
+    [XmlInclude(typeof(TimestampedPwm1ActualFrequency))]
+    [XmlInclude(typeof(TimestampedPwm1ActualDutyCycle))]
     [XmlInclude(typeof(TimestampedPwm1AcquisitionMode))]
     [XmlInclude(typeof(TimestampedPwm1TriggerSource))]
-    [XmlInclude(typeof(TimestampedPwm1EventEnable))]
+    [XmlInclude(typeof(TimestampedPwm1EventConfig))]
     [XmlInclude(typeof(TimestampedPwm2Frequency))]
     [XmlInclude(typeof(TimestampedPwm2DutyCycle))]
     [XmlInclude(typeof(TimestampedPwm2PulseCount))]
-    [XmlInclude(typeof(TimestampedPwm2RealFrequency))]
-    [XmlInclude(typeof(TimestampedPwm2RealDutyCycle))]
+    [XmlInclude(typeof(TimestampedPwm2ActualFrequency))]
+    [XmlInclude(typeof(TimestampedPwm2ActualDutyCycle))]
     [XmlInclude(typeof(TimestampedPwm2AcquisitionMode))]
     [XmlInclude(typeof(TimestampedPwm2TriggerSource))]
-    [XmlInclude(typeof(TimestampedPwm2EventEnable))]
+    [XmlInclude(typeof(TimestampedPwm2EventConfig))]
     [XmlInclude(typeof(TimestampedPwmStart))]
     [XmlInclude(typeof(TimestampedPwmStop))]
-    [XmlInclude(typeof(TimestampedPwmRiseEventEnable))]
+    [XmlInclude(typeof(TimestampedPwmRiseEvent))]
     [XmlInclude(typeof(TimestampedStim0PulseOnTime))]
     [XmlInclude(typeof(TimestampedStim0PulseOffTime))]
     [XmlInclude(typeof(TimestampedStim0PulseCount))]
@@ -458,7 +458,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(TimestampedOut9PulseWidth))]
     [XmlInclude(typeof(TimestampedExpansionBoard))]
     [XmlInclude(typeof(TimestampedEncoder))]
-    [XmlInclude(typeof(TimestampedEncoderSampling))]
+    [XmlInclude(typeof(TimestampedEncoderSamplingRate))]
     [XmlInclude(typeof(TimestampedServoPeriod))]
     [XmlInclude(typeof(TimestampedServo0PulseWidth))]
     [XmlInclude(typeof(TimestampedServo1PulseWidth))]
@@ -472,7 +472,7 @@ namespace Harp.OutputExpander
         /// </summary>
         public Parse()
         {
-            Register = new AuxInPort();
+            Register = new AuxInState();
         }
 
         string INamedElement.Name => $"{nameof(OutputExpander)}.{GetElementDisplayName(Register)}";
@@ -482,43 +482,43 @@ namespace Harp.OutputExpander
     /// Represents an operator which formats a sequence of values as specific
     /// OutputExpander register messages.
     /// </summary>
-    /// <seealso cref="AuxInPort"/>
-    /// <seealso cref="AuxInEnableRisingEdge"/>
-    /// <seealso cref="AuxInEnableFallingEdge"/>
+    /// <seealso cref="AuxInState"/>
+    /// <seealso cref="AuxInRisingEdge"/>
+    /// <seealso cref="AuxInFallingEdge"/>
     /// <seealso cref="OutputSet"/>
     /// <seealso cref="OutputClear"/>
     /// <seealso cref="OutputToggle"/>
     /// <seealso cref="OutputState"/>
     /// <seealso cref="PwmAndStimEnable"/>
     /// <seealso cref="PwmAndStimDisable"/>
-    /// <seealso cref="PwmAndStimWrite"/>
+    /// <seealso cref="PwmAndStimState"/>
     /// <seealso cref="Pwm0Frequency"/>
     /// <seealso cref="Pwm0DutyCycle"/>
     /// <seealso cref="Pwm0PulseCount"/>
-    /// <seealso cref="Pwm0RealFrequency"/>
-    /// <seealso cref="Pwm0RealDutyCycle"/>
+    /// <seealso cref="Pwm0ActualFrequency"/>
+    /// <seealso cref="Pwm0ActualDutyCycle"/>
     /// <seealso cref="Pwm0AcquisitionMode"/>
     /// <seealso cref="Pwm0TriggerSource"/>
-    /// <seealso cref="Pwm0EventEnable"/>
+    /// <seealso cref="Pwm0EventConfig"/>
     /// <seealso cref="Pwm1Frequency"/>
     /// <seealso cref="Pwm1DutyCycle"/>
     /// <seealso cref="Pwm1PulseCount"/>
-    /// <seealso cref="Pwm1RealFrequency"/>
-    /// <seealso cref="Pwm1RealDutyCycle"/>
+    /// <seealso cref="Pwm1ActualFrequency"/>
+    /// <seealso cref="Pwm1ActualDutyCycle"/>
     /// <seealso cref="Pwm1AcquisitionMode"/>
     /// <seealso cref="Pwm1TriggerSource"/>
-    /// <seealso cref="Pwm1EventEnable"/>
+    /// <seealso cref="Pwm1EventConfig"/>
     /// <seealso cref="Pwm2Frequency"/>
     /// <seealso cref="Pwm2DutyCycle"/>
     /// <seealso cref="Pwm2PulseCount"/>
-    /// <seealso cref="Pwm2RealFrequency"/>
-    /// <seealso cref="Pwm2RealDutyCycle"/>
+    /// <seealso cref="Pwm2ActualFrequency"/>
+    /// <seealso cref="Pwm2ActualDutyCycle"/>
     /// <seealso cref="Pwm2AcquisitionMode"/>
     /// <seealso cref="Pwm2TriggerSource"/>
-    /// <seealso cref="Pwm2EventEnable"/>
+    /// <seealso cref="Pwm2EventConfig"/>
     /// <seealso cref="PwmStart"/>
     /// <seealso cref="PwmStop"/>
-    /// <seealso cref="PwmRiseEventEnable"/>
+    /// <seealso cref="PwmRiseEvent"/>
     /// <seealso cref="Stim0PulseOnTime"/>
     /// <seealso cref="Stim0PulseOffTime"/>
     /// <seealso cref="Stim0PulseCount"/>
@@ -539,49 +539,49 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
     /// <seealso cref="Encoder"/>
-    /// <seealso cref="EncoderSampling"/>
+    /// <seealso cref="EncoderSamplingRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
     /// <seealso cref="Servo1PulseWidth"/>
     /// <seealso cref="Servo2PulseWidth"/>
     /// <seealso cref="OpticalFlow"/>
-    [XmlInclude(typeof(AuxInPort))]
-    [XmlInclude(typeof(AuxInEnableRisingEdge))]
-    [XmlInclude(typeof(AuxInEnableFallingEdge))]
+    [XmlInclude(typeof(AuxInState))]
+    [XmlInclude(typeof(AuxInRisingEdge))]
+    [XmlInclude(typeof(AuxInFallingEdge))]
     [XmlInclude(typeof(OutputSet))]
     [XmlInclude(typeof(OutputClear))]
     [XmlInclude(typeof(OutputToggle))]
     [XmlInclude(typeof(OutputState))]
     [XmlInclude(typeof(PwmAndStimEnable))]
     [XmlInclude(typeof(PwmAndStimDisable))]
-    [XmlInclude(typeof(PwmAndStimWrite))]
+    [XmlInclude(typeof(PwmAndStimState))]
     [XmlInclude(typeof(Pwm0Frequency))]
     [XmlInclude(typeof(Pwm0DutyCycle))]
     [XmlInclude(typeof(Pwm0PulseCount))]
-    [XmlInclude(typeof(Pwm0RealFrequency))]
-    [XmlInclude(typeof(Pwm0RealDutyCycle))]
+    [XmlInclude(typeof(Pwm0ActualFrequency))]
+    [XmlInclude(typeof(Pwm0ActualDutyCycle))]
     [XmlInclude(typeof(Pwm0AcquisitionMode))]
     [XmlInclude(typeof(Pwm0TriggerSource))]
-    [XmlInclude(typeof(Pwm0EventEnable))]
+    [XmlInclude(typeof(Pwm0EventConfig))]
     [XmlInclude(typeof(Pwm1Frequency))]
     [XmlInclude(typeof(Pwm1DutyCycle))]
     [XmlInclude(typeof(Pwm1PulseCount))]
-    [XmlInclude(typeof(Pwm1RealFrequency))]
-    [XmlInclude(typeof(Pwm1RealDutyCycle))]
+    [XmlInclude(typeof(Pwm1ActualFrequency))]
+    [XmlInclude(typeof(Pwm1ActualDutyCycle))]
     [XmlInclude(typeof(Pwm1AcquisitionMode))]
     [XmlInclude(typeof(Pwm1TriggerSource))]
-    [XmlInclude(typeof(Pwm1EventEnable))]
+    [XmlInclude(typeof(Pwm1EventConfig))]
     [XmlInclude(typeof(Pwm2Frequency))]
     [XmlInclude(typeof(Pwm2DutyCycle))]
     [XmlInclude(typeof(Pwm2PulseCount))]
-    [XmlInclude(typeof(Pwm2RealFrequency))]
-    [XmlInclude(typeof(Pwm2RealDutyCycle))]
+    [XmlInclude(typeof(Pwm2ActualFrequency))]
+    [XmlInclude(typeof(Pwm2ActualDutyCycle))]
     [XmlInclude(typeof(Pwm2AcquisitionMode))]
     [XmlInclude(typeof(Pwm2TriggerSource))]
-    [XmlInclude(typeof(Pwm2EventEnable))]
+    [XmlInclude(typeof(Pwm2EventConfig))]
     [XmlInclude(typeof(PwmStart))]
     [XmlInclude(typeof(PwmStop))]
-    [XmlInclude(typeof(PwmRiseEventEnable))]
+    [XmlInclude(typeof(PwmRiseEvent))]
     [XmlInclude(typeof(Stim0PulseOnTime))]
     [XmlInclude(typeof(Stim0PulseOffTime))]
     [XmlInclude(typeof(Stim0PulseCount))]
@@ -602,7 +602,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
     [XmlInclude(typeof(Encoder))]
-    [XmlInclude(typeof(EncoderSampling))]
+    [XmlInclude(typeof(EncoderSamplingRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
     [XmlInclude(typeof(Servo1PulseWidth))]
@@ -616,7 +616,7 @@ namespace Harp.OutputExpander
         /// </summary>
         public Format()
         {
-            Register = new AuxInPort();
+            Register = new AuxInState();
         }
 
         string INamedElement.Name => $"{nameof(OutputExpander)}.{GetElementDisplayName(Register)}";
@@ -626,70 +626,70 @@ namespace Harp.OutputExpander
     /// Represents a register that reports the state of the auxiliary inputs.
     /// </summary>
     [Description("Reports the state of the auxiliary inputs.")]
-    public partial class AuxInPort
+    public partial class AuxInState
     {
         /// <summary>
-        /// Represents the address of the <see cref="AuxInPort"/> register. This field is constant.
+        /// Represents the address of the <see cref="AuxInState"/> register. This field is constant.
         /// </summary>
         public const int Address = 32;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="AuxInPort"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="AuxInState"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="AuxInPort"/> register. This field is constant.
+        /// Represents the length of the <see cref="AuxInState"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="AuxInPort"/> register messages.
+        /// Returns the payload data for <see cref="AuxInState"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static AuxiliaryInput GetPayload(HarpMessage message)
+        public static AuxiliaryInputs GetPayload(HarpMessage message)
         {
-            return (AuxiliaryInput)message.GetPayloadByte();
+            return (AuxiliaryInputs)message.GetPayloadByte();
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="AuxInPort"/> register messages.
+        /// Returns the timestamped payload data for <see cref="AuxInState"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<AuxiliaryInput> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<AuxiliaryInputs> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((AuxiliaryInput)payload.Value, payload.Seconds);
+            return Timestamped.Create((AuxiliaryInputs)payload.Value, payload.Seconds);
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="AuxInPort"/> register.
+        /// Returns a Harp message for the <see cref="AuxInState"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInPort"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInState"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, AuxiliaryInput value)
+        public static HarpMessage FromPayload(MessageType messageType, AuxiliaryInputs value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="AuxInPort"/>
+        /// Returns a timestamped Harp message for the <see cref="AuxInState"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInPort"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInState"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, AuxiliaryInput value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, AuxiliaryInputs value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -697,25 +697,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// AuxInPort register.
+    /// AuxInState register.
     /// </summary>
-    /// <seealso cref="AuxInPort"/>
-    [Description("Filters and selects timestamped messages from the AuxInPort register.")]
-    public partial class TimestampedAuxInPort
+    /// <seealso cref="AuxInState"/>
+    [Description("Filters and selects timestamped messages from the AuxInState register.")]
+    public partial class TimestampedAuxInState
     {
         /// <summary>
-        /// Represents the address of the <see cref="AuxInPort"/> register. This field is constant.
+        /// Represents the address of the <see cref="AuxInState"/> register. This field is constant.
         /// </summary>
-        public const int Address = AuxInPort.Address;
+        public const int Address = AuxInState.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="AuxInPort"/> register messages.
+        /// Returns timestamped payload data for <see cref="AuxInState"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<AuxiliaryInput> GetPayload(HarpMessage message)
+        public static Timestamped<AuxiliaryInputs> GetPayload(HarpMessage message)
         {
-            return AuxInPort.GetTimestampedPayload(message);
+            return AuxInState.GetTimestampedPayload(message);
         }
     }
 
@@ -723,70 +723,70 @@ namespace Harp.OutputExpander
     /// Represents a register that enables rising edge detection on the auxiliary inputs.
     /// </summary>
     [Description("Enables rising edge detection on the auxiliary inputs.")]
-    public partial class AuxInEnableRisingEdge
+    public partial class AuxInRisingEdge
     {
         /// <summary>
-        /// Represents the address of the <see cref="AuxInEnableRisingEdge"/> register. This field is constant.
+        /// Represents the address of the <see cref="AuxInRisingEdge"/> register. This field is constant.
         /// </summary>
         public const int Address = 33;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="AuxInEnableRisingEdge"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="AuxInRisingEdge"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="AuxInEnableRisingEdge"/> register. This field is constant.
+        /// Represents the length of the <see cref="AuxInRisingEdge"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="AuxInEnableRisingEdge"/> register messages.
+        /// Returns the payload data for <see cref="AuxInRisingEdge"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static AuxiliaryInput GetPayload(HarpMessage message)
+        public static AuxiliaryInputs GetPayload(HarpMessage message)
         {
-            return (AuxiliaryInput)message.GetPayloadByte();
+            return (AuxiliaryInputs)message.GetPayloadByte();
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="AuxInEnableRisingEdge"/> register messages.
+        /// Returns the timestamped payload data for <see cref="AuxInRisingEdge"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<AuxiliaryInput> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<AuxiliaryInputs> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((AuxiliaryInput)payload.Value, payload.Seconds);
+            return Timestamped.Create((AuxiliaryInputs)payload.Value, payload.Seconds);
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="AuxInEnableRisingEdge"/> register.
+        /// Returns a Harp message for the <see cref="AuxInRisingEdge"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInEnableRisingEdge"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInRisingEdge"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, AuxiliaryInput value)
+        public static HarpMessage FromPayload(MessageType messageType, AuxiliaryInputs value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="AuxInEnableRisingEdge"/>
+        /// Returns a timestamped Harp message for the <see cref="AuxInRisingEdge"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInEnableRisingEdge"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInRisingEdge"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, AuxiliaryInput value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, AuxiliaryInputs value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -794,25 +794,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// AuxInEnableRisingEdge register.
+    /// AuxInRisingEdge register.
     /// </summary>
-    /// <seealso cref="AuxInEnableRisingEdge"/>
-    [Description("Filters and selects timestamped messages from the AuxInEnableRisingEdge register.")]
-    public partial class TimestampedAuxInEnableRisingEdge
+    /// <seealso cref="AuxInRisingEdge"/>
+    [Description("Filters and selects timestamped messages from the AuxInRisingEdge register.")]
+    public partial class TimestampedAuxInRisingEdge
     {
         /// <summary>
-        /// Represents the address of the <see cref="AuxInEnableRisingEdge"/> register. This field is constant.
+        /// Represents the address of the <see cref="AuxInRisingEdge"/> register. This field is constant.
         /// </summary>
-        public const int Address = AuxInEnableRisingEdge.Address;
+        public const int Address = AuxInRisingEdge.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="AuxInEnableRisingEdge"/> register messages.
+        /// Returns timestamped payload data for <see cref="AuxInRisingEdge"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<AuxiliaryInput> GetPayload(HarpMessage message)
+        public static Timestamped<AuxiliaryInputs> GetPayload(HarpMessage message)
         {
-            return AuxInEnableRisingEdge.GetTimestampedPayload(message);
+            return AuxInRisingEdge.GetTimestampedPayload(message);
         }
     }
 
@@ -820,70 +820,70 @@ namespace Harp.OutputExpander
     /// Represents a register that enables falling edge detection on the auxiliary input port.
     /// </summary>
     [Description("Enables falling edge detection on the auxiliary input port.")]
-    public partial class AuxInEnableFallingEdge
+    public partial class AuxInFallingEdge
     {
         /// <summary>
-        /// Represents the address of the <see cref="AuxInEnableFallingEdge"/> register. This field is constant.
+        /// Represents the address of the <see cref="AuxInFallingEdge"/> register. This field is constant.
         /// </summary>
         public const int Address = 34;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="AuxInEnableFallingEdge"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="AuxInFallingEdge"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="AuxInEnableFallingEdge"/> register. This field is constant.
+        /// Represents the length of the <see cref="AuxInFallingEdge"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="AuxInEnableFallingEdge"/> register messages.
+        /// Returns the payload data for <see cref="AuxInFallingEdge"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static AuxiliaryInput GetPayload(HarpMessage message)
+        public static AuxiliaryInputs GetPayload(HarpMessage message)
         {
-            return (AuxiliaryInput)message.GetPayloadByte();
+            return (AuxiliaryInputs)message.GetPayloadByte();
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="AuxInEnableFallingEdge"/> register messages.
+        /// Returns the timestamped payload data for <see cref="AuxInFallingEdge"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<AuxiliaryInput> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<AuxiliaryInputs> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((AuxiliaryInput)payload.Value, payload.Seconds);
+            return Timestamped.Create((AuxiliaryInputs)payload.Value, payload.Seconds);
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="AuxInEnableFallingEdge"/> register.
+        /// Returns a Harp message for the <see cref="AuxInFallingEdge"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInEnableFallingEdge"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInFallingEdge"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, AuxiliaryInput value)
+        public static HarpMessage FromPayload(MessageType messageType, AuxiliaryInputs value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="AuxInEnableFallingEdge"/>
+        /// Returns a timestamped Harp message for the <see cref="AuxInFallingEdge"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInEnableFallingEdge"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AuxInFallingEdge"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, AuxiliaryInput value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, AuxiliaryInputs value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -891,25 +891,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// AuxInEnableFallingEdge register.
+    /// AuxInFallingEdge register.
     /// </summary>
-    /// <seealso cref="AuxInEnableFallingEdge"/>
-    [Description("Filters and selects timestamped messages from the AuxInEnableFallingEdge register.")]
-    public partial class TimestampedAuxInEnableFallingEdge
+    /// <seealso cref="AuxInFallingEdge"/>
+    [Description("Filters and selects timestamped messages from the AuxInFallingEdge register.")]
+    public partial class TimestampedAuxInFallingEdge
     {
         /// <summary>
-        /// Represents the address of the <see cref="AuxInEnableFallingEdge"/> register. This field is constant.
+        /// Represents the address of the <see cref="AuxInFallingEdge"/> register. This field is constant.
         /// </summary>
-        public const int Address = AuxInEnableFallingEdge.Address;
+        public const int Address = AuxInFallingEdge.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="AuxInEnableFallingEdge"/> register messages.
+        /// Returns timestamped payload data for <see cref="AuxInFallingEdge"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<AuxiliaryInput> GetPayload(HarpMessage message)
+        public static Timestamped<AuxiliaryInputs> GetPayload(HarpMessage message)
         {
-            return AuxInEnableFallingEdge.GetTimestampedPayload(message);
+            return AuxInFallingEdge.GetTimestampedPayload(message);
         }
     }
 
@@ -1499,25 +1499,25 @@ namespace Harp.OutputExpander
     /// Represents a register that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.
     /// </summary>
     [Description("Writes the mapping between PWM/stimulation and the specified digital output lines in a single command.")]
-    public partial class PwmAndStimWrite
+    public partial class PwmAndStimState
     {
         /// <summary>
-        /// Represents the address of the <see cref="PwmAndStimWrite"/> register. This field is constant.
+        /// Represents the address of the <see cref="PwmAndStimState"/> register. This field is constant.
         /// </summary>
         public const int Address = 41;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="PwmAndStimWrite"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="PwmAndStimState"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U16;
 
         /// <summary>
-        /// Represents the length of the <see cref="PwmAndStimWrite"/> register. This field is constant.
+        /// Represents the length of the <see cref="PwmAndStimState"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="PwmAndStimWrite"/> register messages.
+        /// Returns the payload data for <see cref="PwmAndStimState"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -1527,7 +1527,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="PwmAndStimWrite"/> register messages.
+        /// Returns the timestamped payload data for <see cref="PwmAndStimState"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -1538,12 +1538,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="PwmAndStimWrite"/> register.
+        /// Returns a Harp message for the <see cref="PwmAndStimState"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimWrite"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimState"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, PwmAndStimMapping value)
@@ -1552,14 +1552,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="PwmAndStimWrite"/>
+        /// Returns a timestamped Harp message for the <see cref="PwmAndStimState"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimWrite"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimState"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmAndStimMapping value)
@@ -1570,25 +1570,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// PwmAndStimWrite register.
+    /// PwmAndStimState register.
     /// </summary>
-    /// <seealso cref="PwmAndStimWrite"/>
-    [Description("Filters and selects timestamped messages from the PwmAndStimWrite register.")]
-    public partial class TimestampedPwmAndStimWrite
+    /// <seealso cref="PwmAndStimState"/>
+    [Description("Filters and selects timestamped messages from the PwmAndStimState register.")]
+    public partial class TimestampedPwmAndStimState
     {
         /// <summary>
-        /// Represents the address of the <see cref="PwmAndStimWrite"/> register. This field is constant.
+        /// Represents the address of the <see cref="PwmAndStimState"/> register. This field is constant.
         /// </summary>
-        public const int Address = PwmAndStimWrite.Address;
+        public const int Address = PwmAndStimState.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="PwmAndStimWrite"/> register messages.
+        /// Returns timestamped payload data for <see cref="PwmAndStimState"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<PwmAndStimMapping> GetPayload(HarpMessage message)
         {
-            return PwmAndStimWrite.GetTimestampedPayload(message);
+            return PwmAndStimState.GetTimestampedPayload(message);
         }
     }
 
@@ -1884,25 +1884,25 @@ namespace Harp.OutputExpander
     /// Represents a register that reports the actual frequency to be generated from PWM0 (Hz).
     /// </summary>
     [Description("Reports the actual frequency to be generated from PWM0 (Hz).")]
-    public partial class Pwm0RealFrequency
+    public partial class Pwm0ActualFrequency
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm0RealFrequency"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm0ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const int Address = 45;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm0RealFrequency"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm0ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.Float;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm0RealFrequency"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm0ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm0RealFrequency"/> register messages.
+        /// Returns the payload data for <see cref="Pwm0ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -1912,7 +1912,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm0RealFrequency"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm0ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -1922,12 +1922,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm0RealFrequency"/> register.
+        /// Returns a Harp message for the <see cref="Pwm0ActualFrequency"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0RealFrequency"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0ActualFrequency"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, float value)
@@ -1936,14 +1936,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm0RealFrequency"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm0ActualFrequency"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0RealFrequency"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0ActualFrequency"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, float value)
@@ -1954,25 +1954,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm0RealFrequency register.
+    /// Pwm0ActualFrequency register.
     /// </summary>
-    /// <seealso cref="Pwm0RealFrequency"/>
-    [Description("Filters and selects timestamped messages from the Pwm0RealFrequency register.")]
-    public partial class TimestampedPwm0RealFrequency
+    /// <seealso cref="Pwm0ActualFrequency"/>
+    [Description("Filters and selects timestamped messages from the Pwm0ActualFrequency register.")]
+    public partial class TimestampedPwm0ActualFrequency
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm0RealFrequency"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm0ActualFrequency"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm0RealFrequency.Address;
+        public const int Address = Pwm0ActualFrequency.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm0RealFrequency"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm0ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<float> GetPayload(HarpMessage message)
         {
-            return Pwm0RealFrequency.GetTimestampedPayload(message);
+            return Pwm0ActualFrequency.GetTimestampedPayload(message);
         }
     }
 
@@ -1980,25 +1980,25 @@ namespace Harp.OutputExpander
     /// Represents a register that reports the actual duty cycle to be generated from PWM0 (%).
     /// </summary>
     [Description("Reports the actual duty cycle to be generated from PWM0 (%).")]
-    public partial class Pwm0RealDutyCycle
+    public partial class Pwm0ActualDutyCycle
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm0RealDutyCycle"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm0ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const int Address = 46;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm0RealDutyCycle"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm0ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.Float;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm0RealDutyCycle"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm0ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm0RealDutyCycle"/> register messages.
+        /// Returns the payload data for <see cref="Pwm0ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2008,7 +2008,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm0RealDutyCycle"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm0ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2018,12 +2018,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm0RealDutyCycle"/> register.
+        /// Returns a Harp message for the <see cref="Pwm0ActualDutyCycle"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0RealDutyCycle"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0ActualDutyCycle"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, float value)
@@ -2032,14 +2032,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm0RealDutyCycle"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm0ActualDutyCycle"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0RealDutyCycle"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0ActualDutyCycle"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, float value)
@@ -2050,25 +2050,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm0RealDutyCycle register.
+    /// Pwm0ActualDutyCycle register.
     /// </summary>
-    /// <seealso cref="Pwm0RealDutyCycle"/>
-    [Description("Filters and selects timestamped messages from the Pwm0RealDutyCycle register.")]
-    public partial class TimestampedPwm0RealDutyCycle
+    /// <seealso cref="Pwm0ActualDutyCycle"/>
+    [Description("Filters and selects timestamped messages from the Pwm0ActualDutyCycle register.")]
+    public partial class TimestampedPwm0ActualDutyCycle
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm0RealDutyCycle"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm0ActualDutyCycle"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm0RealDutyCycle.Address;
+        public const int Address = Pwm0ActualDutyCycle.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm0RealDutyCycle"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm0ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<float> GetPayload(HarpMessage message)
         {
-            return Pwm0RealDutyCycle.GetTimestampedPayload(message);
+            return Pwm0ActualDutyCycle.GetTimestampedPayload(message);
         }
     }
 
@@ -2195,9 +2195,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static TriggerSources GetPayload(HarpMessage message)
+        public static TriggerSource GetPayload(HarpMessage message)
         {
-            return (TriggerSources)message.GetPayloadByte();
+            return (TriggerSource)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -2205,10 +2205,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<TriggerSources> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<TriggerSource> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((TriggerSources)payload.Value, payload.Seconds);
+            return Timestamped.Create((TriggerSource)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -2220,7 +2220,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0TriggerSource"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, TriggerSources value)
+        public static HarpMessage FromPayload(MessageType messageType, TriggerSource value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -2236,7 +2236,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0TriggerSource"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, TriggerSources value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, TriggerSource value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -2260,7 +2260,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<TriggerSources> GetPayload(HarpMessage message)
+        public static Timestamped<TriggerSource> GetPayload(HarpMessage message)
         {
             return Pwm0TriggerSource.GetTimestampedPayload(message);
         }
@@ -2270,25 +2270,25 @@ namespace Harp.OutputExpander
     /// Represents a register that enables the generation of events for PWM0.
     /// </summary>
     [Description("Enables the generation of events for PWM0.")]
-    public partial class Pwm0EventEnable
+    public partial class Pwm0EventConfig
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm0EventEnable"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm0EventConfig"/> register. This field is constant.
         /// </summary>
         public const int Address = 49;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm0EventEnable"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm0EventConfig"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm0EventEnable"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm0EventConfig"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm0EventEnable"/> register messages.
+        /// Returns the payload data for <see cref="Pwm0EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2298,7 +2298,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm0EventEnable"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm0EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2309,12 +2309,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm0EventEnable"/> register.
+        /// Returns a Harp message for the <see cref="Pwm0EventConfig"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0EventEnable"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0EventConfig"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, EnableFlag value)
@@ -2323,14 +2323,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm0EventEnable"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm0EventConfig"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0EventEnable"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm0EventConfig"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, EnableFlag value)
@@ -2341,25 +2341,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm0EventEnable register.
+    /// Pwm0EventConfig register.
     /// </summary>
-    /// <seealso cref="Pwm0EventEnable"/>
-    [Description("Filters and selects timestamped messages from the Pwm0EventEnable register.")]
-    public partial class TimestampedPwm0EventEnable
+    /// <seealso cref="Pwm0EventConfig"/>
+    [Description("Filters and selects timestamped messages from the Pwm0EventConfig register.")]
+    public partial class TimestampedPwm0EventConfig
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm0EventEnable"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm0EventConfig"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm0EventEnable.Address;
+        public const int Address = Pwm0EventConfig.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm0EventEnable"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm0EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<EnableFlag> GetPayload(HarpMessage message)
         {
-            return Pwm0EventEnable.GetTimestampedPayload(message);
+            return Pwm0EventConfig.GetTimestampedPayload(message);
         }
     }
 
@@ -2655,25 +2655,25 @@ namespace Harp.OutputExpander
     /// Represents a register that reports the actual frequency to be generated from PWM1 (Hz).
     /// </summary>
     [Description("Reports the actual frequency to be generated from PWM1 (Hz).")]
-    public partial class Pwm1RealFrequency
+    public partial class Pwm1ActualFrequency
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm1RealFrequency"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm1ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const int Address = 53;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm1RealFrequency"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm1ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.Float;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm1RealFrequency"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm1ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm1RealFrequency"/> register messages.
+        /// Returns the payload data for <see cref="Pwm1ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2683,7 +2683,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm1RealFrequency"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm1ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2693,12 +2693,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm1RealFrequency"/> register.
+        /// Returns a Harp message for the <see cref="Pwm1ActualFrequency"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1RealFrequency"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1ActualFrequency"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, float value)
@@ -2707,14 +2707,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm1RealFrequency"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm1ActualFrequency"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1RealFrequency"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1ActualFrequency"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, float value)
@@ -2725,25 +2725,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm1RealFrequency register.
+    /// Pwm1ActualFrequency register.
     /// </summary>
-    /// <seealso cref="Pwm1RealFrequency"/>
-    [Description("Filters and selects timestamped messages from the Pwm1RealFrequency register.")]
-    public partial class TimestampedPwm1RealFrequency
+    /// <seealso cref="Pwm1ActualFrequency"/>
+    [Description("Filters and selects timestamped messages from the Pwm1ActualFrequency register.")]
+    public partial class TimestampedPwm1ActualFrequency
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm1RealFrequency"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm1ActualFrequency"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm1RealFrequency.Address;
+        public const int Address = Pwm1ActualFrequency.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm1RealFrequency"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm1ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<float> GetPayload(HarpMessage message)
         {
-            return Pwm1RealFrequency.GetTimestampedPayload(message);
+            return Pwm1ActualFrequency.GetTimestampedPayload(message);
         }
     }
 
@@ -2751,25 +2751,25 @@ namespace Harp.OutputExpander
     /// Represents a register that reports the actual duty cycle to be generated from PWM1 (%).
     /// </summary>
     [Description("Reports the actual duty cycle to be generated from PWM1 (%).")]
-    public partial class Pwm1RealDutyCycle
+    public partial class Pwm1ActualDutyCycle
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm1RealDutyCycle"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm1ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const int Address = 54;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm1RealDutyCycle"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm1ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.Float;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm1RealDutyCycle"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm1ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm1RealDutyCycle"/> register messages.
+        /// Returns the payload data for <see cref="Pwm1ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2779,7 +2779,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm1RealDutyCycle"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm1ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2789,12 +2789,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm1RealDutyCycle"/> register.
+        /// Returns a Harp message for the <see cref="Pwm1ActualDutyCycle"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1RealDutyCycle"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1ActualDutyCycle"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, float value)
@@ -2803,14 +2803,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm1RealDutyCycle"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm1ActualDutyCycle"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1RealDutyCycle"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1ActualDutyCycle"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, float value)
@@ -2821,25 +2821,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm1RealDutyCycle register.
+    /// Pwm1ActualDutyCycle register.
     /// </summary>
-    /// <seealso cref="Pwm1RealDutyCycle"/>
-    [Description("Filters and selects timestamped messages from the Pwm1RealDutyCycle register.")]
-    public partial class TimestampedPwm1RealDutyCycle
+    /// <seealso cref="Pwm1ActualDutyCycle"/>
+    [Description("Filters and selects timestamped messages from the Pwm1ActualDutyCycle register.")]
+    public partial class TimestampedPwm1ActualDutyCycle
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm1RealDutyCycle"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm1ActualDutyCycle"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm1RealDutyCycle.Address;
+        public const int Address = Pwm1ActualDutyCycle.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm1RealDutyCycle"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm1ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<float> GetPayload(HarpMessage message)
         {
-            return Pwm1RealDutyCycle.GetTimestampedPayload(message);
+            return Pwm1ActualDutyCycle.GetTimestampedPayload(message);
         }
     }
 
@@ -2966,9 +2966,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static TriggerSources GetPayload(HarpMessage message)
+        public static TriggerSource GetPayload(HarpMessage message)
         {
-            return (TriggerSources)message.GetPayloadByte();
+            return (TriggerSource)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -2976,10 +2976,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<TriggerSources> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<TriggerSource> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((TriggerSources)payload.Value, payload.Seconds);
+            return Timestamped.Create((TriggerSource)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -2991,7 +2991,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1TriggerSource"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, TriggerSources value)
+        public static HarpMessage FromPayload(MessageType messageType, TriggerSource value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -3007,7 +3007,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1TriggerSource"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, TriggerSources value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, TriggerSource value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -3031,7 +3031,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<TriggerSources> GetPayload(HarpMessage message)
+        public static Timestamped<TriggerSource> GetPayload(HarpMessage message)
         {
             return Pwm1TriggerSource.GetTimestampedPayload(message);
         }
@@ -3041,25 +3041,25 @@ namespace Harp.OutputExpander
     /// Represents a register that enables the generation of events for PWM1.
     /// </summary>
     [Description("Enables the generation of events for PWM1.")]
-    public partial class Pwm1EventEnable
+    public partial class Pwm1EventConfig
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm1EventEnable"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm1EventConfig"/> register. This field is constant.
         /// </summary>
         public const int Address = 57;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm1EventEnable"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm1EventConfig"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm1EventEnable"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm1EventConfig"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm1EventEnable"/> register messages.
+        /// Returns the payload data for <see cref="Pwm1EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -3069,7 +3069,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm1EventEnable"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm1EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -3080,12 +3080,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm1EventEnable"/> register.
+        /// Returns a Harp message for the <see cref="Pwm1EventConfig"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1EventEnable"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1EventConfig"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, EnableFlag value)
@@ -3094,14 +3094,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm1EventEnable"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm1EventConfig"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1EventEnable"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm1EventConfig"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, EnableFlag value)
@@ -3112,25 +3112,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm1EventEnable register.
+    /// Pwm1EventConfig register.
     /// </summary>
-    /// <seealso cref="Pwm1EventEnable"/>
-    [Description("Filters and selects timestamped messages from the Pwm1EventEnable register.")]
-    public partial class TimestampedPwm1EventEnable
+    /// <seealso cref="Pwm1EventConfig"/>
+    [Description("Filters and selects timestamped messages from the Pwm1EventConfig register.")]
+    public partial class TimestampedPwm1EventConfig
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm1EventEnable"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm1EventConfig"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm1EventEnable.Address;
+        public const int Address = Pwm1EventConfig.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm1EventEnable"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm1EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<EnableFlag> GetPayload(HarpMessage message)
         {
-            return Pwm1EventEnable.GetTimestampedPayload(message);
+            return Pwm1EventConfig.GetTimestampedPayload(message);
         }
     }
 
@@ -3426,25 +3426,25 @@ namespace Harp.OutputExpander
     /// Represents a register that reports the actual frequency to be generated from PWM2 (Hz).
     /// </summary>
     [Description("Reports the actual frequency to be generated from PWM2 (Hz).")]
-    public partial class Pwm2RealFrequency
+    public partial class Pwm2ActualFrequency
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm2RealFrequency"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm2ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const int Address = 61;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm2RealFrequency"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm2ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.Float;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm2RealFrequency"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm2ActualFrequency"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm2RealFrequency"/> register messages.
+        /// Returns the payload data for <see cref="Pwm2ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -3454,7 +3454,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm2RealFrequency"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm2ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -3464,12 +3464,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm2RealFrequency"/> register.
+        /// Returns a Harp message for the <see cref="Pwm2ActualFrequency"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2RealFrequency"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2ActualFrequency"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, float value)
@@ -3478,14 +3478,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm2RealFrequency"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm2ActualFrequency"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2RealFrequency"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2ActualFrequency"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, float value)
@@ -3496,25 +3496,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm2RealFrequency register.
+    /// Pwm2ActualFrequency register.
     /// </summary>
-    /// <seealso cref="Pwm2RealFrequency"/>
-    [Description("Filters and selects timestamped messages from the Pwm2RealFrequency register.")]
-    public partial class TimestampedPwm2RealFrequency
+    /// <seealso cref="Pwm2ActualFrequency"/>
+    [Description("Filters and selects timestamped messages from the Pwm2ActualFrequency register.")]
+    public partial class TimestampedPwm2ActualFrequency
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm2RealFrequency"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm2ActualFrequency"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm2RealFrequency.Address;
+        public const int Address = Pwm2ActualFrequency.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm2RealFrequency"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm2ActualFrequency"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<float> GetPayload(HarpMessage message)
         {
-            return Pwm2RealFrequency.GetTimestampedPayload(message);
+            return Pwm2ActualFrequency.GetTimestampedPayload(message);
         }
     }
 
@@ -3522,25 +3522,25 @@ namespace Harp.OutputExpander
     /// Represents a register that reports the actual duty cycle to be generated from PWM2 (%).
     /// </summary>
     [Description("Reports the actual duty cycle to be generated from PWM2 (%).")]
-    public partial class Pwm2RealDutyCycle
+    public partial class Pwm2ActualDutyCycle
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm2RealDutyCycle"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm2ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const int Address = 62;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm2RealDutyCycle"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm2ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.Float;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm2RealDutyCycle"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm2ActualDutyCycle"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm2RealDutyCycle"/> register messages.
+        /// Returns the payload data for <see cref="Pwm2ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -3550,7 +3550,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm2RealDutyCycle"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm2ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -3560,12 +3560,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm2RealDutyCycle"/> register.
+        /// Returns a Harp message for the <see cref="Pwm2ActualDutyCycle"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2RealDutyCycle"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2ActualDutyCycle"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, float value)
@@ -3574,14 +3574,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm2RealDutyCycle"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm2ActualDutyCycle"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2RealDutyCycle"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2ActualDutyCycle"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, float value)
@@ -3592,25 +3592,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm2RealDutyCycle register.
+    /// Pwm2ActualDutyCycle register.
     /// </summary>
-    /// <seealso cref="Pwm2RealDutyCycle"/>
-    [Description("Filters and selects timestamped messages from the Pwm2RealDutyCycle register.")]
-    public partial class TimestampedPwm2RealDutyCycle
+    /// <seealso cref="Pwm2ActualDutyCycle"/>
+    [Description("Filters and selects timestamped messages from the Pwm2ActualDutyCycle register.")]
+    public partial class TimestampedPwm2ActualDutyCycle
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm2RealDutyCycle"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm2ActualDutyCycle"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm2RealDutyCycle.Address;
+        public const int Address = Pwm2ActualDutyCycle.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm2RealDutyCycle"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm2ActualDutyCycle"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<float> GetPayload(HarpMessage message)
         {
-            return Pwm2RealDutyCycle.GetTimestampedPayload(message);
+            return Pwm2ActualDutyCycle.GetTimestampedPayload(message);
         }
     }
 
@@ -3737,9 +3737,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static TriggerSources GetPayload(HarpMessage message)
+        public static TriggerSource GetPayload(HarpMessage message)
         {
-            return (TriggerSources)message.GetPayloadByte();
+            return (TriggerSource)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -3747,10 +3747,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<TriggerSources> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<TriggerSource> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((TriggerSources)payload.Value, payload.Seconds);
+            return Timestamped.Create((TriggerSource)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -3762,7 +3762,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2TriggerSource"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, TriggerSources value)
+        public static HarpMessage FromPayload(MessageType messageType, TriggerSource value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -3778,7 +3778,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2TriggerSource"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, TriggerSources value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, TriggerSource value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -3802,7 +3802,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<TriggerSources> GetPayload(HarpMessage message)
+        public static Timestamped<TriggerSource> GetPayload(HarpMessage message)
         {
             return Pwm2TriggerSource.GetTimestampedPayload(message);
         }
@@ -3812,25 +3812,25 @@ namespace Harp.OutputExpander
     /// Represents a register that enables the generation of events for PWM2.
     /// </summary>
     [Description("Enables the generation of events for PWM2.")]
-    public partial class Pwm2EventEnable
+    public partial class Pwm2EventConfig
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm2EventEnable"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm2EventConfig"/> register. This field is constant.
         /// </summary>
         public const int Address = 65;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Pwm2EventEnable"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="Pwm2EventConfig"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="Pwm2EventEnable"/> register. This field is constant.
+        /// Represents the length of the <see cref="Pwm2EventConfig"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="Pwm2EventEnable"/> register messages.
+        /// Returns the payload data for <see cref="Pwm2EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -3840,7 +3840,7 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Pwm2EventEnable"/> register messages.
+        /// Returns the timestamped payload data for <see cref="Pwm2EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -3851,12 +3851,12 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Pwm2EventEnable"/> register.
+        /// Returns a Harp message for the <see cref="Pwm2EventConfig"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2EventEnable"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2EventConfig"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, EnableFlag value)
@@ -3865,14 +3865,14 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Pwm2EventEnable"/>
+        /// Returns a timestamped Harp message for the <see cref="Pwm2EventConfig"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2EventEnable"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="Pwm2EventConfig"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, EnableFlag value)
@@ -3883,25 +3883,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Pwm2EventEnable register.
+    /// Pwm2EventConfig register.
     /// </summary>
-    /// <seealso cref="Pwm2EventEnable"/>
-    [Description("Filters and selects timestamped messages from the Pwm2EventEnable register.")]
-    public partial class TimestampedPwm2EventEnable
+    /// <seealso cref="Pwm2EventConfig"/>
+    [Description("Filters and selects timestamped messages from the Pwm2EventConfig register.")]
+    public partial class TimestampedPwm2EventConfig
     {
         /// <summary>
-        /// Represents the address of the <see cref="Pwm2EventEnable"/> register. This field is constant.
+        /// Represents the address of the <see cref="Pwm2EventConfig"/> register. This field is constant.
         /// </summary>
-        public const int Address = Pwm2EventEnable.Address;
+        public const int Address = Pwm2EventConfig.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Pwm2EventEnable"/> register messages.
+        /// Returns timestamped payload data for <see cref="Pwm2EventConfig"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<EnableFlag> GetPayload(HarpMessage message)
         {
-            return Pwm2EventEnable.GetTimestampedPayload(message);
+            return Pwm2EventConfig.GetTimestampedPayload(message);
         }
     }
 
@@ -3931,9 +3931,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static Pwm GetPayload(HarpMessage message)
+        public static PwmChannels GetPayload(HarpMessage message)
         {
-            return (Pwm)message.GetPayloadByte();
+            return (PwmChannels)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -3941,10 +3941,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Pwm> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<PwmChannels> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((Pwm)payload.Value, payload.Seconds);
+            return Timestamped.Create((PwmChannels)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -3956,7 +3956,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmStart"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, Pwm value)
+        public static HarpMessage FromPayload(MessageType messageType, PwmChannels value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -3972,7 +3972,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmStart"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, Pwm value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmChannels value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -3996,7 +3996,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Pwm> GetPayload(HarpMessage message)
+        public static Timestamped<PwmChannels> GetPayload(HarpMessage message)
         {
             return PwmStart.GetTimestampedPayload(message);
         }
@@ -4028,9 +4028,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static Pwm GetPayload(HarpMessage message)
+        public static PwmChannels GetPayload(HarpMessage message)
         {
-            return (Pwm)message.GetPayloadByte();
+            return (PwmChannels)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -4038,10 +4038,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Pwm> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<PwmChannels> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((Pwm)payload.Value, payload.Seconds);
+            return Timestamped.Create((PwmChannels)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -4053,7 +4053,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmStop"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, Pwm value)
+        public static HarpMessage FromPayload(MessageType messageType, PwmChannels value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -4069,7 +4069,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmStop"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, Pwm value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmChannels value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -4093,7 +4093,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Pwm> GetPayload(HarpMessage message)
+        public static Timestamped<PwmChannels> GetPayload(HarpMessage message)
         {
             return PwmStop.GetTimestampedPayload(message);
         }
@@ -4103,70 +4103,70 @@ namespace Harp.OutputExpander
     /// Represents a register that enables the generation of an event on every rising edge of the PWM line.
     /// </summary>
     [Description("Enables the generation of an event on every rising edge of the PWM line.")]
-    public partial class PwmRiseEventEnable
+    public partial class PwmRiseEvent
     {
         /// <summary>
-        /// Represents the address of the <see cref="PwmRiseEventEnable"/> register. This field is constant.
+        /// Represents the address of the <see cref="PwmRiseEvent"/> register. This field is constant.
         /// </summary>
         public const int Address = 68;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="PwmRiseEventEnable"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="PwmRiseEvent"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="PwmRiseEventEnable"/> register. This field is constant.
+        /// Represents the length of the <see cref="PwmRiseEvent"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="PwmRiseEventEnable"/> register messages.
+        /// Returns the payload data for <see cref="PwmRiseEvent"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static Pwm GetPayload(HarpMessage message)
+        public static PwmChannels GetPayload(HarpMessage message)
         {
-            return (Pwm)message.GetPayloadByte();
+            return (PwmChannels)message.GetPayloadByte();
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="PwmRiseEventEnable"/> register messages.
+        /// Returns the timestamped payload data for <see cref="PwmRiseEvent"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Pwm> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<PwmChannels> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((Pwm)payload.Value, payload.Seconds);
+            return Timestamped.Create((PwmChannels)payload.Value, payload.Seconds);
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="PwmRiseEventEnable"/> register.
+        /// Returns a Harp message for the <see cref="PwmRiseEvent"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="PwmRiseEventEnable"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PwmRiseEvent"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, Pwm value)
+        public static HarpMessage FromPayload(MessageType messageType, PwmChannels value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="PwmRiseEventEnable"/>
+        /// Returns a timestamped Harp message for the <see cref="PwmRiseEvent"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="PwmRiseEventEnable"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PwmRiseEvent"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, Pwm value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmChannels value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -4174,25 +4174,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// PwmRiseEventEnable register.
+    /// PwmRiseEvent register.
     /// </summary>
-    /// <seealso cref="PwmRiseEventEnable"/>
-    [Description("Filters and selects timestamped messages from the PwmRiseEventEnable register.")]
-    public partial class TimestampedPwmRiseEventEnable
+    /// <seealso cref="PwmRiseEvent"/>
+    [Description("Filters and selects timestamped messages from the PwmRiseEvent register.")]
+    public partial class TimestampedPwmRiseEvent
     {
         /// <summary>
-        /// Represents the address of the <see cref="PwmRiseEventEnable"/> register. This field is constant.
+        /// Represents the address of the <see cref="PwmRiseEvent"/> register. This field is constant.
         /// </summary>
-        public const int Address = PwmRiseEventEnable.Address;
+        public const int Address = PwmRiseEvent.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="PwmRiseEventEnable"/> register messages.
+        /// Returns timestamped payload data for <see cref="PwmRiseEvent"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Pwm> GetPayload(HarpMessage message)
+        public static Timestamped<PwmChannels> GetPayload(HarpMessage message)
         {
-            return PwmRiseEventEnable.GetTimestampedPayload(message);
+            return PwmRiseEvent.GetTimestampedPayload(message);
         }
     }
 
@@ -4607,9 +4607,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static TriggerSources GetPayload(HarpMessage message)
+        public static TriggerSource GetPayload(HarpMessage message)
         {
-            return (TriggerSources)message.GetPayloadByte();
+            return (TriggerSource)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -4617,10 +4617,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<TriggerSources> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<TriggerSource> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((TriggerSources)payload.Value, payload.Seconds);
+            return Timestamped.Create((TriggerSource)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -4632,7 +4632,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="Stim0TriggerSource"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, TriggerSources value)
+        public static HarpMessage FromPayload(MessageType messageType, TriggerSource value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -4648,7 +4648,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="Stim0TriggerSource"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, TriggerSources value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, TriggerSource value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -4672,7 +4672,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<TriggerSources> GetPayload(HarpMessage message)
+        public static Timestamped<TriggerSource> GetPayload(HarpMessage message)
         {
             return Stim0TriggerSource.GetTimestampedPayload(message);
         }
@@ -4704,9 +4704,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static Stim GetPayload(HarpMessage message)
+        public static StimChannels GetPayload(HarpMessage message)
         {
-            return (Stim)message.GetPayloadByte();
+            return (StimChannels)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -4714,10 +4714,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Stim> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<StimChannels> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((Stim)payload.Value, payload.Seconds);
+            return Timestamped.Create((StimChannels)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -4729,7 +4729,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="StimStart"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, Stim value)
+        public static HarpMessage FromPayload(MessageType messageType, StimChannels value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -4745,7 +4745,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="StimStart"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, Stim value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, StimChannels value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -4769,7 +4769,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Stim> GetPayload(HarpMessage message)
+        public static Timestamped<StimChannels> GetPayload(HarpMessage message)
         {
             return StimStart.GetTimestampedPayload(message);
         }
@@ -4801,9 +4801,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static Stim GetPayload(HarpMessage message)
+        public static StimChannels GetPayload(HarpMessage message)
         {
-            return (Stim)message.GetPayloadByte();
+            return (StimChannels)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -4811,10 +4811,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Stim> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<StimChannels> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((Stim)payload.Value, payload.Seconds);
+            return Timestamped.Create((StimChannels)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -4826,7 +4826,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="StimStop"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, Stim value)
+        public static HarpMessage FromPayload(MessageType messageType, StimChannels value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -4842,7 +4842,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="StimStop"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, Stim value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, StimChannels value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -4866,7 +4866,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<Stim> GetPayload(HarpMessage message)
+        public static Timestamped<StimChannels> GetPayload(HarpMessage message)
         {
             return StimStop.GetTimestampedPayload(message);
         }
@@ -5955,9 +5955,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static ExpansionBoardTypes GetPayload(HarpMessage message)
+        public static ExpansionBoardType GetPayload(HarpMessage message)
         {
-            return (ExpansionBoardTypes)message.GetPayloadByte();
+            return (ExpansionBoardType)message.GetPayloadByte();
         }
 
         /// <summary>
@@ -5965,10 +5965,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<ExpansionBoardTypes> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<ExpansionBoardType> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((ExpansionBoardTypes)payload.Value, payload.Seconds);
+            return Timestamped.Create((ExpansionBoardType)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -5980,7 +5980,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="ExpansionBoard"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, ExpansionBoardTypes value)
+        public static HarpMessage FromPayload(MessageType messageType, ExpansionBoardType value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
@@ -5996,7 +5996,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="ExpansionBoard"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, ExpansionBoardTypes value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, ExpansionBoardType value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -6020,7 +6020,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<ExpansionBoardTypes> GetPayload(HarpMessage message)
+        public static Timestamped<ExpansionBoardType> GetPayload(HarpMessage message)
         {
             return ExpansionBoard.GetTimestampedPayload(message);
         }
@@ -6126,70 +6126,70 @@ namespace Harp.OutputExpander
     /// Represents a register that sets the sampling rate of the magnetic encoder.
     /// </summary>
     [Description("Sets the sampling rate of the magnetic encoder.")]
-    public partial class EncoderSampling
+    public partial class EncoderSamplingRate
     {
         /// <summary>
-        /// Represents the address of the <see cref="EncoderSampling"/> register. This field is constant.
+        /// Represents the address of the <see cref="EncoderSamplingRate"/> register. This field is constant.
         /// </summary>
         public const int Address = 91;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="EncoderSampling"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="EncoderSamplingRate"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="EncoderSampling"/> register. This field is constant.
+        /// Represents the length of the <see cref="EncoderSamplingRate"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="EncoderSampling"/> register messages.
+        /// Returns the payload data for <see cref="EncoderSamplingRate"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static EncoderSamplingRate GetPayload(HarpMessage message)
+        public static EncoderSamplingRateMode GetPayload(HarpMessage message)
         {
-            return (EncoderSamplingRate)message.GetPayloadByte();
+            return (EncoderSamplingRateMode)message.GetPayloadByte();
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="EncoderSampling"/> register messages.
+        /// Returns the timestamped payload data for <see cref="EncoderSamplingRate"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<EncoderSamplingRate> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<EncoderSamplingRateMode> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((EncoderSamplingRate)payload.Value, payload.Seconds);
+            return Timestamped.Create((EncoderSamplingRateMode)payload.Value, payload.Seconds);
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="EncoderSampling"/> register.
+        /// Returns a Harp message for the <see cref="EncoderSamplingRate"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="EncoderSampling"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="EncoderSamplingRate"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, EncoderSamplingRate value)
+        public static HarpMessage FromPayload(MessageType messageType, EncoderSamplingRateMode value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="EncoderSampling"/>
+        /// Returns a timestamped Harp message for the <see cref="EncoderSamplingRate"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="EncoderSampling"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="EncoderSamplingRate"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, EncoderSamplingRate value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, EncoderSamplingRateMode value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -6197,25 +6197,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// EncoderSampling register.
+    /// EncoderSamplingRate register.
     /// </summary>
-    /// <seealso cref="EncoderSampling"/>
-    [Description("Filters and selects timestamped messages from the EncoderSampling register.")]
-    public partial class TimestampedEncoderSampling
+    /// <seealso cref="EncoderSamplingRate"/>
+    [Description("Filters and selects timestamped messages from the EncoderSamplingRate register.")]
+    public partial class TimestampedEncoderSamplingRate
     {
         /// <summary>
-        /// Represents the address of the <see cref="EncoderSampling"/> register. This field is constant.
+        /// Represents the address of the <see cref="EncoderSamplingRate"/> register. This field is constant.
         /// </summary>
-        public const int Address = EncoderSampling.Address;
+        public const int Address = EncoderSamplingRate.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="EncoderSampling"/> register messages.
+        /// Returns timestamped payload data for <see cref="EncoderSamplingRate"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<EncoderSamplingRate> GetPayload(HarpMessage message)
+        public static Timestamped<EncoderSamplingRateMode> GetPayload(HarpMessage message)
         {
-            return EncoderSampling.GetTimestampedPayload(message);
+            return EncoderSamplingRate.GetTimestampedPayload(message);
         }
     }
 
@@ -6703,43 +6703,43 @@ namespace Harp.OutputExpander
     /// Represents an operator which creates standard message payloads for the
     /// OutputExpander device.
     /// </summary>
-    /// <seealso cref="CreateAuxInPortPayload"/>
-    /// <seealso cref="CreateAuxInEnableRisingEdgePayload"/>
-    /// <seealso cref="CreateAuxInEnableFallingEdgePayload"/>
+    /// <seealso cref="CreateAuxInStatePayload"/>
+    /// <seealso cref="CreateAuxInRisingEdgePayload"/>
+    /// <seealso cref="CreateAuxInFallingEdgePayload"/>
     /// <seealso cref="CreateOutputSetPayload"/>
     /// <seealso cref="CreateOutputClearPayload"/>
     /// <seealso cref="CreateOutputTogglePayload"/>
     /// <seealso cref="CreateOutputStatePayload"/>
     /// <seealso cref="CreatePwmAndStimEnablePayload"/>
     /// <seealso cref="CreatePwmAndStimDisablePayload"/>
-    /// <seealso cref="CreatePwmAndStimWritePayload"/>
+    /// <seealso cref="CreatePwmAndStimStatePayload"/>
     /// <seealso cref="CreatePwm0FrequencyPayload"/>
     /// <seealso cref="CreatePwm0DutyCyclePayload"/>
     /// <seealso cref="CreatePwm0PulseCountPayload"/>
-    /// <seealso cref="CreatePwm0RealFrequencyPayload"/>
-    /// <seealso cref="CreatePwm0RealDutyCyclePayload"/>
+    /// <seealso cref="CreatePwm0ActualFrequencyPayload"/>
+    /// <seealso cref="CreatePwm0ActualDutyCyclePayload"/>
     /// <seealso cref="CreatePwm0AcquisitionModePayload"/>
     /// <seealso cref="CreatePwm0TriggerSourcePayload"/>
-    /// <seealso cref="CreatePwm0EventEnablePayload"/>
+    /// <seealso cref="CreatePwm0EventConfigPayload"/>
     /// <seealso cref="CreatePwm1FrequencyPayload"/>
     /// <seealso cref="CreatePwm1DutyCyclePayload"/>
     /// <seealso cref="CreatePwm1PulseCountPayload"/>
-    /// <seealso cref="CreatePwm1RealFrequencyPayload"/>
-    /// <seealso cref="CreatePwm1RealDutyCyclePayload"/>
+    /// <seealso cref="CreatePwm1ActualFrequencyPayload"/>
+    /// <seealso cref="CreatePwm1ActualDutyCyclePayload"/>
     /// <seealso cref="CreatePwm1AcquisitionModePayload"/>
     /// <seealso cref="CreatePwm1TriggerSourcePayload"/>
-    /// <seealso cref="CreatePwm1EventEnablePayload"/>
+    /// <seealso cref="CreatePwm1EventConfigPayload"/>
     /// <seealso cref="CreatePwm2FrequencyPayload"/>
     /// <seealso cref="CreatePwm2DutyCyclePayload"/>
     /// <seealso cref="CreatePwm2PulseCountPayload"/>
-    /// <seealso cref="CreatePwm2RealFrequencyPayload"/>
-    /// <seealso cref="CreatePwm2RealDutyCyclePayload"/>
+    /// <seealso cref="CreatePwm2ActualFrequencyPayload"/>
+    /// <seealso cref="CreatePwm2ActualDutyCyclePayload"/>
     /// <seealso cref="CreatePwm2AcquisitionModePayload"/>
     /// <seealso cref="CreatePwm2TriggerSourcePayload"/>
-    /// <seealso cref="CreatePwm2EventEnablePayload"/>
+    /// <seealso cref="CreatePwm2EventConfigPayload"/>
     /// <seealso cref="CreatePwmStartPayload"/>
     /// <seealso cref="CreatePwmStopPayload"/>
-    /// <seealso cref="CreatePwmRiseEventEnablePayload"/>
+    /// <seealso cref="CreatePwmRiseEventPayload"/>
     /// <seealso cref="CreateStim0PulseOnTimePayload"/>
     /// <seealso cref="CreateStim0PulseOffTimePayload"/>
     /// <seealso cref="CreateStim0PulseCountPayload"/>
@@ -6760,49 +6760,49 @@ namespace Harp.OutputExpander
     /// <seealso cref="CreateOut9PulseWidthPayload"/>
     /// <seealso cref="CreateExpansionBoardPayload"/>
     /// <seealso cref="CreateEncoderPayload"/>
-    /// <seealso cref="CreateEncoderSamplingPayload"/>
+    /// <seealso cref="CreateEncoderSamplingRatePayload"/>
     /// <seealso cref="CreateServoPeriodPayload"/>
     /// <seealso cref="CreateServo0PulseWidthPayload"/>
     /// <seealso cref="CreateServo1PulseWidthPayload"/>
     /// <seealso cref="CreateServo2PulseWidthPayload"/>
     /// <seealso cref="CreateOpticalFlowPayload"/>
-    [XmlInclude(typeof(CreateAuxInPortPayload))]
-    [XmlInclude(typeof(CreateAuxInEnableRisingEdgePayload))]
-    [XmlInclude(typeof(CreateAuxInEnableFallingEdgePayload))]
+    [XmlInclude(typeof(CreateAuxInStatePayload))]
+    [XmlInclude(typeof(CreateAuxInRisingEdgePayload))]
+    [XmlInclude(typeof(CreateAuxInFallingEdgePayload))]
     [XmlInclude(typeof(CreateOutputSetPayload))]
     [XmlInclude(typeof(CreateOutputClearPayload))]
     [XmlInclude(typeof(CreateOutputTogglePayload))]
     [XmlInclude(typeof(CreateOutputStatePayload))]
     [XmlInclude(typeof(CreatePwmAndStimEnablePayload))]
     [XmlInclude(typeof(CreatePwmAndStimDisablePayload))]
-    [XmlInclude(typeof(CreatePwmAndStimWritePayload))]
+    [XmlInclude(typeof(CreatePwmAndStimStatePayload))]
     [XmlInclude(typeof(CreatePwm0FrequencyPayload))]
     [XmlInclude(typeof(CreatePwm0DutyCyclePayload))]
     [XmlInclude(typeof(CreatePwm0PulseCountPayload))]
-    [XmlInclude(typeof(CreatePwm0RealFrequencyPayload))]
-    [XmlInclude(typeof(CreatePwm0RealDutyCyclePayload))]
+    [XmlInclude(typeof(CreatePwm0ActualFrequencyPayload))]
+    [XmlInclude(typeof(CreatePwm0ActualDutyCyclePayload))]
     [XmlInclude(typeof(CreatePwm0AcquisitionModePayload))]
     [XmlInclude(typeof(CreatePwm0TriggerSourcePayload))]
-    [XmlInclude(typeof(CreatePwm0EventEnablePayload))]
+    [XmlInclude(typeof(CreatePwm0EventConfigPayload))]
     [XmlInclude(typeof(CreatePwm1FrequencyPayload))]
     [XmlInclude(typeof(CreatePwm1DutyCyclePayload))]
     [XmlInclude(typeof(CreatePwm1PulseCountPayload))]
-    [XmlInclude(typeof(CreatePwm1RealFrequencyPayload))]
-    [XmlInclude(typeof(CreatePwm1RealDutyCyclePayload))]
+    [XmlInclude(typeof(CreatePwm1ActualFrequencyPayload))]
+    [XmlInclude(typeof(CreatePwm1ActualDutyCyclePayload))]
     [XmlInclude(typeof(CreatePwm1AcquisitionModePayload))]
     [XmlInclude(typeof(CreatePwm1TriggerSourcePayload))]
-    [XmlInclude(typeof(CreatePwm1EventEnablePayload))]
+    [XmlInclude(typeof(CreatePwm1EventConfigPayload))]
     [XmlInclude(typeof(CreatePwm2FrequencyPayload))]
     [XmlInclude(typeof(CreatePwm2DutyCyclePayload))]
     [XmlInclude(typeof(CreatePwm2PulseCountPayload))]
-    [XmlInclude(typeof(CreatePwm2RealFrequencyPayload))]
-    [XmlInclude(typeof(CreatePwm2RealDutyCyclePayload))]
+    [XmlInclude(typeof(CreatePwm2ActualFrequencyPayload))]
+    [XmlInclude(typeof(CreatePwm2ActualDutyCyclePayload))]
     [XmlInclude(typeof(CreatePwm2AcquisitionModePayload))]
     [XmlInclude(typeof(CreatePwm2TriggerSourcePayload))]
-    [XmlInclude(typeof(CreatePwm2EventEnablePayload))]
+    [XmlInclude(typeof(CreatePwm2EventConfigPayload))]
     [XmlInclude(typeof(CreatePwmStartPayload))]
     [XmlInclude(typeof(CreatePwmStopPayload))]
-    [XmlInclude(typeof(CreatePwmRiseEventEnablePayload))]
+    [XmlInclude(typeof(CreatePwmRiseEventPayload))]
     [XmlInclude(typeof(CreateStim0PulseOnTimePayload))]
     [XmlInclude(typeof(CreateStim0PulseOffTimePayload))]
     [XmlInclude(typeof(CreateStim0PulseCountPayload))]
@@ -6823,7 +6823,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(CreateOut9PulseWidthPayload))]
     [XmlInclude(typeof(CreateExpansionBoardPayload))]
     [XmlInclude(typeof(CreateEncoderPayload))]
-    [XmlInclude(typeof(CreateEncoderSamplingPayload))]
+    [XmlInclude(typeof(CreateEncoderSamplingRatePayload))]
     [XmlInclude(typeof(CreateServoPeriodPayload))]
     [XmlInclude(typeof(CreateServo0PulseWidthPayload))]
     [XmlInclude(typeof(CreateServo1PulseWidthPayload))]
@@ -6837,7 +6837,7 @@ namespace Harp.OutputExpander
         /// </summary>
         public CreateMessage()
         {
-            Payload = new CreateAuxInPortPayload();
+            Payload = new CreateAuxInStatePayload();
         }
 
         string INamedElement.Name => $"{nameof(OutputExpander)}.{GetElementDisplayName(Payload)}";
@@ -6847,16 +6847,16 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that reports the state of the auxiliary inputs.
     /// </summary>
-    [DisplayName("AuxInPortPayload")]
+    [DisplayName("AuxInStatePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that reports the state of the auxiliary inputs.")]
-    public partial class CreateAuxInPortPayload : HarpCombinator
+    public partial class CreateAuxInStatePayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that reports the state of the auxiliary inputs.
         /// </summary>
         [Description("The value that reports the state of the auxiliary inputs.")]
-        public AuxiliaryInput Value { get; set; }
+        public AuxiliaryInputs Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -6887,7 +6887,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => AuxInPort.FromPayload(MessageType, Value));
+            return source.Select(_ => AuxInState.FromPayload(MessageType, Value));
         }
     }
 
@@ -6895,16 +6895,16 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that enables rising edge detection on the auxiliary inputs.
     /// </summary>
-    [DisplayName("AuxInEnableRisingEdgePayload")]
+    [DisplayName("AuxInRisingEdgePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that enables rising edge detection on the auxiliary inputs.")]
-    public partial class CreateAuxInEnableRisingEdgePayload : HarpCombinator
+    public partial class CreateAuxInRisingEdgePayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that enables rising edge detection on the auxiliary inputs.
         /// </summary>
         [Description("The value that enables rising edge detection on the auxiliary inputs.")]
-        public AuxiliaryInput Value { get; set; }
+        public AuxiliaryInputs Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -6935,7 +6935,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => AuxInEnableRisingEdge.FromPayload(MessageType, Value));
+            return source.Select(_ => AuxInRisingEdge.FromPayload(MessageType, Value));
         }
     }
 
@@ -6943,16 +6943,16 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that enables falling edge detection on the auxiliary input port.
     /// </summary>
-    [DisplayName("AuxInEnableFallingEdgePayload")]
+    [DisplayName("AuxInFallingEdgePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that enables falling edge detection on the auxiliary input port.")]
-    public partial class CreateAuxInEnableFallingEdgePayload : HarpCombinator
+    public partial class CreateAuxInFallingEdgePayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that enables falling edge detection on the auxiliary input port.
         /// </summary>
         [Description("The value that enables falling edge detection on the auxiliary input port.")]
-        public AuxiliaryInput Value { get; set; }
+        public AuxiliaryInputs Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -6983,7 +6983,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => AuxInEnableFallingEdge.FromPayload(MessageType, Value));
+            return source.Select(_ => AuxInFallingEdge.FromPayload(MessageType, Value));
         }
     }
 
@@ -7279,10 +7279,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.
     /// </summary>
-    [DisplayName("PwmAndStimWritePayload")]
+    [DisplayName("PwmAndStimStatePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.")]
-    public partial class CreatePwmAndStimWritePayload : HarpCombinator
+    public partial class CreatePwmAndStimStatePayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.
@@ -7319,7 +7319,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => PwmAndStimWrite.FromPayload(MessageType, Value));
+            return source.Select(_ => PwmAndStimState.FromPayload(MessageType, Value));
         }
     }
 
@@ -7335,10 +7335,10 @@ namespace Harp.OutputExpander
         /// <summary>
         /// Gets or sets the value that sets the frequency of PWM0 (Hz).
         /// </summary>
-        [Range(min: long.MinValue, max: 1000)]
+        [Range(min: 0.5, max: 1000)]
         [Editor(DesignTypes.NumericUpDownEditor, DesignTypes.UITypeEditor)]
         [Description("The value that sets the frequency of PWM0 (Hz).")]
-        public float Value { get; set; }
+        public float Value { get; set; } = 0.5F;
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -7385,10 +7385,10 @@ namespace Harp.OutputExpander
         /// <summary>
         /// Gets or sets the value that sets the duty cycle of PWM0 (%).
         /// </summary>
-        [Range(min: 0, max: 100)]
+        [Range(min: 1, max: 100)]
         [Editor(DesignTypes.NumericUpDownEditor, DesignTypes.UITypeEditor)]
         [Description("The value that sets the duty cycle of PWM0 (%).")]
-        public float Value { get; set; } = 50;
+        public float Value { get; set; } = 50F;
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -7475,10 +7475,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that reports the actual frequency to be generated from PWM0 (Hz).
     /// </summary>
-    [DisplayName("Pwm0RealFrequencyPayload")]
+    [DisplayName("Pwm0ActualFrequencyPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that reports the actual frequency to be generated from PWM0 (Hz).")]
-    public partial class CreatePwm0RealFrequencyPayload : HarpCombinator
+    public partial class CreatePwm0ActualFrequencyPayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that reports the actual frequency to be generated from PWM0 (Hz).
@@ -7515,7 +7515,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm0RealFrequency.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm0ActualFrequency.FromPayload(MessageType, Value));
         }
     }
 
@@ -7523,10 +7523,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that reports the actual duty cycle to be generated from PWM0 (%).
     /// </summary>
-    [DisplayName("Pwm0RealDutyCyclePayload")]
+    [DisplayName("Pwm0ActualDutyCyclePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that reports the actual duty cycle to be generated from PWM0 (%).")]
-    public partial class CreatePwm0RealDutyCyclePayload : HarpCombinator
+    public partial class CreatePwm0ActualDutyCyclePayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that reports the actual duty cycle to be generated from PWM0 (%).
@@ -7563,7 +7563,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm0RealDutyCycle.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm0ActualDutyCycle.FromPayload(MessageType, Value));
         }
     }
 
@@ -7628,7 +7628,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that sets the trigger source of PWM0.
         /// </summary>
         [Description("The value that sets the trigger source of PWM0.")]
-        public TriggerSources Value { get; set; }
+        public TriggerSource Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -7667,10 +7667,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that enables the generation of events for PWM0.
     /// </summary>
-    [DisplayName("Pwm0EventEnablePayload")]
+    [DisplayName("Pwm0EventConfigPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that enables the generation of events for PWM0.")]
-    public partial class CreatePwm0EventEnablePayload : HarpCombinator
+    public partial class CreatePwm0EventConfigPayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that enables the generation of events for PWM0.
@@ -7707,7 +7707,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm0EventEnable.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm0EventConfig.FromPayload(MessageType, Value));
         }
     }
 
@@ -7723,10 +7723,10 @@ namespace Harp.OutputExpander
         /// <summary>
         /// Gets or sets the value that sets the frequency of PWM1 (Hz).
         /// </summary>
-        [Range(min: long.MinValue, max: 1000)]
+        [Range(min: 0.5, max: 1000)]
         [Editor(DesignTypes.NumericUpDownEditor, DesignTypes.UITypeEditor)]
         [Description("The value that sets the frequency of PWM1 (Hz).")]
-        public float Value { get; set; }
+        public float Value { get; set; } = 0.5F;
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -7773,10 +7773,10 @@ namespace Harp.OutputExpander
         /// <summary>
         /// Gets or sets the value that sets the duty cycle of PWM1 (%).
         /// </summary>
-        [Range(min: 0, max: 100)]
+        [Range(min: 1, max: 100)]
         [Editor(DesignTypes.NumericUpDownEditor, DesignTypes.UITypeEditor)]
         [Description("The value that sets the duty cycle of PWM1 (%).")]
-        public float Value { get; set; } = 50;
+        public float Value { get; set; } = 50F;
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -7863,10 +7863,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that reports the actual frequency to be generated from PWM1 (Hz).
     /// </summary>
-    [DisplayName("Pwm1RealFrequencyPayload")]
+    [DisplayName("Pwm1ActualFrequencyPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that reports the actual frequency to be generated from PWM1 (Hz).")]
-    public partial class CreatePwm1RealFrequencyPayload : HarpCombinator
+    public partial class CreatePwm1ActualFrequencyPayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that reports the actual frequency to be generated from PWM1 (Hz).
@@ -7903,7 +7903,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm1RealFrequency.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm1ActualFrequency.FromPayload(MessageType, Value));
         }
     }
 
@@ -7911,10 +7911,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that reports the actual duty cycle to be generated from PWM1 (%).
     /// </summary>
-    [DisplayName("Pwm1RealDutyCyclePayload")]
+    [DisplayName("Pwm1ActualDutyCyclePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that reports the actual duty cycle to be generated from PWM1 (%).")]
-    public partial class CreatePwm1RealDutyCyclePayload : HarpCombinator
+    public partial class CreatePwm1ActualDutyCyclePayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that reports the actual duty cycle to be generated from PWM1 (%).
@@ -7951,7 +7951,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm1RealDutyCycle.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm1ActualDutyCycle.FromPayload(MessageType, Value));
         }
     }
 
@@ -8016,7 +8016,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that sets the trigger source of PWM1.
         /// </summary>
         [Description("The value that sets the trigger source of PWM1.")]
-        public TriggerSources Value { get; set; }
+        public TriggerSource Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8055,10 +8055,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that enables the generation of events for PWM1.
     /// </summary>
-    [DisplayName("Pwm1EventEnablePayload")]
+    [DisplayName("Pwm1EventConfigPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that enables the generation of events for PWM1.")]
-    public partial class CreatePwm1EventEnablePayload : HarpCombinator
+    public partial class CreatePwm1EventConfigPayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that enables the generation of events for PWM1.
@@ -8095,7 +8095,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm1EventEnable.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm1EventConfig.FromPayload(MessageType, Value));
         }
     }
 
@@ -8111,10 +8111,10 @@ namespace Harp.OutputExpander
         /// <summary>
         /// Gets or sets the value that sets the frequency of PWM2 (Hz).
         /// </summary>
-        [Range(min: long.MinValue, max: 1000)]
+        [Range(min: 0.5, max: 1000)]
         [Editor(DesignTypes.NumericUpDownEditor, DesignTypes.UITypeEditor)]
         [Description("The value that sets the frequency of PWM2 (Hz).")]
-        public float Value { get; set; }
+        public float Value { get; set; } = 0.5F;
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8161,10 +8161,10 @@ namespace Harp.OutputExpander
         /// <summary>
         /// Gets or sets the value that sets the duty cycle of PWM2 (%).
         /// </summary>
-        [Range(min: 0, max: 100)]
+        [Range(min: 1, max: 100)]
         [Editor(DesignTypes.NumericUpDownEditor, DesignTypes.UITypeEditor)]
         [Description("The value that sets the duty cycle of PWM2 (%).")]
-        public float Value { get; set; } = 50;
+        public float Value { get; set; } = 50F;
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8251,10 +8251,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that reports the actual frequency to be generated from PWM2 (Hz).
     /// </summary>
-    [DisplayName("Pwm2RealFrequencyPayload")]
+    [DisplayName("Pwm2ActualFrequencyPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that reports the actual frequency to be generated from PWM2 (Hz).")]
-    public partial class CreatePwm2RealFrequencyPayload : HarpCombinator
+    public partial class CreatePwm2ActualFrequencyPayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that reports the actual frequency to be generated from PWM2 (Hz).
@@ -8291,7 +8291,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm2RealFrequency.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm2ActualFrequency.FromPayload(MessageType, Value));
         }
     }
 
@@ -8299,10 +8299,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that reports the actual duty cycle to be generated from PWM2 (%).
     /// </summary>
-    [DisplayName("Pwm2RealDutyCyclePayload")]
+    [DisplayName("Pwm2ActualDutyCyclePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that reports the actual duty cycle to be generated from PWM2 (%).")]
-    public partial class CreatePwm2RealDutyCyclePayload : HarpCombinator
+    public partial class CreatePwm2ActualDutyCyclePayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that reports the actual duty cycle to be generated from PWM2 (%).
@@ -8339,7 +8339,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm2RealDutyCycle.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm2ActualDutyCycle.FromPayload(MessageType, Value));
         }
     }
 
@@ -8404,7 +8404,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that sets the trigger source of PWM2.
         /// </summary>
         [Description("The value that sets the trigger source of PWM2.")]
-        public TriggerSources Value { get; set; }
+        public TriggerSource Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8443,10 +8443,10 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that enables the generation of events for PWM2.
     /// </summary>
-    [DisplayName("Pwm2EventEnablePayload")]
+    [DisplayName("Pwm2EventConfigPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that enables the generation of events for PWM2.")]
-    public partial class CreatePwm2EventEnablePayload : HarpCombinator
+    public partial class CreatePwm2EventConfigPayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that enables the generation of events for PWM2.
@@ -8483,7 +8483,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Pwm2EventEnable.FromPayload(MessageType, Value));
+            return source.Select(_ => Pwm2EventConfig.FromPayload(MessageType, Value));
         }
     }
 
@@ -8500,7 +8500,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that starts the a PWM on the specified channels. An event will be generated if the start was triggered by an auxiliary input.
         /// </summary>
         [Description("The value that starts the a PWM on the specified channels. An event will be generated if the start was triggered by an auxiliary input.")]
-        public Pwm Value { get; set; }
+        public PwmChannels Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8548,7 +8548,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that stops the a PWM on the specified channels.
         /// </summary>
         [Description("The value that stops the a PWM on the specified channels.")]
-        public Pwm Value { get; set; }
+        public PwmChannels Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8587,16 +8587,16 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that enables the generation of an event on every rising edge of the PWM line.
     /// </summary>
-    [DisplayName("PwmRiseEventEnablePayload")]
+    [DisplayName("PwmRiseEventPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that enables the generation of an event on every rising edge of the PWM line.")]
-    public partial class CreatePwmRiseEventEnablePayload : HarpCombinator
+    public partial class CreatePwmRiseEventPayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that enables the generation of an event on every rising edge of the PWM line.
         /// </summary>
         [Description("The value that enables the generation of an event on every rising edge of the PWM line.")]
-        public Pwm Value { get; set; }
+        public PwmChannels Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8627,7 +8627,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => PwmRiseEventEnable.FromPayload(MessageType, Value));
+            return source.Select(_ => PwmRiseEvent.FromPayload(MessageType, Value));
         }
     }
 
@@ -8836,7 +8836,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that sets the trigger source of Stim0.
         /// </summary>
         [Description("The value that sets the trigger source of Stim0.")]
-        public TriggerSources Value { get; set; }
+        public TriggerSource Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8884,7 +8884,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that starts a target Stim protocol.
         /// </summary>
         [Description("The value that starts a target Stim protocol.")]
-        public Stim Value { get; set; }
+        public StimChannels Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -8932,7 +8932,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that stops the target Stim protocol.
         /// </summary>
         [Description("The value that stops the target Stim protocol.")]
-        public Stim Value { get; set; }
+        public StimChannels Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -9508,7 +9508,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that selects the board to be interfaced with via the expansion port.
         /// </summary>
         [Description("The value that selects the board to be interfaced with via the expansion port.")]
-        public ExpansionBoardTypes Value { get; set; }
+        public ExpansionBoardType Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -9595,16 +9595,16 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that sets the sampling rate of the magnetic encoder.
     /// </summary>
-    [DisplayName("EncoderSamplingPayload")]
+    [DisplayName("EncoderSamplingRatePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that sets the sampling rate of the magnetic encoder.")]
-    public partial class CreateEncoderSamplingPayload : HarpCombinator
+    public partial class CreateEncoderSamplingRatePayload : HarpCombinator
     {
         /// <summary>
         /// Gets or sets the value that sets the sampling rate of the magnetic encoder.
         /// </summary>
         [Description("The value that sets the sampling rate of the magnetic encoder.")]
-        public EncoderSamplingRate Value { get; set; }
+        public EncoderSamplingRateMode Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -9635,7 +9635,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => EncoderSampling.FromPayload(MessageType, Value));
+            return source.Select(_ => EncoderSamplingRate.FromPayload(MessageType, Value));
         }
     }
 
@@ -9883,8 +9883,9 @@ namespace Harp.OutputExpander
     /// Specifies the state of auxiliary input lines.
     /// </summary>
     [Flags]
-    public enum AuxiliaryInput : byte
+    public enum AuxiliaryInputs : byte
     {
+        None = 0x0,
         Aux0 = 0x1,
         Aux1 = 0x2,
         Aux0Changed = 0x20,
@@ -9897,6 +9898,7 @@ namespace Harp.OutputExpander
     [Flags]
     public enum DigitalOutputs : ushort
     {
+        None = 0x0,
         Out0 = 0x1,
         Out1 = 0x2,
         Out2 = 0x4,
@@ -9915,6 +9917,7 @@ namespace Harp.OutputExpander
     [Flags]
     public enum PwmAndStimMapping : ushort
     {
+        None = 0x0,
         Pwm0ToOut1 = 0x1,
         Pwm0ToOut2 = 0x2,
         Pwm0ToOut3 = 0x4,
@@ -9930,8 +9933,9 @@ namespace Harp.OutputExpander
     /// Specifies the available PWM protocols.
     /// </summary>
     [Flags]
-    public enum Pwm : byte
+    public enum PwmChannels : byte
     {
+        None = 0x0,
         Pwm0 = 0x1,
         Pwm1 = 0x2,
         Pwm2 = 0x4
@@ -9941,8 +9945,9 @@ namespace Harp.OutputExpander
     /// Specifies the available Stim protocols.
     /// </summary>
     [Flags]
-    public enum Stim : byte
+    public enum StimChannels : byte
     {
+        None = 0x0,
         Stim0 = 0x1
     }
 
@@ -9958,7 +9963,7 @@ namespace Harp.OutputExpander
     /// <summary>
     /// Available trigger sources.
     /// </summary>
-    public enum TriggerSources : byte
+    public enum TriggerSource : byte
     {
         Software = 0,
         Aux0Rising = 1,
@@ -9972,18 +9977,9 @@ namespace Harp.OutputExpander
     }
 
     /// <summary>
-    /// The state of a configuration.
-    /// </summary>
-    public enum EnableFlag : byte
-    {
-        Disabled = 0,
-        Enabled = 1
-    }
-
-    /// <summary>
     /// Specifies the available expansion boards implemented.
     /// </summary>
-    public enum ExpansionBoardTypes : byte
+    public enum ExpansionBoardType : byte
     {
         Breakout = 0,
         Encoder = 1,
@@ -9996,13 +9992,13 @@ namespace Harp.OutputExpander
     /// <summary>
     /// Specifies the sampling rate of the encoder.
     /// </summary>
-    public enum EncoderSamplingRate : byte
+    public enum EncoderSamplingRateMode : byte
     {
-        At50Hz = 0,
-        At00Hz = 1,
-        At200Hz = 2,
-        At250Hz = 3,
-        At500Hz = 4,
-        At1000Hz = 5
+        SamplingRate50Hz = 0,
+        SamplingRate100Hz = 1,
+        SamplingRate200Hz = 2,
+        SamplingRate250Hz = 3,
+        SamplingRate500Hz = 4,
+        SamplingRate1000Hz = 5
     }
 }
