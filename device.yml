@@ -46,7 +46,7 @@ registers:
     address: 39
     type: U16
     access: Write
-    maskType: PwmAndStimMapping
+    maskType: PwmAndStimMappings
     description: Enables PWM and stimulation on the specified digital output lines.
   PwmAndStimDisable:
     <<: *pwmstimcontrol
@@ -343,7 +343,7 @@ bitMasks:
       Out7: 0x80
       Out8: 0x100
       Out9: 0x200
-  PwmAndStimMapping:
+  PwmAndStimMappings:
     description: Specifies the mapping PWM and Stimulation to digital output lines.
     bits:
       Pwm0ToOut1: 0x1
