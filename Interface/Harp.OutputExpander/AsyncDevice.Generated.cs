@@ -299,7 +299,7 @@ namespace Harp.OutputExpander
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the register payload.
         /// </returns>
-        public async Task<PwmAndStimMapping> ReadPwmAndStimEnableAsync()
+        public async Task<PwmAndStimMappings> ReadPwmAndStimEnableAsync()
         {
             var reply = await CommandAsync(HarpCommand.ReadUInt16(PwmAndStimEnable.Address));
             return PwmAndStimEnable.GetPayload(reply);
@@ -312,7 +312,7 @@ namespace Harp.OutputExpander
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<PwmAndStimMapping>> ReadTimestampedPwmAndStimEnableAsync()
+        public async Task<Timestamped<PwmAndStimMappings>> ReadTimestampedPwmAndStimEnableAsync()
         {
             var reply = await CommandAsync(HarpCommand.ReadUInt16(PwmAndStimEnable.Address));
             return PwmAndStimEnable.GetTimestampedPayload(reply);
@@ -323,7 +323,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="value">The value to be stored in the register.</param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WritePwmAndStimEnableAsync(PwmAndStimMapping value)
+        public async Task WritePwmAndStimEnableAsync(PwmAndStimMappings value)
         {
             var request = PwmAndStimEnable.FromPayload(MessageType.Write, value);
             await CommandAsync(request);
@@ -336,7 +336,7 @@ namespace Harp.OutputExpander
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the register payload.
         /// </returns>
-        public async Task<PwmAndStimMapping> ReadPwmAndStimDisableAsync()
+        public async Task<PwmAndStimMappings> ReadPwmAndStimDisableAsync()
         {
             var reply = await CommandAsync(HarpCommand.ReadUInt16(PwmAndStimDisable.Address));
             return PwmAndStimDisable.GetPayload(reply);
@@ -349,7 +349,7 @@ namespace Harp.OutputExpander
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<PwmAndStimMapping>> ReadTimestampedPwmAndStimDisableAsync()
+        public async Task<Timestamped<PwmAndStimMappings>> ReadTimestampedPwmAndStimDisableAsync()
         {
             var reply = await CommandAsync(HarpCommand.ReadUInt16(PwmAndStimDisable.Address));
             return PwmAndStimDisable.GetTimestampedPayload(reply);
@@ -360,7 +360,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="value">The value to be stored in the register.</param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WritePwmAndStimDisableAsync(PwmAndStimMapping value)
+        public async Task WritePwmAndStimDisableAsync(PwmAndStimMappings value)
         {
             var request = PwmAndStimDisable.FromPayload(MessageType.Write, value);
             await CommandAsync(request);
@@ -373,7 +373,7 @@ namespace Harp.OutputExpander
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the register payload.
         /// </returns>
-        public async Task<PwmAndStimMapping> ReadPwmAndStimStateAsync()
+        public async Task<PwmAndStimMappings> ReadPwmAndStimStateAsync()
         {
             var reply = await CommandAsync(HarpCommand.ReadUInt16(PwmAndStimState.Address));
             return PwmAndStimState.GetPayload(reply);
@@ -386,7 +386,7 @@ namespace Harp.OutputExpander
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<PwmAndStimMapping>> ReadTimestampedPwmAndStimStateAsync()
+        public async Task<Timestamped<PwmAndStimMappings>> ReadTimestampedPwmAndStimStateAsync()
         {
             var reply = await CommandAsync(HarpCommand.ReadUInt16(PwmAndStimState.Address));
             return PwmAndStimState.GetTimestampedPayload(reply);
@@ -397,7 +397,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="value">The value to be stored in the register.</param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WritePwmAndStimStateAsync(PwmAndStimMapping value)
+        public async Task WritePwmAndStimStateAsync(PwmAndStimMappings value)
         {
             var request = PwmAndStimState.FromPayload(MessageType.Write, value);
             await CommandAsync(request);

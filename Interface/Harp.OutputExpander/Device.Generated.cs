@@ -1327,9 +1327,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static PwmAndStimMapping GetPayload(HarpMessage message)
+        public static PwmAndStimMappings GetPayload(HarpMessage message)
         {
-            return (PwmAndStimMapping)message.GetPayloadUInt16();
+            return (PwmAndStimMappings)message.GetPayloadUInt16();
         }
 
         /// <summary>
@@ -1337,10 +1337,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<PwmAndStimMapping> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<PwmAndStimMappings> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadUInt16();
-            return Timestamped.Create((PwmAndStimMapping)payload.Value, payload.Seconds);
+            return Timestamped.Create((PwmAndStimMappings)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -1352,7 +1352,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimEnable"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, PwmAndStimMapping value)
+        public static HarpMessage FromPayload(MessageType messageType, PwmAndStimMappings value)
         {
             return HarpMessage.FromUInt16(Address, messageType, (ushort)value);
         }
@@ -1368,7 +1368,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimEnable"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmAndStimMapping value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmAndStimMappings value)
         {
             return HarpMessage.FromUInt16(Address, timestamp, messageType, (ushort)value);
         }
@@ -1392,7 +1392,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<PwmAndStimMapping> GetPayload(HarpMessage message)
+        public static Timestamped<PwmAndStimMappings> GetPayload(HarpMessage message)
         {
             return PwmAndStimEnable.GetTimestampedPayload(message);
         }
@@ -1424,9 +1424,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static PwmAndStimMapping GetPayload(HarpMessage message)
+        public static PwmAndStimMappings GetPayload(HarpMessage message)
         {
-            return (PwmAndStimMapping)message.GetPayloadUInt16();
+            return (PwmAndStimMappings)message.GetPayloadUInt16();
         }
 
         /// <summary>
@@ -1434,10 +1434,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<PwmAndStimMapping> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<PwmAndStimMappings> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadUInt16();
-            return Timestamped.Create((PwmAndStimMapping)payload.Value, payload.Seconds);
+            return Timestamped.Create((PwmAndStimMappings)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -1449,7 +1449,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimDisable"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, PwmAndStimMapping value)
+        public static HarpMessage FromPayload(MessageType messageType, PwmAndStimMappings value)
         {
             return HarpMessage.FromUInt16(Address, messageType, (ushort)value);
         }
@@ -1465,7 +1465,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimDisable"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmAndStimMapping value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmAndStimMappings value)
         {
             return HarpMessage.FromUInt16(Address, timestamp, messageType, (ushort)value);
         }
@@ -1489,7 +1489,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<PwmAndStimMapping> GetPayload(HarpMessage message)
+        public static Timestamped<PwmAndStimMappings> GetPayload(HarpMessage message)
         {
             return PwmAndStimDisable.GetTimestampedPayload(message);
         }
@@ -1521,9 +1521,9 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static PwmAndStimMapping GetPayload(HarpMessage message)
+        public static PwmAndStimMappings GetPayload(HarpMessage message)
         {
-            return (PwmAndStimMapping)message.GetPayloadUInt16();
+            return (PwmAndStimMappings)message.GetPayloadUInt16();
         }
 
         /// <summary>
@@ -1531,10 +1531,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<PwmAndStimMapping> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<PwmAndStimMappings> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadUInt16();
-            return Timestamped.Create((PwmAndStimMapping)payload.Value, payload.Seconds);
+            return Timestamped.Create((PwmAndStimMappings)payload.Value, payload.Seconds);
         }
 
         /// <summary>
@@ -1546,7 +1546,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimState"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, PwmAndStimMapping value)
+        public static HarpMessage FromPayload(MessageType messageType, PwmAndStimMappings value)
         {
             return HarpMessage.FromUInt16(Address, messageType, (ushort)value);
         }
@@ -1562,7 +1562,7 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="PwmAndStimState"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmAndStimMapping value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, PwmAndStimMappings value)
         {
             return HarpMessage.FromUInt16(Address, timestamp, messageType, (ushort)value);
         }
@@ -1586,7 +1586,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<PwmAndStimMapping> GetPayload(HarpMessage message)
+        public static Timestamped<PwmAndStimMappings> GetPayload(HarpMessage message)
         {
             return PwmAndStimState.GetTimestampedPayload(message);
         }
@@ -7192,7 +7192,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that enables PWM and stimulation on the specified digital output lines.
         /// </summary>
         [Description("The value that enables PWM and stimulation on the specified digital output lines.")]
-        public PwmAndStimMapping Value { get; set; }
+        public PwmAndStimMappings Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -7240,7 +7240,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that disables PWM and stimulation on the specified digital output lines.
         /// </summary>
         [Description("The value that disables PWM and stimulation on the specified digital output lines.")]
-        public PwmAndStimMapping Value { get; set; }
+        public PwmAndStimMappings Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -7288,7 +7288,7 @@ namespace Harp.OutputExpander
         /// Gets or sets the value that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.
         /// </summary>
         [Description("The value that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.")]
-        public PwmAndStimMapping Value { get; set; }
+        public PwmAndStimMappings Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -9915,7 +9915,7 @@ namespace Harp.OutputExpander
     /// Specifies the mapping PWM and Stimulation to digital output lines.
     /// </summary>
     [Flags]
-    public enum PwmAndStimMapping : ushort
+    public enum PwmAndStimMappings : ushort
     {
         None = 0x0,
         Pwm0ToOut1 = 0x1,
