@@ -289,11 +289,11 @@ registers:
       Magnitude:
         offset: 1
         description: The magnitude of the magnetic field.
-  EncoderSamplingRate:
+  MagneticEncoderSamplingRate:
     address: 91
     type: U8
     access: Write
-    maskType: EncoderSamplingRateMode
+    maskType: MagneticEncoderSamplingRateMode
     description: Sets the sampling rate of the magnetic encoder.
   Reserved2:
     <<: *reserved
@@ -406,12 +406,12 @@ groupMasks:
     description: Specifies the available expansion boards implemented.
     values:
       Breakout: 0
-      Encoder: 1
+      MagneticEncoder: 1
       ServoMotor1: 2
       ServoMotor2: 3
       ServoMotor3: 4
       OpticalFlow: 5
-  EncoderSamplingRateMode:
+  MagneticEncoderSamplingRateMode:
     description: Specifies the sampling rate of the encoder.
     values:
       SamplingRate50Hz: 0
