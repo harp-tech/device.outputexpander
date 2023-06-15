@@ -2066,39 +2066,39 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the MagneticEncoderSamplingRate register.
+        /// Asynchronously reads the contents of the MagneticEncoderSampleRate register.
         /// </summary>
         /// <returns>
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the register payload.
         /// </returns>
-        public async Task<MagneticEncoderSamplingRateMode> ReadMagneticEncoderSamplingRateAsync()
+        public async Task<MagneticEncoderSampleRateMode> ReadMagneticEncoderSampleRateAsync()
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(MagneticEncoderSamplingRate.Address));
-            return MagneticEncoderSamplingRate.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(MagneticEncoderSampleRate.Address));
+            return MagneticEncoderSampleRate.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the MagneticEncoderSamplingRate register.
+        /// Asynchronously reads the timestamped contents of the MagneticEncoderSampleRate register.
         /// </summary>
         /// <returns>
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<MagneticEncoderSamplingRateMode>> ReadTimestampedMagneticEncoderSamplingRateAsync()
+        public async Task<Timestamped<MagneticEncoderSampleRateMode>> ReadTimestampedMagneticEncoderSampleRateAsync()
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(MagneticEncoderSamplingRate.Address));
-            return MagneticEncoderSamplingRate.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(MagneticEncoderSampleRate.Address));
+            return MagneticEncoderSampleRate.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the MagneticEncoderSamplingRate register.
+        /// Asynchronously writes a value to the MagneticEncoderSampleRate register.
         /// </summary>
         /// <param name="value">The value to be stored in the register.</param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteMagneticEncoderSamplingRateAsync(MagneticEncoderSamplingRateMode value)
+        public async Task WriteMagneticEncoderSampleRateAsync(MagneticEncoderSampleRateMode value)
         {
-            var request = MagneticEncoderSamplingRate.FromPayload(MessageType.Write, value);
+            var request = MagneticEncoderSampleRate.FromPayload(MessageType.Write, value);
             await CommandAsync(request);
         }
 

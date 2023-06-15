@@ -94,7 +94,7 @@ namespace Harp.OutputExpander
             { 86, typeof(Out9PulseWidth) },
             { 87, typeof(ExpansionBoard) },
             { 90, typeof(MagneticEncoder) },
-            { 91, typeof(MagneticEncoderSamplingRate) },
+            { 91, typeof(MagneticEncoderSampleRate) },
             { 94, typeof(ServoPeriod) },
             { 95, typeof(Servo0PulseWidth) },
             { 96, typeof(Servo1PulseWidth) },
@@ -185,7 +185,7 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
     /// <seealso cref="MagneticEncoder"/>
-    /// <seealso cref="MagneticEncoderSamplingRate"/>
+    /// <seealso cref="MagneticEncoderSampleRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
     /// <seealso cref="Servo1PulseWidth"/>
@@ -248,7 +248,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
     [XmlInclude(typeof(MagneticEncoder))]
-    [XmlInclude(typeof(MagneticEncoderSamplingRate))]
+    [XmlInclude(typeof(MagneticEncoderSampleRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
     [XmlInclude(typeof(Servo1PulseWidth))]
@@ -332,7 +332,7 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
     /// <seealso cref="MagneticEncoder"/>
-    /// <seealso cref="MagneticEncoderSamplingRate"/>
+    /// <seealso cref="MagneticEncoderSampleRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
     /// <seealso cref="Servo1PulseWidth"/>
@@ -395,7 +395,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
     [XmlInclude(typeof(MagneticEncoder))]
-    [XmlInclude(typeof(MagneticEncoderSamplingRate))]
+    [XmlInclude(typeof(MagneticEncoderSampleRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
     [XmlInclude(typeof(Servo1PulseWidth))]
@@ -458,7 +458,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(TimestampedOut9PulseWidth))]
     [XmlInclude(typeof(TimestampedExpansionBoard))]
     [XmlInclude(typeof(TimestampedMagneticEncoder))]
-    [XmlInclude(typeof(TimestampedMagneticEncoderSamplingRate))]
+    [XmlInclude(typeof(TimestampedMagneticEncoderSampleRate))]
     [XmlInclude(typeof(TimestampedServoPeriod))]
     [XmlInclude(typeof(TimestampedServo0PulseWidth))]
     [XmlInclude(typeof(TimestampedServo1PulseWidth))]
@@ -539,7 +539,7 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
     /// <seealso cref="MagneticEncoder"/>
-    /// <seealso cref="MagneticEncoderSamplingRate"/>
+    /// <seealso cref="MagneticEncoderSampleRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
     /// <seealso cref="Servo1PulseWidth"/>
@@ -602,7 +602,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
     [XmlInclude(typeof(MagneticEncoder))]
-    [XmlInclude(typeof(MagneticEncoderSamplingRate))]
+    [XmlInclude(typeof(MagneticEncoderSampleRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
     [XmlInclude(typeof(Servo1PulseWidth))]
@@ -6141,73 +6141,73 @@ namespace Harp.OutputExpander
     }
 
     /// <summary>
-    /// Represents a register that sets the sampling rate of the magnetic encoder.
+    /// Represents a register that sets the sample rate of the magnetic encoder.
     /// </summary>
-    [Description("Sets the sampling rate of the magnetic encoder.")]
-    public partial class MagneticEncoderSamplingRate
+    [Description("Sets the sample rate of the magnetic encoder.")]
+    public partial class MagneticEncoderSampleRate
     {
         /// <summary>
-        /// Represents the address of the <see cref="MagneticEncoderSamplingRate"/> register. This field is constant.
+        /// Represents the address of the <see cref="MagneticEncoderSampleRate"/> register. This field is constant.
         /// </summary>
         public const int Address = 91;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="MagneticEncoderSamplingRate"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="MagneticEncoderSampleRate"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="MagneticEncoderSamplingRate"/> register. This field is constant.
+        /// Represents the length of the <see cref="MagneticEncoderSampleRate"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="MagneticEncoderSamplingRate"/> register messages.
+        /// Returns the payload data for <see cref="MagneticEncoderSampleRate"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static MagneticEncoderSamplingRateMode GetPayload(HarpMessage message)
+        public static MagneticEncoderSampleRateMode GetPayload(HarpMessage message)
         {
-            return (MagneticEncoderSamplingRateMode)message.GetPayloadByte();
+            return (MagneticEncoderSampleRateMode)message.GetPayloadByte();
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="MagneticEncoderSamplingRate"/> register messages.
+        /// Returns the timestamped payload data for <see cref="MagneticEncoderSampleRate"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<MagneticEncoderSamplingRateMode> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<MagneticEncoderSampleRateMode> GetTimestampedPayload(HarpMessage message)
         {
             var payload = message.GetTimestampedPayloadByte();
-            return Timestamped.Create((MagneticEncoderSamplingRateMode)payload.Value, payload.Seconds);
+            return Timestamped.Create((MagneticEncoderSampleRateMode)payload.Value, payload.Seconds);
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="MagneticEncoderSamplingRate"/> register.
+        /// Returns a Harp message for the <see cref="MagneticEncoderSampleRate"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="MagneticEncoderSamplingRate"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="MagneticEncoderSampleRate"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, MagneticEncoderSamplingRateMode value)
+        public static HarpMessage FromPayload(MessageType messageType, MagneticEncoderSampleRateMode value)
         {
             return HarpMessage.FromByte(Address, messageType, (byte)value);
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="MagneticEncoderSamplingRate"/>
+        /// Returns a timestamped Harp message for the <see cref="MagneticEncoderSampleRate"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="MagneticEncoderSamplingRate"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="MagneticEncoderSampleRate"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, MagneticEncoderSamplingRateMode value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, MagneticEncoderSampleRateMode value)
         {
             return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
         }
@@ -6215,25 +6215,25 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// MagneticEncoderSamplingRate register.
+    /// MagneticEncoderSampleRate register.
     /// </summary>
-    /// <seealso cref="MagneticEncoderSamplingRate"/>
-    [Description("Filters and selects timestamped messages from the MagneticEncoderSamplingRate register.")]
-    public partial class TimestampedMagneticEncoderSamplingRate
+    /// <seealso cref="MagneticEncoderSampleRate"/>
+    [Description("Filters and selects timestamped messages from the MagneticEncoderSampleRate register.")]
+    public partial class TimestampedMagneticEncoderSampleRate
     {
         /// <summary>
-        /// Represents the address of the <see cref="MagneticEncoderSamplingRate"/> register. This field is constant.
+        /// Represents the address of the <see cref="MagneticEncoderSampleRate"/> register. This field is constant.
         /// </summary>
-        public const int Address = MagneticEncoderSamplingRate.Address;
+        public const int Address = MagneticEncoderSampleRate.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="MagneticEncoderSamplingRate"/> register messages.
+        /// Returns timestamped payload data for <see cref="MagneticEncoderSampleRate"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<MagneticEncoderSamplingRateMode> GetPayload(HarpMessage message)
+        public static Timestamped<MagneticEncoderSampleRateMode> GetPayload(HarpMessage message)
         {
-            return MagneticEncoderSamplingRate.GetTimestampedPayload(message);
+            return MagneticEncoderSampleRate.GetTimestampedPayload(message);
         }
     }
 
@@ -6798,7 +6798,7 @@ namespace Harp.OutputExpander
     /// <seealso cref="CreateOut9PulseWidthPayload"/>
     /// <seealso cref="CreateExpansionBoardPayload"/>
     /// <seealso cref="CreateMagneticEncoderPayload"/>
-    /// <seealso cref="CreateMagneticEncoderSamplingRatePayload"/>
+    /// <seealso cref="CreateMagneticEncoderSampleRatePayload"/>
     /// <seealso cref="CreateServoPeriodPayload"/>
     /// <seealso cref="CreateServo0PulseWidthPayload"/>
     /// <seealso cref="CreateServo1PulseWidthPayload"/>
@@ -6861,7 +6861,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(CreateOut9PulseWidthPayload))]
     [XmlInclude(typeof(CreateExpansionBoardPayload))]
     [XmlInclude(typeof(CreateMagneticEncoderPayload))]
-    [XmlInclude(typeof(CreateMagneticEncoderSamplingRatePayload))]
+    [XmlInclude(typeof(CreateMagneticEncoderSampleRatePayload))]
     [XmlInclude(typeof(CreateServoPeriodPayload))]
     [XmlInclude(typeof(CreateServo0PulseWidthPayload))]
     [XmlInclude(typeof(CreateServo1PulseWidthPayload))]
@@ -9643,22 +9643,22 @@ namespace Harp.OutputExpander
 
     /// <summary>
     /// Represents an operator that creates a sequence of message payloads
-    /// that sets the sampling rate of the magnetic encoder.
+    /// that sets the sample rate of the magnetic encoder.
     /// </summary>
-    [DisplayName("MagneticEncoderSamplingRatePayload")]
+    [DisplayName("MagneticEncoderSampleRatePayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that sets the sampling rate of the magnetic encoder.")]
-    public partial class CreateMagneticEncoderSamplingRatePayload : HarpCombinator
+    [Description("Creates a sequence of message payloads that sets the sample rate of the magnetic encoder.")]
+    public partial class CreateMagneticEncoderSampleRatePayload : HarpCombinator
     {
         /// <summary>
-        /// Gets or sets the value that sets the sampling rate of the magnetic encoder.
+        /// Gets or sets the value that sets the sample rate of the magnetic encoder.
         /// </summary>
-        [Description("The value that sets the sampling rate of the magnetic encoder.")]
-        public MagneticEncoderSamplingRateMode Value { get; set; }
+        [Description("The value that sets the sample rate of the magnetic encoder.")]
+        public MagneticEncoderSampleRateMode Value { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
-        /// that sets the sampling rate of the magnetic encoder.
+        /// that sets the sample rate of the magnetic encoder.
         /// </summary>
         /// <returns>
         /// A sequence containing a single <see cref="HarpMessage"/> object
@@ -9671,7 +9671,7 @@ namespace Harp.OutputExpander
 
         /// <summary>
         /// Creates an observable sequence of message payloads
-        /// that sets the sampling rate of the magnetic encoder.
+        /// that sets the sample rate of the magnetic encoder.
         /// </summary>
         /// <typeparam name="TSource">
         /// The type of the elements in the <paramref name="source"/> sequence.
@@ -9685,7 +9685,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => MagneticEncoderSamplingRate.FromPayload(MessageType, Value));
+            return source.Select(_ => MagneticEncoderSampleRate.FromPayload(MessageType, Value));
         }
     }
 
@@ -10125,15 +10125,15 @@ namespace Harp.OutputExpander
     }
 
     /// <summary>
-    /// Specifies the sampling rate of the encoder.
+    /// Specifies the sample rate of the encoder.
     /// </summary>
-    public enum MagneticEncoderSamplingRateMode : byte
+    public enum MagneticEncoderSampleRateMode : byte
     {
-        SamplingRate50Hz = 0,
-        SamplingRate100Hz = 1,
-        SamplingRate200Hz = 2,
-        SamplingRate250Hz = 3,
-        SamplingRate500Hz = 4,
-        SamplingRate1000Hz = 5
+        SampleRate50Hz = 0,
+        SampleRate100Hz = 1,
+        SampleRate200Hz = 2,
+        SampleRate250Hz = 3,
+        SampleRate500Hz = 4,
+        SampleRate1000Hz = 5
     }
 }
