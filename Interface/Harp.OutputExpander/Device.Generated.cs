@@ -93,7 +93,7 @@ namespace Harp.OutputExpander
             { 85, typeof(Out8PulseWidth) },
             { 86, typeof(Out9PulseWidth) },
             { 87, typeof(ExpansionBoard) },
-            { 90, typeof(Encoder) },
+            { 90, typeof(MagneticEncoder) },
             { 91, typeof(EncoderSamplingRate) },
             { 94, typeof(ServoPeriod) },
             { 95, typeof(Servo0PulseWidth) },
@@ -184,7 +184,7 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out8PulseWidth"/>
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
-    /// <seealso cref="Encoder"/>
+    /// <seealso cref="MagneticEncoder"/>
     /// <seealso cref="EncoderSamplingRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
@@ -247,7 +247,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out8PulseWidth))]
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
-    [XmlInclude(typeof(Encoder))]
+    [XmlInclude(typeof(MagneticEncoder))]
     [XmlInclude(typeof(EncoderSamplingRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
@@ -331,7 +331,7 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out8PulseWidth"/>
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
-    /// <seealso cref="Encoder"/>
+    /// <seealso cref="MagneticEncoder"/>
     /// <seealso cref="EncoderSamplingRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
@@ -394,7 +394,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out8PulseWidth))]
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
-    [XmlInclude(typeof(Encoder))]
+    [XmlInclude(typeof(MagneticEncoder))]
     [XmlInclude(typeof(EncoderSamplingRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
@@ -457,7 +457,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(TimestampedOut8PulseWidth))]
     [XmlInclude(typeof(TimestampedOut9PulseWidth))]
     [XmlInclude(typeof(TimestampedExpansionBoard))]
-    [XmlInclude(typeof(TimestampedEncoder))]
+    [XmlInclude(typeof(TimestampedMagneticEncoder))]
     [XmlInclude(typeof(TimestampedEncoderSamplingRate))]
     [XmlInclude(typeof(TimestampedServoPeriod))]
     [XmlInclude(typeof(TimestampedServo0PulseWidth))]
@@ -538,7 +538,7 @@ namespace Harp.OutputExpander
     /// <seealso cref="Out8PulseWidth"/>
     /// <seealso cref="Out9PulseWidth"/>
     /// <seealso cref="ExpansionBoard"/>
-    /// <seealso cref="Encoder"/>
+    /// <seealso cref="MagneticEncoder"/>
     /// <seealso cref="EncoderSamplingRate"/>
     /// <seealso cref="ServoPeriod"/>
     /// <seealso cref="Servo0PulseWidth"/>
@@ -601,7 +601,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Out8PulseWidth))]
     [XmlInclude(typeof(Out9PulseWidth))]
     [XmlInclude(typeof(ExpansionBoard))]
-    [XmlInclude(typeof(Encoder))]
+    [XmlInclude(typeof(MagneticEncoder))]
     [XmlInclude(typeof(EncoderSamplingRate))]
     [XmlInclude(typeof(ServoPeriod))]
     [XmlInclude(typeof(Servo0PulseWidth))]
@@ -6030,95 +6030,113 @@ namespace Harp.OutputExpander
     /// Represents a register that generated event with the latest read from the magnetic encoder.
     /// </summary>
     [Description("Generated event with the latest read from the magnetic encoder.")]
-    public partial class Encoder
+    public partial class MagneticEncoder
     {
         /// <summary>
-        /// Represents the address of the <see cref="Encoder"/> register. This field is constant.
+        /// Represents the address of the <see cref="MagneticEncoder"/> register. This field is constant.
         /// </summary>
         public const int Address = 90;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="Encoder"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="MagneticEncoder"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U16;
 
         /// <summary>
-        /// Represents the length of the <see cref="Encoder"/> register. This field is constant.
+        /// Represents the length of the <see cref="MagneticEncoder"/> register. This field is constant.
         /// </summary>
-        public const int RegisterLength = 1;
+        public const int RegisterLength = 2;
+
+        static MagneticEncoderPayload ParsePayload(ushort[] payload)
+        {
+            MagneticEncoderPayload result;
+            result.Angle = payload[0];
+            result.Magnitude = payload[1];
+            return result;
+        }
+
+        static ushort[] FormatPayload(MagneticEncoderPayload value)
+        {
+            ushort[] result;
+            result = new ushort[2];
+            result[0] = value.Angle;
+            result[1] = value.Magnitude;
+            return result;
+        }
 
         /// <summary>
-        /// Returns the payload data for <see cref="Encoder"/> register messages.
+        /// Returns the payload data for <see cref="MagneticEncoder"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static ushort GetPayload(HarpMessage message)
+        public static MagneticEncoderPayload GetPayload(HarpMessage message)
         {
-            return message.GetPayloadUInt16();
+            return ParsePayload(message.GetPayloadArray<ushort>());
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="Encoder"/> register messages.
+        /// Returns the timestamped payload data for <see cref="MagneticEncoder"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<ushort> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<MagneticEncoderPayload> GetTimestampedPayload(HarpMessage message)
         {
-            return message.GetTimestampedPayloadUInt16();
+            var payload = message.GetTimestampedPayloadArray<ushort>();
+            return Timestamped.Create(ParsePayload(payload.Value), payload.Seconds);
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="Encoder"/> register.
+        /// Returns a Harp message for the <see cref="MagneticEncoder"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Encoder"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="MagneticEncoder"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, ushort value)
+        public static HarpMessage FromPayload(MessageType messageType, MagneticEncoderPayload value)
         {
-            return HarpMessage.FromUInt16(Address, messageType, value);
+            return HarpMessage.FromUInt16(Address, messageType, FormatPayload(value));
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="Encoder"/>
+        /// Returns a timestamped Harp message for the <see cref="MagneticEncoder"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="Encoder"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="MagneticEncoder"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, ushort value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, MagneticEncoderPayload value)
         {
-            return HarpMessage.FromUInt16(Address, timestamp, messageType, value);
+            return HarpMessage.FromUInt16(Address, timestamp, messageType, FormatPayload(value));
         }
     }
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// Encoder register.
+    /// MagneticEncoder register.
     /// </summary>
-    /// <seealso cref="Encoder"/>
-    [Description("Filters and selects timestamped messages from the Encoder register.")]
-    public partial class TimestampedEncoder
+    /// <seealso cref="MagneticEncoder"/>
+    [Description("Filters and selects timestamped messages from the MagneticEncoder register.")]
+    public partial class TimestampedMagneticEncoder
     {
         /// <summary>
-        /// Represents the address of the <see cref="Encoder"/> register. This field is constant.
+        /// Represents the address of the <see cref="MagneticEncoder"/> register. This field is constant.
         /// </summary>
-        public const int Address = Encoder.Address;
+        public const int Address = MagneticEncoder.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="Encoder"/> register messages.
+        /// Returns timestamped payload data for <see cref="MagneticEncoder"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<ushort> GetPayload(HarpMessage message)
+        public static Timestamped<MagneticEncoderPayload> GetPayload(HarpMessage message)
         {
-            return Encoder.GetTimestampedPayload(message);
+            return MagneticEncoder.GetTimestampedPayload(message);
         }
     }
 
@@ -6622,16 +6640,35 @@ namespace Harp.OutputExpander
         /// <summary>
         /// Represents the length of the <see cref="OpticalFlow"/> register. This field is constant.
         /// </summary>
-        public const int RegisterLength = 1;
+        public const int RegisterLength = 3;
+
+        static OpticalFlowPayload ParsePayload(short[] payload)
+        {
+            OpticalFlowPayload result;
+            result.DeltaX = payload[0];
+            result.DeltaY = payload[1];
+            result.Squal = payload[2];
+            return result;
+        }
+
+        static short[] FormatPayload(OpticalFlowPayload value)
+        {
+            short[] result;
+            result = new short[3];
+            result[0] = value.DeltaX;
+            result[1] = value.DeltaY;
+            result[2] = value.Squal;
+            return result;
+        }
 
         /// <summary>
         /// Returns the payload data for <see cref="OpticalFlow"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static short GetPayload(HarpMessage message)
+        public static OpticalFlowPayload GetPayload(HarpMessage message)
         {
-            return message.GetPayloadInt16();
+            return ParsePayload(message.GetPayloadArray<short>());
         }
 
         /// <summary>
@@ -6639,9 +6676,10 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<short> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<OpticalFlowPayload> GetTimestampedPayload(HarpMessage message)
         {
-            return message.GetTimestampedPayloadInt16();
+            var payload = message.GetTimestampedPayloadArray<short>();
+            return Timestamped.Create(ParsePayload(payload.Value), payload.Seconds);
         }
 
         /// <summary>
@@ -6653,9 +6691,9 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="OpticalFlow"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, short value)
+        public static HarpMessage FromPayload(MessageType messageType, OpticalFlowPayload value)
         {
-            return HarpMessage.FromInt16(Address, messageType, value);
+            return HarpMessage.FromInt16(Address, messageType, FormatPayload(value));
         }
 
         /// <summary>
@@ -6669,9 +6707,9 @@ namespace Harp.OutputExpander
         /// A <see cref="HarpMessage"/> object for the <see cref="OpticalFlow"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, short value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, OpticalFlowPayload value)
         {
-            return HarpMessage.FromInt16(Address, timestamp, messageType, value);
+            return HarpMessage.FromInt16(Address, timestamp, messageType, FormatPayload(value));
         }
     }
 
@@ -6693,7 +6731,7 @@ namespace Harp.OutputExpander
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<short> GetPayload(HarpMessage message)
+        public static Timestamped<OpticalFlowPayload> GetPayload(HarpMessage message)
         {
             return OpticalFlow.GetTimestampedPayload(message);
         }
@@ -6759,7 +6797,7 @@ namespace Harp.OutputExpander
     /// <seealso cref="CreateOut8PulseWidthPayload"/>
     /// <seealso cref="CreateOut9PulseWidthPayload"/>
     /// <seealso cref="CreateExpansionBoardPayload"/>
-    /// <seealso cref="CreateEncoderPayload"/>
+    /// <seealso cref="CreateMagneticEncoderPayload"/>
     /// <seealso cref="CreateEncoderSamplingRatePayload"/>
     /// <seealso cref="CreateServoPeriodPayload"/>
     /// <seealso cref="CreateServo0PulseWidthPayload"/>
@@ -6822,7 +6860,7 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(CreateOut8PulseWidthPayload))]
     [XmlInclude(typeof(CreateOut9PulseWidthPayload))]
     [XmlInclude(typeof(CreateExpansionBoardPayload))]
-    [XmlInclude(typeof(CreateEncoderPayload))]
+    [XmlInclude(typeof(CreateMagneticEncoderPayload))]
     [XmlInclude(typeof(CreateEncoderSamplingRatePayload))]
     [XmlInclude(typeof(CreateServoPeriodPayload))]
     [XmlInclude(typeof(CreateServo0PulseWidthPayload))]
@@ -9547,16 +9585,22 @@ namespace Harp.OutputExpander
     /// Represents an operator that creates a sequence of message payloads
     /// that generated event with the latest read from the magnetic encoder.
     /// </summary>
-    [DisplayName("EncoderPayload")]
+    [DisplayName("MagneticEncoderPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     [Description("Creates a sequence of message payloads that generated event with the latest read from the magnetic encoder.")]
-    public partial class CreateEncoderPayload : HarpCombinator
+    public partial class CreateMagneticEncoderPayload : HarpCombinator
     {
         /// <summary>
-        /// Gets or sets the value that generated event with the latest read from the magnetic encoder.
+        /// Gets or sets a value that the angle position measurement of the magnetic encoder.
         /// </summary>
-        [Description("The value that generated event with the latest read from the magnetic encoder.")]
-        public ushort Value { get; set; }
+        [Description("The angle position measurement of the magnetic encoder.")]
+        public ushort Angle { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value that the magnitude of the magnetic field.
+        /// </summary>
+        [Description("The magnitude of the magnetic field.")]
+        public ushort Magnitude { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -9587,7 +9631,13 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => Encoder.FromPayload(MessageType, Value));
+            return source.Select(_ =>
+            {
+                MagneticEncoderPayload value;
+                value.Angle = Angle;
+                value.Magnitude = Magnitude;
+                return MagneticEncoder.FromPayload(MessageType, value);
+            });
         }
     }
 
@@ -9841,10 +9891,22 @@ namespace Harp.OutputExpander
     public partial class CreateOpticalFlowPayload : HarpCombinator
     {
         /// <summary>
-        /// Gets or sets the value that generated event with the latest read from the optical flow sensor.
+        /// Gets or sets a value that the movement in the X axis.
         /// </summary>
-        [Description("The value that generated event with the latest read from the optical flow sensor.")]
-        public short Value { get; set; }
+        [Description("The movement in the X axis.")]
+        public short DeltaX { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value that the movement in the Y axis.
+        /// </summary>
+        [Description("The movement in the Y axis.")]
+        public short DeltaY { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value that the measure of the number of features visible by the sensor.
+        /// </summary>
+        [Description("The measure of the number of features visible by the sensor.")]
+        public short Squal { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
@@ -9875,8 +9937,81 @@ namespace Harp.OutputExpander
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => OpticalFlow.FromPayload(MessageType, Value));
+            return source.Select(_ =>
+            {
+                OpticalFlowPayload value;
+                value.DeltaX = DeltaX;
+                value.DeltaY = DeltaY;
+                value.Squal = Squal;
+                return OpticalFlow.FromPayload(MessageType, value);
+            });
         }
+    }
+
+    /// <summary>
+    /// Represents the payload of the MagneticEncoder register.
+    /// </summary>
+    public struct MagneticEncoderPayload
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MagneticEncoderPayload"/> structure.
+        /// </summary>
+        /// <param name="angle">The angle position measurement of the magnetic encoder.</param>
+        /// <param name="magnitude">The magnitude of the magnetic field.</param>
+        public MagneticEncoderPayload(
+            ushort angle,
+            ushort magnitude)
+        {
+            Angle = angle;
+            Magnitude = magnitude;
+        }
+
+        /// <summary>
+        /// The angle position measurement of the magnetic encoder.
+        /// </summary>
+        public ushort Angle;
+
+        /// <summary>
+        /// The magnitude of the magnetic field.
+        /// </summary>
+        public ushort Magnitude;
+    }
+
+    /// <summary>
+    /// Represents the payload of the OpticalFlow register.
+    /// </summary>
+    public struct OpticalFlowPayload
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpticalFlowPayload"/> structure.
+        /// </summary>
+        /// <param name="deltaX">The movement in the X axis.</param>
+        /// <param name="deltaY">The movement in the Y axis.</param>
+        /// <param name="squal">The measure of the number of features visible by the sensor.</param>
+        public OpticalFlowPayload(
+            short deltaX,
+            short deltaY,
+            short squal)
+        {
+            DeltaX = deltaX;
+            DeltaY = deltaY;
+            Squal = squal;
+        }
+
+        /// <summary>
+        /// The movement in the X axis.
+        /// </summary>
+        public short DeltaX;
+
+        /// <summary>
+        /// The movement in the Y axis.
+        /// </summary>
+        public short DeltaY;
+
+        /// <summary>
+        /// The measure of the number of features visible by the sensor.
+        /// </summary>
+        public short Squal;
     }
 
     /// <summary>

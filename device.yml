@@ -276,11 +276,19 @@ registers:
   Reserved1:
     <<: *reserved
     address: 89
-  Encoder:
+  MagneticEncoder:
     address: 90
     type: U16
+    length: 2
     access: Event
     description: Generated event with the latest read from the magnetic encoder.
+    payloadSpec:
+      Angle:
+        offset: 0
+        description: The angle position measurement of the magnetic encoder.
+      Magnitude:
+        offset: 1
+        description: The magnitude of the magnetic field.
   EncoderSamplingRate:
     address: 91
     type: U8
@@ -320,8 +328,19 @@ registers:
   OpticalFlow:
     address: 100
     type: S16
+    length: 3
     access: Event
     description: Generated event with the latest read from the optical flow sensor.
+    payloadSpec:
+      DeltaX:
+        offset: 0
+        description: The movement in the X axis.
+      DeltaY:
+        offset: 1
+        description: The movement in the Y axis.
+      Squal:
+        offset: 2
+        description: The measure of the number of features visible by the sensor.
 bitMasks:
   AuxiliaryInputs:
     bits:

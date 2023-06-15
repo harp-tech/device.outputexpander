@@ -2040,29 +2040,29 @@ namespace Harp.OutputExpander
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the Encoder register.
+        /// Asynchronously reads the contents of the MagneticEncoder register.
         /// </summary>
         /// <returns>
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the register payload.
         /// </returns>
-        public async Task<ushort> ReadEncoderAsync()
+        public async Task<MagneticEncoderPayload> ReadMagneticEncoderAsync()
         {
-            var reply = await CommandAsync(HarpCommand.ReadUInt16(Encoder.Address));
-            return Encoder.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadUInt16(MagneticEncoder.Address));
+            return MagneticEncoder.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the Encoder register.
+        /// Asynchronously reads the timestamped contents of the MagneticEncoder register.
         /// </summary>
         /// <returns>
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<ushort>> ReadTimestampedEncoderAsync()
+        public async Task<Timestamped<MagneticEncoderPayload>> ReadTimestampedMagneticEncoderAsync()
         {
-            var reply = await CommandAsync(HarpCommand.ReadUInt16(Encoder.Address));
-            return Encoder.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadUInt16(MagneticEncoder.Address));
+            return MagneticEncoder.GetTimestampedPayload(reply);
         }
 
         /// <summary>
@@ -2257,7 +2257,7 @@ namespace Harp.OutputExpander
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the register payload.
         /// </returns>
-        public async Task<short> ReadOpticalFlowAsync()
+        public async Task<OpticalFlowPayload> ReadOpticalFlowAsync()
         {
             var reply = await CommandAsync(HarpCommand.ReadInt16(OpticalFlow.Address));
             return OpticalFlow.GetPayload(reply);
@@ -2270,7 +2270,7 @@ namespace Harp.OutputExpander
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<short>> ReadTimestampedOpticalFlowAsync()
+        public async Task<Timestamped<OpticalFlowPayload>> ReadTimestampedOpticalFlowAsync()
         {
             var reply = await CommandAsync(HarpCommand.ReadInt16(OpticalFlow.Address));
             return OpticalFlow.GetTimestampedPayload(reply);
