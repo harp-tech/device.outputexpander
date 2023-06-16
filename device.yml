@@ -276,17 +276,25 @@ registers:
   Reserved1:
     <<: *reserved
     address: 89
-  Encoder:
+  MagneticEncoder:
     address: 90
     type: U16
+    length: 2
     access: Event
     description: Generated event with the latest read from the magnetic encoder.
-  EncoderSamplingRate:
+    payloadSpec:
+      Angle:
+        offset: 0
+        description: The angle position measurement of the magnetic encoder.
+      Magnitude:
+        offset: 1
+        description: The magnitude of the magnetic field.
+  MagneticEncoderSampleRate:
     address: 91
     type: U8
     access: Write
-    maskType: EncoderSamplingRateMode
-    description: Sets the sampling rate of the magnetic encoder.
+    maskType: MagneticEncoderSampleRateMode
+    description: Sets the sample rate of the magnetic encoder.
   Reserved2:
     <<: *reserved
     address: 92
@@ -320,8 +328,19 @@ registers:
   OpticalFlow:
     address: 100
     type: S16
+    length: 3
     access: Event
     description: Generated event with the latest read from the optical flow sensor.
+    payloadSpec:
+      DeltaX:
+        offset: 0
+        description: The movement in the X axis.
+      DeltaY:
+        offset: 1
+        description: The movement in the Y axis.
+      Squal:
+        offset: 2
+        description: The measure of the number of features visible by the sensor.
 bitMasks:
   AuxiliaryInputs:
     bits:
@@ -387,17 +406,17 @@ groupMasks:
     description: Specifies the available expansion boards implemented.
     values:
       Breakout: 0
-      Encoder: 1
+      MagneticEncoder: 1
       ServoMotor1: 2
       ServoMotor2: 3
       ServoMotor3: 4
       OpticalFlow: 5
-  EncoderSamplingRateMode:
-    description: Specifies the sampling rate of the encoder.
+  MagneticEncoderSampleRateMode:
+    description: Specifies the sample rate of the encoder.
     values:
-      SamplingRate50Hz: 0
-      SamplingRate100Hz: 1
-      SamplingRate200Hz: 2
-      SamplingRate250Hz: 3
-      SamplingRate500Hz: 4
-      SamplingRate1000Hz: 5
+      SampleRate50Hz: 0
+      SampleRate100Hz: 1
+      SampleRate200Hz: 2
+      SampleRate250Hz: 3
+      SampleRate500Hz: 4
+      SampleRate1000Hz: 5
