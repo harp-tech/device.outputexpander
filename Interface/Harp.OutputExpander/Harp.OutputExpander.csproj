@@ -17,12 +17,12 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
-    <VersionPrefix>0.1.0-preview4</VersionPrefix>
+    <VersionPrefix>0.1.0-preview5</VersionPrefix>
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bonsai.Harp" Version="3.5.0-build032701" />
+    <PackageReference Include="Bonsai.Harp" Version="3.5.0-build061901" />
   </ItemGroup>
   
   <ItemGroup>
