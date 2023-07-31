@@ -255,12 +255,12 @@ namespace Harp.OutputExpander
     [XmlInclude(typeof(Servo2PulseWidth))]
     [XmlInclude(typeof(OpticalFlow))]
     [Description("Filters register-specific messages reported by the OutputExpander device.")]
-    public class FilterMessage : FilterMessageBuilder, INamedElement
+    public class FilterRegister : FilterRegisterBuilder, INamedElement
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FilterMessage"/> class.
+        /// Initializes a new instance of the <see cref="FilterRegister"/> class.
         /// </summary>
-        public FilterMessage()
+        public FilterRegister()
         {
             Register = new AuxInState();
         }
