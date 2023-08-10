@@ -3,8 +3,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/harp-tech/reflex-generator/main/schema/device.json
 device: OutputExpander
 whoAmI: 1108
-firmwareVersion: "2.1"
-hardwareTargets: "1.0"
+firmwareVersion: "2.2"
+hardwareTargets: "1.2"
 registers:
   AuxInState:
     address: 32
