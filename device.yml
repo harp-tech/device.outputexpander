@@ -225,7 +225,7 @@ registers:
     description: Stops the target Stim protocol.
   OutputPulse:
     address: 76
-    type: U8
+    type: U16
     access: Write
     maskType: DigitalOutputs
     description: Enables pulse generation on the specified digital output line.
