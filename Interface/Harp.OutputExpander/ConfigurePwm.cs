@@ -40,6 +40,18 @@ namespace Harp.OutputExpander
         [Description("The number of pulses to trigger on the specified PWM. If the default value of zero is specified, the PWM will be infinite.")]
         public int PulseCount { get; set; }
 
+        /// <summary>
+        /// Gets or sets the trigger source of the PWM.
+        /// </summary>
+        [Description("The trigger source of the PWM.")]
+        public TriggerSource TriggerSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value specifying whether generation of events for the PWM is enabled.
+        /// </summary>
+        [Description("Specifies whether generation of events for the PWM is enabled.")]
+        public EnableFlag EventConfig { get; set; } = EnableFlag.Enabled;
+
         IEnumerable<HarpMessage> CreateMessageSequence()
         {
             byte pwmOffset;
@@ -70,8 +82,8 @@ namespace Harp.OutputExpander
                     yield return HarpCommand.WriteByte(pwmOffset + PwmAcquisitionMode, (byte)AcquisitionMode.Finite);
                 }
                 else yield return HarpCommand.WriteByte(pwmOffset + PwmAcquisitionMode, (byte)AcquisitionMode.Continuous);
-                yield return HarpCommand.WriteByte(pwmOffset + PwmTriggerSource, (byte)TriggerSource.Software);
-                yield return HarpCommand.WriteByte(pwmOffset + PwmEventConfig, (byte)EnableFlag.Enabled);
+                yield return HarpCommand.WriteByte(pwmOffset + PwmTriggerSource, (byte)TriggerSource);
+                yield return HarpCommand.WriteByte(pwmOffset + PwmEventConfig, (byte)EventConfig);
             }
         }
 
