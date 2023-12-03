@@ -346,8 +346,8 @@ bitMasks:
     bits:
       Aux0: 0x1
       Aux1: 0x2
-      Aux0Changed: 0x20
-      Aux1Changed: 0x40
+      Aux0Changed: 0x10
+      Aux1Changed: 0x20
     description: Specifies the state of auxiliary input lines.
   DigitalOutputs:
     description: Specifies the available digital output lines.
