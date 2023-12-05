@@ -16,10 +16,10 @@ namespace Harp.OutputExpander
     public class ConfigurePwm : Source<HarpMessage>
     {
         /// <summary>
-        /// Gets or sets a value specifying which PWM digital outputs to configure.
+        /// Gets or sets the PWM protocol channels to configure.
         /// </summary>
-        [Description("Specifies which PWM digital outputs to enable.")]
-        public PwmOutputs Mask { get; set; } = PwmOutputs.PwmOutput1;
+        [Description("The PWM protocol channels to configure.")]
+        public PwmChannels PwmChannels { get; set; }
 
         /// <summary>
         /// Gets or sets the frequency of the PWM. The maximum frequency is 1000Hz.
@@ -40,24 +40,51 @@ namespace Harp.OutputExpander
         [Description("The number of pulses to trigger on the specified PWM. If the default value of zero is specified, the PWM will be infinite.")]
         public int PulseCount { get; set; }
 
+        /// <summary>
+        /// Gets or sets the trigger source of the PWM.
+        /// </summary>
+        [Description("The trigger source of the PWM.")]
+        public TriggerSource TriggerSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value specifying whether generation of events for the PWM is enabled.
+        /// </summary>
+        [Description("Specifies whether generation of events for the PWM is enabled.")]
+        public EnableFlag EventConfig { get; set; } = EnableFlag.Enabled;
+
         IEnumerable<HarpMessage> CreateMessageSequence()
         {
             byte pwmOffset;
-            var mask = Mask;
-            if (mask >= PwmOutputs.PwmOutput9) pwmOffset = Pwm2Frequency.Address;
-            else if (mask >= PwmOutputs.PwmOutput6) pwmOffset = Pwm1Frequency.Address;
-            else pwmOffset = Pwm0Frequency.Address;
-            yield return PwmAndStimEnable.FromPayload(MessageType.Write, (PwmAndStimMappings)Mask);
-            yield return HarpCommand.WriteSingle(pwmOffset + PwmFrequency, Frequency);
-            yield return HarpCommand.WriteSingle(pwmOffset + PwmDutyCycle, DutyCycle);
-            if (PulseCount > 0)
+            var mask = PwmChannels;
+            while (mask != PwmChannels.None)
             {
-                yield return HarpCommand.WriteUInt16(pwmOffset + PwmPulseCount, (ushort)PulseCount);
-                yield return HarpCommand.WriteByte(pwmOffset + PwmAcquisitionMode, (byte)AcquisitionMode.Finite);
+                if ((mask & PwmChannels.Pwm0) != 0)
+                {
+                    pwmOffset = Pwm0Frequency.Address;
+                    mask &= ~PwmChannels.Pwm0;
+                }
+                else if ((mask & PwmChannels.Pwm1) != 0)
+                {
+                    pwmOffset = Pwm1Frequency.Address;
+                    mask &= ~PwmChannels.Pwm1;
+                }
+                else
+                {
+                    pwmOffset = Pwm2Frequency.Address;
+                    mask = PwmChannels.None;
+                }
+
+                yield return HarpCommand.WriteSingle(pwmOffset + PwmFrequency, Frequency);
+                yield return HarpCommand.WriteSingle(pwmOffset + PwmDutyCycle, DutyCycle);
+                if (PulseCount > 0)
+                {
+                    yield return HarpCommand.WriteUInt16(pwmOffset + PwmPulseCount, (ushort)PulseCount);
+                    yield return HarpCommand.WriteByte(pwmOffset + PwmAcquisitionMode, (byte)AcquisitionMode.Finite);
+                }
+                else yield return HarpCommand.WriteByte(pwmOffset + PwmAcquisitionMode, (byte)AcquisitionMode.Continuous);
+                yield return HarpCommand.WriteByte(pwmOffset + PwmTriggerSource, (byte)TriggerSource);
+                yield return HarpCommand.WriteByte(pwmOffset + PwmEventConfig, (byte)EventConfig);
             }
-            else yield return HarpCommand.WriteByte(pwmOffset + PwmAcquisitionMode, (byte)AcquisitionMode.Continuous);
-            yield return HarpCommand.WriteByte(pwmOffset + PwmTriggerSource, (byte)TriggerSource.Software);
-            yield return HarpCommand.WriteByte(pwmOffset + PwmEventConfig, (byte)EnableFlag.Enabled);
         }
 
         /// <summary>
@@ -99,21 +126,5 @@ namespace Harp.OutputExpander
         const int PwmAcquisitionMode = Pwm0AcquisitionMode.Address - Pwm0Frequency.Address;
         const int PwmTriggerSource = Pwm0TriggerSource.Address - Pwm0Frequency.Address;
         const int PwmEventConfig = Pwm0EventConfig.Address - Pwm0Frequency.Address;
-    }
-
-    /// <summary>
-    /// Specifies the digital output lines available for PWM.
-    /// </summary>
-    [Flags]
-    public enum PwmOutputs : ushort
-    {
-        None = PwmAndStimMappings.None,
-        PwmOutput1 = PwmAndStimMappings.Pwm0ToOut1,
-        PwmOutput2 = PwmAndStimMappings.Pwm0ToOut2,
-        PwmOutput3 = PwmAndStimMappings.Pwm0ToOut3,
-        PwmOutput6 = PwmAndStimMappings.Pwm1ToOut6,
-        PwmOutput7 = PwmAndStimMappings.Pwm1ToOut7,
-        PwmOutput8 = PwmAndStimMappings.Pwm1ToOut8,
-        PwmOutput9 = PwmAndStimMappings.Pwm2ToOut9
     }
 }
