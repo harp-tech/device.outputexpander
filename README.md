@@ -1,4 +1,4 @@
-# Harp Output Expander
+## Harp Output Expander
 Harp board to expand the outputs of the current harp ecosystem.
 
 ![HarpExpander](./Assets/pcb.jpg)
