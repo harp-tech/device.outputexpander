@@ -1983,7 +1983,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public async Task<DigitalOutputs> ReadOutputPulseAsync(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(OutputPulse.Address), cancellationToken);
+            var reply = await CommandAsync(HarpCommand.ReadUInt16(OutputPulse.Address), cancellationToken);
             return OutputPulse.GetPayload(reply);
         }
 
@@ -1999,7 +1999,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public async Task<Timestamped<DigitalOutputs>> ReadTimestampedOutputPulseAsync(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(OutputPulse.Address), cancellationToken);
+            var reply = await CommandAsync(HarpCommand.ReadUInt16(OutputPulse.Address), cancellationToken);
             return OutputPulse.GetTimestampedPayload(reply);
         }
 

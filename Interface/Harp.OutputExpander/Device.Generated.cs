@@ -4886,7 +4886,7 @@ namespace Harp.OutputExpander
         /// <summary>
         /// Represents the payload type of the <see cref="OutputPulse"/> register. This field is constant.
         /// </summary>
-        public const PayloadType RegisterType = PayloadType.U8;
+        public const PayloadType RegisterType = PayloadType.U16;
 
         /// <summary>
         /// Represents the length of the <see cref="OutputPulse"/> register. This field is constant.
@@ -4900,7 +4900,7 @@ namespace Harp.OutputExpander
         /// <returns>A value representing the message payload.</returns>
         public static DigitalOutputs GetPayload(HarpMessage message)
         {
-            return (DigitalOutputs)message.GetPayloadByte();
+            return (DigitalOutputs)message.GetPayloadUInt16();
         }
 
         /// <summary>
@@ -4910,7 +4910,7 @@ namespace Harp.OutputExpander
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DigitalOutputs> GetTimestampedPayload(HarpMessage message)
         {
-            var payload = message.GetTimestampedPayloadByte();
+            var payload = message.GetTimestampedPayloadUInt16();
             return Timestamped.Create((DigitalOutputs)payload.Value, payload.Seconds);
         }
 
@@ -4925,7 +4925,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DigitalOutputs value)
         {
-            return HarpMessage.FromByte(Address, messageType, (byte)value);
+            return HarpMessage.FromUInt16(Address, messageType, (ushort)value);
         }
 
         /// <summary>
@@ -4941,7 +4941,7 @@ namespace Harp.OutputExpander
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DigitalOutputs value)
         {
-            return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
+            return HarpMessage.FromUInt16(Address, timestamp, messageType, (ushort)value);
         }
     }
 
@@ -10458,8 +10458,8 @@ namespace Harp.OutputExpander
         None = 0x0,
         Aux0 = 0x1,
         Aux1 = 0x2,
-        Aux0Changed = 0x20,
-        Aux1Changed = 0x40
+        Aux0Changed = 0x10,
+        Aux1Changed = 0x20
     }
 
     /// <summary>
