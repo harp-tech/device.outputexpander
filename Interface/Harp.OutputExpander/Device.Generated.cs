@@ -93,14 +93,55 @@ namespace Harp.OutputExpander
             { 85, typeof(Out8PulseWidth) },
             { 86, typeof(Out9PulseWidth) },
             { 87, typeof(ExpansionBoard) },
+            { 88, typeof(Reserved0) },
+            { 89, typeof(Reserved1) },
             { 90, typeof(MagneticEncoder) },
             { 91, typeof(MagneticEncoderSampleRate) },
+            { 92, typeof(Reserved2) },
+            { 93, typeof(Reserved3) },
             { 94, typeof(ServoPeriod) },
             { 95, typeof(Servo0PulseWidth) },
             { 96, typeof(Servo1PulseWidth) },
             { 97, typeof(Servo2PulseWidth) },
+            { 98, typeof(Reserved4) },
+            { 99, typeof(Reserved5) },
             { 100, typeof(OpticalFlow) }
         };
+
+        /// <summary>
+        /// Gets the contents of the metadata file describing the <see cref="OutputExpander"/>
+        /// device registers.
+        /// </summary>
+        public static readonly string Metadata = GetDeviceMetadata();
+
+        static string GetDeviceMetadata()
+        {
+            var deviceType = typeof(Device);
+            using var metadataStream = deviceType.Assembly.GetManifestResourceStream($"{deviceType.Namespace}.device.yml");
+            using var streamReader = new System.IO.StreamReader(metadataStream);
+            return streamReader.ReadToEnd();
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that returns the contents of the metadata file
+    /// describing the <see cref="OutputExpander"/> device registers.
+    /// </summary>
+    [Description("Returns the contents of the metadata file describing the OutputExpander device registers.")]
+    public partial class GetMetadata : Source<string>
+    {
+        /// <summary>
+        /// Returns an observable sequence with the contents of the metadata file
+        /// describing the <see cref="OutputExpander"/> device registers.
+        /// </summary>
+        /// <returns>
+        /// A sequence with a single <see cref="string"/> object representing the
+        /// contents of the metadata file.
+        /// </returns>
+        public override IObservable<string> Generate()
+        {
+            return Observable.Return(Device.Metadata);
+        }
     }
 
     /// <summary>
@@ -6027,6 +6068,50 @@ namespace Harp.OutputExpander
     }
 
     /// <summary>
+    /// Represents a register that reserved for future use.
+    /// </summary>
+    [Description("Reserved for future use.")]
+    internal partial class Reserved0
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="Reserved0"/> register. This field is constant.
+        /// </summary>
+        public const int Address = 88;
+
+        /// <summary>
+        /// Represents the payload type of the <see cref="Reserved0"/> register. This field is constant.
+        /// </summary>
+        public const PayloadType RegisterType = PayloadType.U8;
+
+        /// <summary>
+        /// Represents the length of the <see cref="Reserved0"/> register. This field is constant.
+        /// </summary>
+        public const int RegisterLength = 1;
+    }
+
+    /// <summary>
+    /// Represents a register that reserved for future use.
+    /// </summary>
+    [Description("Reserved for future use.")]
+    internal partial class Reserved1
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="Reserved1"/> register. This field is constant.
+        /// </summary>
+        public const int Address = 89;
+
+        /// <summary>
+        /// Represents the payload type of the <see cref="Reserved1"/> register. This field is constant.
+        /// </summary>
+        public const PayloadType RegisterType = PayloadType.U8;
+
+        /// <summary>
+        /// Represents the length of the <see cref="Reserved1"/> register. This field is constant.
+        /// </summary>
+        public const int RegisterLength = 1;
+    }
+
+    /// <summary>
     /// Represents a register that generated event with the latest read from the magnetic encoder.
     /// </summary>
     [Description("Generated event with the latest read from the magnetic encoder.")]
@@ -6235,6 +6320,50 @@ namespace Harp.OutputExpander
         {
             return MagneticEncoderSampleRate.GetTimestampedPayload(message);
         }
+    }
+
+    /// <summary>
+    /// Represents a register that reserved for future use.
+    /// </summary>
+    [Description("Reserved for future use.")]
+    internal partial class Reserved2
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="Reserved2"/> register. This field is constant.
+        /// </summary>
+        public const int Address = 92;
+
+        /// <summary>
+        /// Represents the payload type of the <see cref="Reserved2"/> register. This field is constant.
+        /// </summary>
+        public const PayloadType RegisterType = PayloadType.U8;
+
+        /// <summary>
+        /// Represents the length of the <see cref="Reserved2"/> register. This field is constant.
+        /// </summary>
+        public const int RegisterLength = 1;
+    }
+
+    /// <summary>
+    /// Represents a register that reserved for future use.
+    /// </summary>
+    [Description("Reserved for future use.")]
+    internal partial class Reserved3
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="Reserved3"/> register. This field is constant.
+        /// </summary>
+        public const int Address = 93;
+
+        /// <summary>
+        /// Represents the payload type of the <see cref="Reserved3"/> register. This field is constant.
+        /// </summary>
+        public const PayloadType RegisterType = PayloadType.U8;
+
+        /// <summary>
+        /// Represents the length of the <see cref="Reserved3"/> register. This field is constant.
+        /// </summary>
+        public const int RegisterLength = 1;
     }
 
     /// <summary>
@@ -6619,6 +6748,50 @@ namespace Harp.OutputExpander
         {
             return Servo2PulseWidth.GetTimestampedPayload(message);
         }
+    }
+
+    /// <summary>
+    /// Represents a register that reserved for future use.
+    /// </summary>
+    [Description("Reserved for future use.")]
+    internal partial class Reserved4
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="Reserved4"/> register. This field is constant.
+        /// </summary>
+        public const int Address = 98;
+
+        /// <summary>
+        /// Represents the payload type of the <see cref="Reserved4"/> register. This field is constant.
+        /// </summary>
+        public const PayloadType RegisterType = PayloadType.U8;
+
+        /// <summary>
+        /// Represents the length of the <see cref="Reserved4"/> register. This field is constant.
+        /// </summary>
+        public const int RegisterLength = 1;
+    }
+
+    /// <summary>
+    /// Represents a register that reserved for future use.
+    /// </summary>
+    [Description("Reserved for future use.")]
+    internal partial class Reserved5
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="Reserved5"/> register. This field is constant.
+        /// </summary>
+        public const int Address = 99;
+
+        /// <summary>
+        /// Represents the payload type of the <see cref="Reserved5"/> register. This field is constant.
+        /// </summary>
+        public const PayloadType RegisterType = PayloadType.U8;
+
+        /// <summary>
+        /// Represents the length of the <see cref="Reserved5"/> register. This field is constant.
+        /// </summary>
+        public const int RegisterLength = 1;
     }
 
     /// <summary>
@@ -10410,6 +10583,22 @@ namespace Harp.OutputExpander
         /// The magnitude of the magnetic field.
         /// </summary>
         public ushort Magnitude;
+
+        /// <summary>
+        /// Returns a <see cref="string"/> that represents the payload of
+        /// the MagneticEncoder register.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="string"/> that represents the payload of the
+        /// MagneticEncoder register.
+        /// </returns>
+        public override string ToString()
+        {
+            return "MagneticEncoderPayload { " +
+                "Angle = " + Angle + ", " +
+                "Magnitude = " + Magnitude + " " +
+            "}";
+        }
     }
 
     /// <summary>
@@ -10447,6 +10636,23 @@ namespace Harp.OutputExpander
         /// The measure of the number of features visible by the sensor.
         /// </summary>
         public short Squal;
+
+        /// <summary>
+        /// Returns a <see cref="string"/> that represents the payload of
+        /// the OpticalFlow register.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="string"/> that represents the payload of the
+        /// OpticalFlow register.
+        /// </returns>
+        public override string ToString()
+        {
+            return "OpticalFlowPayload { " +
+                "DeltaX = " + DeltaX + ", " +
+                "DeltaY = " + DeltaY + ", " +
+                "Squal = " + Squal + " " +
+            "}";
+        }
     }
 
     /// <summary>
