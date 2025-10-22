@@ -33,7 +33,7 @@ void hwbp_app_initialize(void)
     uint8_t hwH = 1;
     uint8_t hwL = 2;
     uint8_t fwH = 2;
-    uint8_t fwL = 2;
+    uint8_t fwL = 3;
     uint8_t ass = 0;
     
    	/* Start core */
@@ -102,7 +102,7 @@ void core_callback_initialize_hardware(void)
 		else
 		{
 			/* Let user know that hardware is wrong by blinking LED0 for 5 seconds */
-			for (uint8_t i; i < 50; i++)
+			for (uint8_t i = 0; i < 50; i++)
 			{
 				tgl_LED_0;
 				_delay_ms(100);
