@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "harp expander output Lib") (type "KiCad") (uri "${KIPRJMOD}/harp_expander_output_Lib.kicad_sym") (options "") (descr ""))
+)

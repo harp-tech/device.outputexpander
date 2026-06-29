@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "harp_expander_output") (type "KiCad") (uri "${KIPRJMOD}/harp expander output.pretty") (options "") (descr ""))
+)
