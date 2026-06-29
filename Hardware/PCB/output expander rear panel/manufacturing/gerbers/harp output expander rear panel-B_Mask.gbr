@@ -1,0 +1,23 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,10.0.1*%
+%TF.CreationDate,2026-06-29T16:07:37+01:00*%
+%TF.ProjectId,harp output expander rear panel,68617270-206f-4757-9470-757420657870,rev?*%
+%TF.SameCoordinates,PX4e14cb4PY74f31c8*%
+%TF.FileFunction,Soldermask,Bot*%
+%TF.FilePolarity,Negative*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 10.0.1) date 2026-06-29 16:07:37*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10C,6.000000*%
+G04 APERTURE END LIST*
+D10*
+%TO.C,UNK_HOLE_1*%
+X54603400Y16907000D03*
+%TD*%
+%TO.C,UNK_HOLE_0*%
+X42103400Y16907000D03*
+%TD*%
+M02*
