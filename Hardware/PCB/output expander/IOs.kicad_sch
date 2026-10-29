@@ -6754,26 +6754,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "MPN original: 74LVC4245AD,118 "
-		(exclude_from_sim no)
-		(at 149.098 43.434 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "28b37981-f5b4-48b8-bde9-db2c49f0b80a")
-	)
-	(text "MPN original: 74LVC4245AD,118 "
-		(exclude_from_sim no)
-		(at 150.622 132.842 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "8b26a464-de48-48ef-a978-e97b7ed6aa92")
-	)
 	(junction
 		(at 269.24 55.88)
 		(diameter 0)
@@ -10083,6 +10063,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
+			(at 236.22 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "6c5772f4-f3ea-4e99-a705-0406f1ae23ff")
 		)
@@ -10211,6 +10202,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 210.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "563bc252-61e3-41e3-8e59-ae3a4accf818")
 		)
@@ -10326,6 +10328,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 71.12 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 71.12 90)
 			(hide yes)
 			(show_name no)
@@ -10520,6 +10533,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS080029"
+			(at 173.99 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "IC:   BUFFER NON-INVERT 1CH 3-STATE   [SN74LVC1G125DBVT] [SOT-23-5]"
 			(at 173.99 260.35 0)
 			(hide yes)
 			(show_name no)
@@ -10825,6 +10849,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 284.48 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "50a6310d-a158-4551-a037-ff921fff4ad2")
 		)
@@ -10965,6 +11000,17 @@
 			)
 		)
 		(property "Voltage" "50V"
+			(at 228.6 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
 			(at 228.6 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11125,6 +11171,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
+			(at 248.92 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "625201e9-f927-4232-a154-e61b8da71ae4")
 		)
@@ -11162,7 +11219,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74LVC4245APWR"
+		(property "Value" "SN74LVC8T245DWR"
 			(at 180.34 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -11206,7 +11263,7 @@
 				)
 			)
 		)
-		(property "MPN" "SN74LVC4245APWR"
+		(property "MPN" "SN74LVC8T245DWR"
 			(at 180.34 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -11217,7 +11274,18 @@
 				)
 			)
 		)
-		(property "OEPSPN" "OEPS080126"
+		(property "OEPSPN" "OEPS080253"
+			(at 180.34 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "IC:   LEVEL TRANSLATOR 8CH BIDIRECTIONAL   [SN74LVC8T245DWR] [24-SOIC]"
 			(at 180.34 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -11422,6 +11490,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 200.66 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "3461a1ff-381d-4589-aabb-b446ecda675c")
 		)
@@ -11572,6 +11651,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
+			(at 195.58 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a071876c-5f59-4714-8920-c6eff50d0862")
 		)
@@ -11687,6 +11777,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 142.24 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 142.24 90)
 			(hide yes)
 			(show_name no)
@@ -11815,6 +11916,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 210.82 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 210.82 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -12054,6 +12166,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
+			(at 226.06 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6cdbef7f-de27-441c-9173-65399b317836")
 		)
@@ -12204,6 +12327,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
+			(at 251.46 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c18950eb-2150-4ad9-ad70-580c55197f42")
 		)
@@ -12322,6 +12456,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 279.4 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 279.4 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -12527,7 +12672,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74LVC4245APWR"
+		(property "Value" "SN74LVC8T245DWR"
 			(at 179.6056 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -12571,7 +12716,7 @@
 				)
 			)
 		)
-		(property "MPN" "SN74LVC4245APWR"
+		(property "MPN" "SN74LVC8T245DWR"
 			(at 180.34 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -12582,7 +12727,18 @@
 				)
 			)
 		)
-		(property "OEPSPN" "OEPS080126"
+		(property "OEPSPN" "OEPS080253"
+			(at 180.34 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "IC:   LEVEL TRANSLATOR 8CH BIDIRECTIONAL   [SN74LVC8T245DWR] [24-SOIC]"
 			(at 180.34 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -12877,6 +13033,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 205.74 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 205.74 29.21 0)
 			(hide yes)
 			(show_name no)
@@ -13349,6 +13516,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
+			(at 195.58 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8d13835c-8a55-4952-a6e7-f8120e0f2c60")
 		)
@@ -13577,6 +13755,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
+			(at 243.84 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "19626092-7934-4191-9293-0d0985bcccd6")
 		)
@@ -13695,6 +13884,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 194.31 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 194.31 224.79 0)
 			(hide yes)
 			(show_name no)
@@ -14057,6 +14257,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "IC:   BUFFER NON-INVERT 1CH 3-STATE   [SN74LVC1G125DBVT] [SOT-23-5]"
+			(at 173.99 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b522f0e0-96ec-4504-85e3-83f61d35fe4a")
 		)
@@ -14337,6 +14548,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 60.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 60.96 90)
 			(hide yes)
 			(show_name no)
@@ -14808,6 +15030,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
+			(at 154.94 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0f33548b-265c-4a69-9a51-23f99ab377c3")
 		)
@@ -14899,6 +15132,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS080024"
+			(at 88.9 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "IC:   BUFFER NON-INVERT 4CH 3-STATE   [74HCT125D,653] [SOIC-14]"
 			(at 88.9 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15085,6 +15329,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 93.98 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 93.98 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -15288,6 +15543,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 76.2 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 76.2 90)
 			(hide yes)
 			(show_name no)
@@ -15526,6 +15792,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
+			(at 154.94 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4efabc23-c3fa-4b14-aa0d-012e459322c4")
 		)
@@ -15666,6 +15943,17 @@
 			)
 		)
 		(property "Voltage" "50V"
+			(at 233.68 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
 			(at 233.68 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -15881,6 +16169,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 160.02 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8f2b65ea-5b8f-4ff2-9a37-41416de0ce14")
 		)
@@ -15996,6 +16295,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 152.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 152.4 90)
 			(hide yes)
 			(show_name no)
@@ -16123,6 +16433,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 289.56 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 289.56 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -16406,6 +16727,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 160.02 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 160.02 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -17405,6 +17737,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 284.48 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "c703e191-88ce-4c26-bdfb-37b5570a0332")
 		)
@@ -17520,6 +17863,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 55.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 55.88 90)
 			(hide yes)
 			(show_name no)
@@ -17648,6 +18002,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 274.32 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 274.32 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -17929,6 +18294,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 66.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 66.04 90)
 			(hide yes)
 			(show_name no)
@@ -18378,6 +18754,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 226.06 48.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "23c31490-4526-4928-9219-297d3f07aa4d")
 		)
@@ -18528,6 +18915,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
+			(at 165.1 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "dc0ac5bb-1557-4fd7-876c-5b4cd9b751f1")
 		)
@@ -18643,6 +19041,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CONNECTOR:   HEADER 2.54MM R/A 2x5POS   [SBH11-PBPC-D05-RA-BK] [TH]"
+			(at 347.98 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "5"
 			(uuid "36143e80-ce64-4cb1-b985-5d177c4a42c3")
 		)
@@ -18747,7 +19156,7 @@
 				)
 			)
 		)
-		(property "MPN" "731000105"
+		(property "MPN" "0731000105"
 			(at 360.68 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -18772,6 +19181,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS070024"
+			(at 360.68 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CONNECTOR:   BNC JACK 50ohm R/A   [0731000105] [TH]"
 			(at 360.68 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -19001,6 +19421,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 185.42 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 185.42 247.65 0)
 			(hide yes)
 			(show_name no)
@@ -19296,6 +19727,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 269.24 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "360e964e-7b05-4b26-8a25-1db6e86d8eb9")
 		)
@@ -19492,6 +19934,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 144.78 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 144.78 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -19707,6 +20160,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 144.78 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ad572744-17a1-49e7-a91c-063586d740f1")
 		)
@@ -19847,6 +20311,17 @@
 			)
 		)
 		(property "Voltage" "50V"
+			(at 220.98 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
 			(at 220.98 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -20163,6 +20638,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
+			(at 165.1 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2455ca9d-a9d3-4f10-80dc-c50d32d39cdf")
 		)
@@ -20399,7 +20885,7 @@
 				)
 			)
 		)
-		(property "MPN" "731000105"
+		(property "MPN" "0731000105"
 			(at 335.28 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -20424,6 +20910,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS070024"
+			(at 335.28 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CONNECTOR:   BNC JACK 50ohm R/A   [0731000105] [TH]"
 			(at 335.28 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -20640,6 +21137,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 289.56 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "24933833-5109-4758-b170-62e95d608372")
 		)
@@ -20755,6 +21263,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 157.48 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 157.48 90)
 			(hide yes)
 			(show_name no)
@@ -20971,6 +21490,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 269.24 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "81ac89ac-7434-4373-9c19-95b084c1b48b")
 		)
@@ -21089,6 +21619,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 205.74 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 205.74 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -21384,6 +21925,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 194.31 265.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "516c1713-563f-4a8c-ba51-bf59eb742001")
 		)
@@ -21602,6 +22154,17 @@
 			)
 		)
 		(property "Voltage" "50V"
+			(at 241.3 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
 			(at 241.3 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -21909,6 +22472,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 208.28 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 208.28 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -22356,6 +22930,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
+			(at 261.62 162.56 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7e3f5870-2283-4198-b3ee-8e9d8ffbc891")
 		)
@@ -22471,6 +23056,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 261.62 147.32 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
 			(at 261.62 147.32 90)
 			(hide yes)
 			(show_name no)
@@ -22631,6 +23227,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
+			(at 185.42 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "682416c0-2a74-4a82-a07e-70d8ad62391e")
 		)
@@ -22749,6 +23356,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 152.4 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 152.4 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -22885,6 +23503,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 226.06 134.62 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "c4ac7459-39c9-4a43-afb0-c575b22b665d")
 		)
@@ -22965,7 +23594,7 @@
 				)
 			)
 		)
-		(property "MPN" "731000105"
+		(property "MPN" "0731000105"
 			(at 335.28 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -22990,6 +23619,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS070024"
+			(at 335.28 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CONNECTOR:   BNC JACK 50ohm R/A   [0731000105] [TH]"
 			(at 335.28 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -23117,6 +23757,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 279.4 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 279.4 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -23255,6 +23906,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 152.4 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5ccd2fef-d6ea-49a1-a185-dc2eb7faee0a")
 		)
@@ -23373,6 +24035,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 200.66 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 200.66 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -23854,7 +24527,7 @@
 				)
 			)
 		)
-		(property "MPN" "731000105"
+		(property "MPN" "0731000105"
 			(at 386.08 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -23879,6 +24552,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS070024"
+			(at 386.08 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CONNECTOR:   BNC JACK 50ohm R/A   [0731000105] [TH]"
 			(at 386.08 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -24029,6 +24713,17 @@
 			)
 		)
 		(property "Voltage" "50V"
+			(at 218.44 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 330pF 50V ±5% C0G   [C0402C331J5GAC7867] [SMD]"
 			(at 218.44 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -24245,6 +24940,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 205.74 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "152fb687-132c-45a5-91e7-db9b6cf7db97")
 		)
@@ -24451,6 +25157,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 274.32 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0311d22d-af5f-4e8c-851c-dd8ccc1d760e")
 		)
@@ -24531,7 +25248,7 @@
 				)
 			)
 		)
-		(property "MPN" "731000105"
+		(property "MPN" "0731000105"
 			(at 360.68 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -24556,6 +25273,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS070024"
+			(at 360.68 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CONNECTOR:   BNC JACK 50ohm R/A   [0731000105] [TH]"
 			(at 360.68 88.9 0)
 			(hide yes)
 			(show_name no)

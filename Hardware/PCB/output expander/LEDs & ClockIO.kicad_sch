@@ -4098,6 +4098,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
+			(at 265.43 241.3 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "88e129d8-fe8b-4d4f-a9a6-f776ad6fb47f")
 		)
@@ -4215,6 +4226,17 @@
 			)
 		)
 		(property "Tolerance" "5%"
+			(at 224.79 31.75 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10Ω ±5% 0.25W   [ERJ-PA2J100X] [SMD]"
 			(at 224.79 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -4586,6 +4608,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
+			(at 87.63 241.3 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5a369fef-dcd2-448b-a59b-a073c9519341")
 		)
@@ -4704,6 +4737,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 123.19 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
 			(at 123.19 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5097,6 +5141,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
+			(at 187.96 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d2f4e5c0-07f3-4312-8e03-9264b7f0e549")
 		)
@@ -5212,6 +5267,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 194.31 241.3 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
 			(at 194.31 241.3 90)
 			(hide yes)
 			(show_name no)
@@ -5406,6 +5472,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
+			(at 135.89 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "C1"
 			(uuid "ed094bde-f37c-4dde-a5a9-2f4ec67d693c")
 		)
@@ -5553,6 +5630,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 229.87 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 229.87 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -5846,6 +5934,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
+			(at 123.19 241.3 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "94a71442-dc39-45a2-822e-4c178b7479e1")
 		)
@@ -5942,6 +6041,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS030007"
+			(at 207.01 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
 			(at 207.01 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -6220,6 +6330,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
+			(at 278.13 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "C1"
 			(uuid "02272d8b-fb8b-40f7-83ef-55416b9f6105")
 		)
@@ -6344,6 +6465,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 100.33 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
 			(at 100.33 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -6482,6 +6614,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
+			(at 135.89 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "f0522443-49d5-424b-8b1f-3061f24d7986")
 		)
@@ -6600,6 +6743,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 171.45 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
 			(at 171.45 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -6816,6 +6970,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
+			(at 278.13 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f085e00c-e899-40cc-8818-6ecb695b9778")
 		)
@@ -6966,6 +7131,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
+			(at 120.65 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "465a74b8-c3bc-4051-ab6f-335ae62a11ac")
 		)
@@ -7084,6 +7260,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 207.01 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
 			(at 207.01 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -7278,6 +7465,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
+			(at 242.57 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "A2"
 			(uuid "b2062b5d-d983-41bc-be58-b2fab67aa6ce")
 		)
@@ -7380,6 +7578,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS030007"
+			(at 100.33 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
 			(at 100.33 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7680,6 +7889,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
+			(at 135.89 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "02f8fc03-d301-4ab6-8406-4f2ea0815a65")
 		)
@@ -7776,6 +7996,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS030007"
+			(at 171.45 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
 			(at 171.45 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7920,6 +8151,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
+			(at 278.13 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "df247f54-f71b-4a1e-a367-4a1701e21523")
 		)
@@ -8031,6 +8273,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS060006"
+			(at 168.91 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
 			(at 168.91 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -8239,6 +8492,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "IC:   BUFFER NON-INVERT 1CH 3-STATE   [SN74LVC1G125DBVT] [SOT-23-5]"
+			(at 133.35 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "9898adea-fe52-446d-98a4-5dbd17823342")
 		)
@@ -8344,6 +8608,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS030007"
+			(at 135.89 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
 			(at 135.89 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -8475,6 +8750,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 158.75 241.3 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
 			(at 158.75 241.3 90)
 			(hide yes)
 			(show_name no)
@@ -8762,6 +9048,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
+			(at 275.59 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3c764af1-a458-471d-9283-ae1ca9aece2c")
 		)
@@ -8960,6 +9257,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 123.19 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
 			(at 123.19 193.04 90)
 			(hide yes)
 			(show_name no)
@@ -9175,6 +9483,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
+			(at 171.45 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "42df101c-77c1-4298-af8e-c1deb28a65fd")
 		)
@@ -9286,6 +9605,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS060006"
+			(at 204.47 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
 			(at 204.47 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -9581,6 +9911,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
+			(at 158.75 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "417ec202-8490-4d56-a25f-b87a2f7e38ce")
 		)
@@ -9863,6 +10204,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
+			(at 207.01 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "79255cbf-5a9e-4590-9ce5-7e7aa3e20b52")
 		)
@@ -10052,6 +10404,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS060006"
+			(at 240.03 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
 			(at 240.03 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -10263,6 +10626,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
+			(at 133.35 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "74c2b573-e1c4-4cb8-b4c1-b6df5b1925da")
 		)
@@ -10377,6 +10751,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS060006"
+			(at 133.35 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
 			(at 133.35 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -10515,6 +10900,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
+			(at 87.63 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f9e4ea0e-8cfd-48c1-9b71-30d9daa138e6")
 		)
@@ -10643,6 +11039,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
+			(at 242.57 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "1ca382e0-b5cb-41a8-80c0-b206c29fa893")
 		)
@@ -10754,6 +11161,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS060006"
+			(at 97.79 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
 			(at 97.79 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -10973,6 +11391,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 137.16 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d227ed34-e878-47f1-accc-1aacae3a480d")
 		)
@@ -11176,6 +11605,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
+			(at 194.31 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0988bbdf-578d-49b9-a76f-e78e2d296be5")
 		)
@@ -11272,6 +11712,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS030007"
+			(at 242.57 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
 			(at 242.57 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -11627,6 +12078,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CONNECTOR:   3.5MM JACK STEREO 90º   [35RASMT2BHNTRX] [SMD]"
+			(at 242.57 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "3e3fd46c-8213-4bfb-a27c-5517e621b4fd")
 		)
@@ -11770,6 +12232,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 130.81 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 130.81 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -12078,6 +12551,17 @@
 			)
 		)
 		(property "Voltage" "16V"
+			(at 214.63 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
 			(at 214.63 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -12524,6 +13008,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
+			(at 204.47 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "a4635d3b-d098-40fe-9a3f-58cbaed8190a")
 		)
@@ -12638,6 +13133,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS060006"
+			(at 275.59 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
 			(at 275.59 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -12835,6 +13341,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
+			(at 207.01 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "A1"
 			(uuid "28508e12-6bb3-4fd1-a605-a6aa9f84160c")
 		)
@@ -12878,7 +13395,7 @@
 				)
 			)
 		)
-		(property "Value" "SI8621BC-B-ISR"
+		(property "Value" "SI8610BC-B-IS"
 			(at 194.31 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12888,7 +13405,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm"
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 194.31 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -12910,7 +13427,7 @@
 				)
 			)
 		)
-		(property "Description" "DGTL ISO 3750VRMS 1CH GP 8SOIC"
+		(property "Description" "DGTL ISO 1CH 8SOIC"
 			(at 194.31 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -12921,7 +13438,7 @@
 				)
 			)
 		)
-		(property "MPN" "SI8621BC-B-ISR"
+		(property "MPN" "SI8610BC-B-ISR"
 			(at 194.31 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -12932,7 +13449,18 @@
 				)
 			)
 		)
-		(property "OEPSPN" "OEPS080031"
+		(property "OEPSPN" "OEPS080004"
+			(at 194.31 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "IC:   DIGITAL ISOLATOR 1WAY   [SI8610BC-B-ISR] [8-SOIC]"
 			(at 194.31 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -13067,6 +13595,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
+			(at 278.13 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "C1"
 			(uuid "6e8026e9-596c-4142-880d-75378efb71d0")
 		)
@@ -13168,6 +13707,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS070025"
+			(at 240.03 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CONNECTOR:   3.5MM JACK STEREO 90º   [35RASMT2BHNTRX] [SMD]"
 			(at 240.03 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13299,6 +13849,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 242.57 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
 			(at 242.57 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -13512,6 +14073,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
+			(at 229.87 241.3 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4d3794ab-e3b8-4d59-803b-6ef2b58b5797")
 		)
@@ -13633,6 +14205,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
+			(at 168.91 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b5956c22-b7bb-4b41-8e78-fc1d4b0d4fde")
 		)
@@ -13742,6 +14325,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS080086"
+			(at 201.93 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "IC:   LDO 3.3V 200mA   [TLV70033DDCR] [SOT-23-THIN]"
 			(at 201.93 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -13879,6 +14473,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "IC:   BUFFER NON-INVERT 1CH 3-STATE   [SN74LVC1G125DBVT] [SOT-23-5]"
+			(at 146.05 81.28 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "1c8ce616-1264-4a7b-9927-abbf9d13d421")
 		)
@@ -14003,6 +14608,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 229.87 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
 			(at 229.87 193.04 90)
 			(hide yes)
 			(show_name no)
@@ -14152,6 +14768,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 160.02 99.06 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 160.02 99.06 90)
 			(hide yes)
 			(show_name no)
@@ -14362,6 +14989,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
+			(at 97.79 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "09f9050a-51c3-4193-8045-05ac2bff3f8d")
 		)
@@ -14482,6 +15120,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 100.33 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 330Ω ±1% 0.063W   [RC0402FR-07330RL] [SMD]"
 			(at 100.33 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -14620,6 +15269,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 10kΩ ±1% 0.063W   [CRCW040210K0FKED] [SMD]"
+			(at 227.33 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "220646fc-5067-4ff4-beee-c13acff3aab5")
 		)
@@ -14716,6 +15376,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS030007"
+			(at 171.45 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
 			(at 171.45 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -14828,6 +15499,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS030007"
+			(at 100.33 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "DIODE:   LED DUAL Red 635nm 20mA   [569-0111-100F] [TH]"
 			(at 100.33 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -14965,6 +15647,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "TRANSISTOR:   BJT NPN 45V 0.1A   [BC850C,215] [SOT-23-3]"
+			(at 240.03 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "55ae36fd-7fe7-4211-b0de-917ec33f0b4a")
 		)
@@ -15083,6 +15776,17 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 265.43 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 1kΩ ±1% 0.063W   [CRCW04021K00FKED] [SMD]"
 			(at 265.43 193.04 90)
 			(hide yes)
 			(show_name no)

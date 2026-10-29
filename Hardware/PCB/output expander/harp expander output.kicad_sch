@@ -4,7 +4,11 @@
 	(generator_version "10.0")
 	(uuid "5f227ff8-6975-43e5-b38f-3c28629b3889")
 	(paper "A3")
-	(lib_symbols
+	
+	(title_block
+		(rev "1.3")
+	)
+(lib_symbols
 		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
@@ -4756,6 +4760,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 47pF 50V ±5% C0G   [04025A470JAT2A] [SMD]"
+			(at 163.83 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "fa48e0d9-a33c-4b9b-abec-bbe01126f5f9")
 		)
@@ -4853,6 +4868,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS030010"
+			(at 132.08 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "DIODE:   TVS DIODE 5.25VWM 17VC   [USBLC6-2SC6] [SOT-23-6]"
 			(at 132.08 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -5025,6 +5051,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 47pF 50V ±5% C0G   [04025A470JAT2A] [SMD]"
+			(at 157.48 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2568796b-d229-4c1b-b343-fd8592ec58e8")
 		)
@@ -5162,6 +5199,17 @@
 			)
 		)
 		(property "TempCo" ""
+			(at 106.68 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 5.1kΩ ±1% 0.100W   [ERJ-2RKF5101X] [SMD]"
 			(at 106.68 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -5421,6 +5469,17 @@
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
+			)
+		)
+		(property "OEPS Description" ""
+			(at 267.97 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -6041,6 +6100,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
+			(at 242.57 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "f038b07c-f236-49e9-8ade-da63ab1e2595")
 		)
@@ -6348,6 +6418,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
+			(at 222.25 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1a956b75-37cb-4782-9558-ab04baf4d089")
 		)
@@ -6488,6 +6569,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 207.01 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 207.01 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -6693,6 +6785,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "INDUCTOR:   FERRITE BEAD SMD 40Ω 2A 50mΩ   [MI0805K400R-10] [0805]"
+			(at 130.81 171.45 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "51a2036c-5615-4e31-b67b-cda0f65cb8c0")
 		)
@@ -6833,6 +6936,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS010016"
+			(at 205.74 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
 			(at 205.74 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7070,6 +7184,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
+			(at 170.18 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c2f4dbe8-1d57-4cf0-896d-eae9abae0b92")
 		)
@@ -7161,6 +7286,17 @@
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
+			)
+		)
+		(property "OEPS Description" ""
+			(at 306.07 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7522,6 +7658,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "RESISTOR:   SMD 0603 100Ω ±1% 0.333W   [CRCW0603100RFKEAHP] [SMD]"
+			(at 96.52 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a5f3c8c9-b2fc-4639-869a-2ea22741f44f")
 		)
@@ -7695,6 +7842,17 @@
 				(justify left bottom)
 			)
 		)
+		(property "OEPS Description" ""
+			(at 252.73 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "201c07e6-9d4e-4992-8a28-a1c79a877bc8")
 		)
@@ -7809,6 +7967,17 @@
 			)
 		)
 		(property "Voltage" "25V"
+			(at 138.43 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR POL:   TH ALUM 100uF 25V ±20% 130mOhm   [EEU-FM1E101B] [TH]"
 			(at 138.43 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -8047,6 +8216,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 4.7nF 100V ±10% X7R   [885012205084] [SMD]"
+			(at 91.44 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "fc4e3e40-c0d9-4fb0-b01b-919f0cd7a152")
 		)
@@ -8232,6 +8412,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS080013"
+			(at 229.87 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "IC:   USB Interface IC USB to Serial UART (OEPS NP1 073)   [FT232RL-REEL] [SSOP-28]"
 			(at 229.87 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -8451,6 +8642,17 @@
 			)
 		)
 		(property "TempCo" ""
+			(at 110.49 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "RESISTOR:   SMD 0402 5.1kΩ ±1% 0.100W   [ERJ-2RKF5101X] [SMD]"
 			(at 110.49 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -8847,6 +9049,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0402 100nF 50V ±10% X7R   [CGA2B3X7R1H104K050BB] [SMD]"
+			(at 119.38 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "81de6e1f-64dd-476b-8768-a7066f1b77d8")
 		)
@@ -8953,6 +9166,17 @@
 			)
 		)
 		(property "OEPSPN" "OEPS080086"
+			(at 186.69 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "IC:   LDO 3.3V 200mA   [TLV70033DDCR] [SOT-23-THIN]"
 			(at 186.69 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -9378,6 +9602,17 @@
 				(justify left bottom)
 			)
 		)
+		(property "OEPS Description" ""
+			(at 290.83 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7294939f-23c3-4072-bf56-a67f51de1969")
 		)
@@ -9515,6 +9750,17 @@
 			)
 		)
 		(property "Voltage" "16V"
+			(at 196.85 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
 			(at 196.85 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -9754,6 +10000,17 @@
 				)
 			)
 		)
+		(property "OEPS Description" "CAPACITOR:   SMD CER 0603 4.7uF 16V ±10% X6S   [C1608X6S1C475K080AC] [SMD]"
+			(at 252.73 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "866f23a6-218e-4706-b0a5-e2a363fa027c")
 		)
@@ -9880,6 +10137,17 @@
 			)
 		)
 		(property "Voltage" ""
+			(at 90.17 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "OEPS Description" "CONNECTOR:   USB2.0 TYPE C 16P SMD R/A   [USB4105-GF-A] [SMD/TH]"
 			(at 90.17 111.76 0)
 			(hide yes)
 			(show_name no)
