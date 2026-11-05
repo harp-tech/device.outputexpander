@@ -3763,7 +3763,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74LVC8T245DWR"
+		(property "Value" "74LVC4245AD,118"
 			(at 0 8.65 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3797,7 +3797,7 @@
 				)
 			)
 		)
-		(property "MPN" "SN74LVC8T245DWR"
+		(property "MPN" "74LVC4245AD,118"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3823,7 +3823,7 @@
 				)
 			)
 		)
-		(property "OEPS Description" "IC:   LEVEL TRANSLATOR 8CH BIDIRECTIONAL   [SN74LVC8T245DWR] [24-SOIC]"
+		(property "OEPS Description" "IC:   LEVEL TRANSLATOR 8CH BIDIRECTIONAL   [74LVC4245AD,118] [24-SOIC]"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -28708,7 +28708,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74LVC8T245DWR"
+		(property "Value" "74LVC4245AD,118"
 			(at 0 8.65 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -28742,7 +28742,7 @@
 				)
 			)
 		)
-		(property "MPN" "SN74LVC8T245DWR"
+		(property "MPN" "74LVC4245AD,118"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -28768,7 +28768,7 @@
 				)
 			)
 		)
-		(property "OEPS Description" "IC:   LEVEL TRANSLATOR 8CH BIDIRECTIONAL   [SN74LVC8T245DWR] [24-SOIC]"
+		(property "OEPS Description" "IC:   LEVEL TRANSLATOR 8CH BIDIRECTIONAL   [74LVC4245AD,118] [24-SOIC]"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
