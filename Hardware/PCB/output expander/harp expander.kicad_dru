@@ -1,0 +1,4 @@
+(version 1)
+(rule "class 1:1"
+  (condition "A.NetClass == 'IOss' && B.NetClass == 'IOss'")
+  (constraint clearance (min 0.35mm)))
